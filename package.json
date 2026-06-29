@@ -1,0 +1,20 @@
+{
+  "name": "dtek-data",
+  "version": "0.1.0",
+  "description": "Universal power-outage schedule collector that publishes machine- and human-friendly JSON.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "outage-collect": "./src/index.js"
+  },
+  "scripts": {
+    "collect": "node src/index.js",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.56.0"
+  }
+}
