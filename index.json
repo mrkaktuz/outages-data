@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-06-29T13:27:02+03:00",
+  "sources": [
+    {
+      "id": "dtek-krem",
+      "name": "ДТЕК Київські регіональні електромережі",
+      "region": "Київська область",
+      "updatedAt": "2026-06-29T13:25:46+03:00",
+      "status": "ok",
+      "groups": [],
+      "file": "dtek-krem.json"
+    },
+    {
+      "id": "dtek-kem",
+      "name": "ДТЕК Київські електромережі",
+      "region": "місто Київ",
+      "updatedAt": "2026-06-29T13:27:02+03:00",
+      "status": "ok",
+      "groups": [],
+      "file": "dtek-kem.json"
+    }
+  ]
+}
