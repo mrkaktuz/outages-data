@@ -30,9 +30,15 @@ src/
     registry.js   list of adapters — add new sources here
     dtek/
       adapter.js     shared DTEK fetch (DisconSchedule) + HTML fallback
-      normalize.js   DisconSchedule -> normalized schedule
+      normalize.js   DisconSchedule -> normalized schedule (also reused by ztoe)
       dtek-krem.js   config: Kyiv region
       dtek-kem.js    config: Kyiv city
+    ztoe/
+      parse.js       ztoe coloured HTML table -> DisconSchedule snapshot
+      ztoe.js        adapter: Житомиробленерго (reuses dtek/normalize.js)
+    chernihiv/
+      parse.js       Chernihiv JSON API intervals -> normalized schedule
+      chernihiv.js   adapter: Чернігівобленерго (browser-driven JSON API)
   index.js        CLI entry (parse args -> runPipeline)
 test/             node:test unit tests + fixtures (no browser needed)
 .github/workflows/collect.yml   scheduled run -> publishes to data branch
@@ -81,6 +87,45 @@ differ, so they share `sources/dtek/adapter.js`.
    straight from the page HTML** via brace matching (`sliceBalanced`). This path is
    the common success path in CI; it works because the data is inline in the HTML.
    If the HTML is the short Incapsula stub → `CollectError(WAF_BLOCKED)`.
+
+## ztoe source — confirmed facts (Житомиробленерго)
+
+- URL `https://www.ztoe.com.ua/unhooking-search.php`. **No WAF**, plain
+  server-rendered HTML in **windows-1251** (the browser decodes it; a raw
+  `fetch`/`curl` needs iconv). A browser is not strictly required but we reuse the
+  shared session anyway.
+- Per published date there is one `<table>` headed by `<b>DD.MM.YYYY</b>`. Each
+  queue 1.1..6.2 is a `<tr>` (`pidcherga_id=N` → `<b>1.1</b>`) with exactly **48
+  half-hour cells** styled `background:#RRGGBB`. **Red = off** (detected by RGB:
+  `r>200 && g<80 && b<80`, covers `#ff0000`/`#ff3333`), white = on.
+- `parse.js` collapses the 48 half-hours into 24 DisconSchedule hour codes
+  (`no`/`first`/`second`/`yes`) and emits them under `fact.data[<kyiv-midnight
+  unix>][GPV1.1]`, so the **DTEK `normalize.js` is reused verbatim**. No weekly
+  `preset` exists; `preset.data` is left empty and `sch_names` are synthesized
+  ("Черга 1.1"). Update label parsed from "Дата оновлення інформації - HH:MM
+  DD.MM.YYYY" → `sourceUpdatedAt` as "DD.MM.YYYY HH:MM".
+- Modeled on two existing parsers (yaroslav2901/ZTOE_PARSER, IfRiTLove/ztoe-parser);
+  code here is original. Verified against a live page snapshot (12 queues parsed).
+
+## chernihiv source — confirmed facts (Чернігівобленерго)
+
+- JSON API `POST https://interruptions.energy.cn.ua/api/info_schedule_part` with
+  body `{"queue":"1/1","curr_dt":"YYYY-MM-DD"}`. Queues are **"1/1".."6/2"** (12;
+  labeled "1.1".."6.2"). One request = one queue for one day.
+- Response: `{status, aData:[{time_from:"HH:MM", time_to:"HH:MM", queue:<state>}],
+  aState:{"1":{name,color}...}}`. The per-interval `queue` field is a **state
+  code**: `1`=on (no interval), `2`="Розмін черги/підчерги" → `possible`,
+  `3`="Відключення" → `off/planned`. `time_to:"00:00"` means end-of-day (24:00).
+- The adapter collects every queue for **today+tomorrow** by running `fetch()`
+  **inside a page loaded on the operator's origin** (`/interruptions`). Two
+  reasons: the API only answers same-origin requests, and the host serves an
+  **incomplete TLS chain** — Chromium completes it via AIA, so we never disable
+  TLS verification (the HA integration we modeled on used `ssl=False`; we don't).
+- **Not live-verifiable from the dev sandbox** (the egress proxy rejects the
+  host's cert and blocks the archive), so the shape is taken from
+  AlexiusFrostys/ha-chepower-integration. **Validate the first real run in CI**
+  (Actions logs / `git show origin/data:chernihiv.json`); if `aData`/state codes
+  differ, adjust `chernihiv/parse.js`.
 
 ## Output schema (normalized)
 
