@@ -22,6 +22,7 @@ import {
   writeOverallBadge,
   appendRunLog,
 } from './publish.js';
+import { buildNotifications, sendNotifications } from './notify.js';
 import { STATUS } from './schema.js';
 import { toKyivIso } from './time.js';
 import { log } from './logger.js';
@@ -46,6 +47,29 @@ function summarize(doc, changed) {
   };
 }
 
+function eventOf(doc, previous, changed) {
+  return {
+    name: doc.source.name,
+    changed,
+    prevOk: previous ? previous.status.ok : null,
+    nowOk: doc.status.ok,
+    code: doc.status.code,
+    groups: doc.groups.length,
+    sourceUpdatedAt: doc.status.sourceUpdatedAt,
+  };
+}
+
+async function notify(events) {
+  try {
+    const messages = buildNotifications(events);
+    if (!messages.length) return;
+    const results = await sendNotifications(messages);
+    log.info('notifications', { sent: results.filter((r) => r.sent).length, total: results.length });
+  } catch (err) {
+    log.warn('notify failed', { message: err && err.message });
+  }
+}
+
 /**
  * @param {Object} options
  * @param {import('./schema.js').SourceAdapter[]} options.sources
@@ -67,6 +91,7 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
     });
     const docs = [];
     const summaries = [];
+    const events = [];
     for (const adapter of sources) {
       const previous = await loadDocument(outDir, adapter.id);
       const candidate = buildFailureDocument(adapter, previous, STATUS.PARSE_ERROR, err && err.message);
@@ -74,15 +99,18 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
       await writeBadge(outDir, doc);
       docs.push(doc);
       summaries.push(summarize(doc, changed));
+      events.push(eventOf(doc, previous, changed));
     }
     await persistIndex(outDir, docs);
     await writeStatusBadge(outDir, startedAt, summaries);
     await writeRunLog(outDir, startedAt, summaries, false);
+    await notify(events);
     return { docs, allOk: false };
   }
 
   const docs = [];
   const summaries = [];
+  const events = [];
   try {
     for (const adapter of sources) {
       const previous = await loadDocument(outDir, adapter.id);
@@ -105,6 +133,7 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
       await writeBadge(outDir, doc);
       docs.push(doc);
       summaries.push(summarize(doc, changed));
+      events.push(eventOf(doc, previous, changed));
     }
     if (storageStatePath) await session.saveState(storageStatePath).catch(() => {});
   } finally {
@@ -115,6 +144,7 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
   const allOk = docs.every((doc) => doc.status.ok);
   await writeStatusBadge(outDir, startedAt, summaries);
   await writeRunLog(outDir, startedAt, summaries, allOk);
+  await notify(events);
   return { docs, allOk };
 }
 

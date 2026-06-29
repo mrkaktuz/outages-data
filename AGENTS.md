@@ -22,8 +22,9 @@ src/
     time.js       Europe/Kyiv <-> instant (DST-aware), ISO 8601, mergeIntervals
     browser.js    Playwright session, light stealth, retry/backoff (CollectError)
     errors.js     CollectError (kept import-light so adapters don't load Playwright)
-    pipeline.js   per-source orchestrate -> persist -> index -> run log
-    publish.js    document/index builders, hashing, reconcile (no-churn), run log
+    pipeline.js   per-source orchestrate -> persist -> index -> run log -> notify
+    publish.js    document/index builders, hashing, reconcile (no-churn), run log, badges
+    notify.js     optional Telegram notifications (env-gated, best-effort)
     logger.js     stderr structured logs (LOG_LEVEL)
   sources/
     registry.js   list of adapters — add new sources here
@@ -128,11 +129,32 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   it — after such a switch, push a commit that touches `collect.yml` to main to
   activate the schedule. The `push` trigger is the reliable fallback meanwhile.
 
+## Notifications (notify.js)
+
+Optional Telegram alerts, env-gated and best-effort (never throw). `buildNotifications`
+(pure) maps per-source events to messages: data change on a healthy source → silent;
+ok→fail and fail→ok transitions → loud; otherwise nothing (no spam while broken).
+Pipeline computes events via `eventOf(doc, previous, changed)` (prevOk from the
+previously published doc). Credentials: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`
+(GitHub secrets; never committed). Absent creds ⇒ no-op.
+
+## Schedule reliability
+
+GitHub `*/5` cron is throttled hard for low-traffic repos (observed: fires once
+after (re)registration, then sporadically). The workflow's "Keep the 5-minute
+chain alive" step re-dispatches the next run via a `DISPATCH_TOKEN` PAT
+(fine-grained, Actions: read+write) — GITHUB_TOKEN cannot self-dispatch
+(recursion guard). A guard skips dispatch when another run is queued/in-progress,
+so chains don't pile up; cron stays as a restart fallback. No `DISPATCH_TOKEN`
+⇒ cron-only. Reminder: cron only (re)registers when collect.yml changes on the
+default branch.
+
 ## Environment knobs
 
 `LOG_LEVEL` (debug|info|warn|error), `STORAGE_STATE_PATH` (persist cookies between
 runs), `DTEK_DATA_TIMEOUT_MS` (default 180000), `DTEK_NAV_TIMEOUT_MS` (45000),
 `CHROMIUM_EXECUTABLE` (override Chromium path — used for local sandboxes).
+Secrets (CI): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `DISPATCH_TOKEN`.
 
 ## Run & verify
 
