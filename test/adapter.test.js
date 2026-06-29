@@ -22,3 +22,11 @@ test('sliceBalanced handles nested braces and strings with braces', () => {
 test('extractFromHtml returns null when preset is missing', () => {
   assert.equal(__test__.extractFromHtml('<html>no data here</html>'), null);
 });
+
+test('extractFromHtml captures sourceUpdatedAt from fact.update', () => {
+  const html =
+    'DisconSchedule.preset = {"data":{"GPV1.1":{}},"updateFact":"29.06.2026 10:23"};' +
+    'DisconSchedule.fact = {"update":"29.06.2026 11:04","data":{}};';
+  const out = __test__.extractFromHtml(html);
+  assert.equal(out.sourceUpdatedAt, '29.06.2026 11:04');
+});

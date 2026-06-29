@@ -54,10 +54,12 @@ function extractFromHtml(html) {
   if (!presetText) return null;
   const factText = sliceBalanced(html, 'DisconSchedule.fact');
   try {
+    const preset = JSON.parse(presetText);
+    const fact = factText ? JSON.parse(factText) : null;
     return {
-      preset: JSON.parse(presetText),
-      fact: factText ? JSON.parse(factText) : null,
-      sourceUpdatedAt: null,
+      preset,
+      fact,
+      sourceUpdatedAt: (fact && fact.update) || (preset && preset.updateFact) || null,
     };
   } catch {
     return null;
@@ -112,7 +114,10 @@ async function fetchSnapshot(page, url) {
   if (!raw.preset || !raw.preset.data || Object.keys(raw.preset.data).length === 0) {
     throw new CollectError(STATUS.NO_DATA, 'preset.data is empty after page load');
   }
-  raw.sourceUpdatedAt = (raw.fact && raw.fact.update) || (await readUpdatedLabel(page));
+  raw.sourceUpdatedAt =
+    (raw.fact && raw.fact.update) ||
+    (raw.preset && raw.preset.updateFact) ||
+    (await readUpdatedLabel(page));
   return raw;
 }
 
