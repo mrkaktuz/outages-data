@@ -56,6 +56,25 @@ export function loadIndex(outDir) {
   return loadJson(outDir, 'index.json');
 }
 
+/** How many run-log entries to retain (JSON Lines, newest at the end). */
+export const MAX_LOG_ENTRIES = 1000;
+
+/** Append one run entry to log.jsonl, trimming to the most recent entries. */
+export async function appendRunLog(outDir, entry, maxEntries = MAX_LOG_ENTRIES) {
+  const file = path.join(outDir, 'log.jsonl');
+  let lines = [];
+  try {
+    lines = (await readFile(file, 'utf8')).split('\n').filter(Boolean);
+  } catch {
+    lines = [];
+  }
+  lines.push(JSON.stringify(entry));
+  if (lines.length > maxEntries) lines = lines.slice(lines.length - maxEntries);
+  await mkdir(outDir, { recursive: true });
+  await writeFile(file, lines.join('\n') + '\n', 'utf8');
+  return file;
+}
+
 /** Deep-equal two objects after dropping volatile keys. */
 function equalIgnoring(a, b, ignoreKeys) {
   const strip = (obj) => {

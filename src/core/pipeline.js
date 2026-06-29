@@ -1,7 +1,8 @@
 /**
  * Orchestration: for each source — fetch (with retries) → parse → build a
  * document → write it. One failing source never aborts the others; it just
- * gets a failure document that preserves its last good data.
+ * gets a failure document that preserves its last good data. Every run also
+ * appends an entry to the run log so the data branch carries its own history.
  */
 
 import { readFile } from 'node:fs/promises';
@@ -16,8 +17,10 @@ import {
   buildIndex,
   saveDocument,
   writeIndex,
+  appendRunLog,
 } from './publish.js';
 import { STATUS } from './schema.js';
+import { toKyivIso } from './time.js';
 import { log } from './logger.js';
 
 async function readStorageState(storageStatePath) {
@@ -29,6 +32,17 @@ async function readStorageState(storageStatePath) {
   }
 }
 
+function summarize(doc, changed) {
+  return {
+    id: doc.source.id,
+    status: doc.status.code,
+    ok: doc.status.ok,
+    groups: doc.groups.length,
+    changed,
+    sourceUpdatedAt: doc.status.sourceUpdatedAt,
+  };
+}
+
 /**
  * @param {Object} options
  * @param {import('./schema.js').SourceAdapter[]} options.sources
@@ -37,6 +51,7 @@ async function readStorageState(storageStatePath) {
  * @param {string|null} [options.storageStatePath]
  */
 export async function runPipeline({ sources, outDir, attempts = 3, storageStatePath = null }) {
+  const startedAt = new Date();
   const storageState = await readStorageState(storageStatePath);
 
   let session;
@@ -48,16 +63,21 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
       message: err && err.message,
     });
     const docs = [];
+    const summaries = [];
     for (const adapter of sources) {
       const previous = await loadDocument(outDir, adapter.id);
       const candidate = buildFailureDocument(adapter, previous, STATUS.PARSE_ERROR, err && err.message);
-      docs.push(await persistDocument(outDir, candidate, previous));
+      const { doc, changed } = await persistDocument(outDir, candidate, previous);
+      docs.push(doc);
+      summaries.push(summarize(doc, changed));
     }
     await persistIndex(outDir, docs);
+    await writeRunLog(outDir, startedAt, summaries, false);
     return { docs, allOk: false };
   }
 
   const docs = [];
+  const summaries = [];
   try {
     for (const adapter of sources) {
       const previous = await loadDocument(outDir, adapter.id);
@@ -76,7 +96,9 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
           hadPrevious: Boolean(previous),
         });
       }
-      docs.push(await persistDocument(outDir, candidate, previous));
+      const { doc, changed } = await persistDocument(outDir, candidate, previous);
+      docs.push(doc);
+      summaries.push(summarize(doc, changed));
     }
     if (storageStatePath) await session.saveState(storageStatePath).catch(() => {});
   } finally {
@@ -84,14 +106,16 @@ export async function runPipeline({ sources, outDir, attempts = 3, storageStateP
   }
 
   await persistIndex(outDir, docs);
-  return { docs, allOk: docs.every((doc) => doc.status.ok) };
+  const allOk = docs.every((doc) => doc.status.ok);
+  await writeRunLog(outDir, startedAt, summaries, allOk);
+  return { docs, allOk };
 }
 
 /** Save a document, keeping the previous one when nothing but the timestamp changed. */
 async function persistDocument(outDir, candidate, previous) {
   const doc = reconcileDocument(candidate, previous);
   await saveDocument(outDir, doc);
-  return doc;
+  return { doc, changed: doc !== previous };
 }
 
 /** Write the index only when the source set/state actually changed. */
@@ -99,4 +123,15 @@ async function persistIndex(outDir, docs) {
   const previous = await loadIndex(outDir);
   const index = reconcileIndex(buildIndex(docs), previous);
   await writeIndex(outDir, index);
+}
+
+/** Append one entry to the run-history log. */
+async function writeRunLog(outDir, startedAt, sources, ok) {
+  await appendRunLog(outDir, {
+    runAt: toKyivIso(startedAt),
+    durationMs: Date.now() - startedAt.getTime(),
+    ok,
+    changed: sources.some((s) => s.changed),
+    sources,
+  });
 }
