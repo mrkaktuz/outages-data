@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "id": "chernihiv",
+    "name": "Чернігівобленерго",
+    "region": "Чернігівська область",
+    "url": "https://interruptions.energy.cn.ua/interruptions"
+  },
+  "updatedAt": "2026-06-29T22:48:34+03:00",
+  "status": {
+    "ok": false,
+    "code": "no_data",
+    "message": "Chernihiv API returned no schedule for any queue",
+    "contentHash": null,
+    "sourceUpdatedAt": null
+  },
+  "groups": [],
+  "schedules": {},
+  "raw": {
+    "preset": null,
+    "fact": null
+  }
+}
