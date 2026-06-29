@@ -1,0 +1,25 @@
+name: Notify test
+
+# Manual check that Telegram secrets are wired up: sends one (loud) test message.
+on:
+  workflow_dispatch:
+
+jobs:
+  notify-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Send test notification
+        env:
+          LOG_LEVEL: info
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+        run: node src/index.js --notify-test

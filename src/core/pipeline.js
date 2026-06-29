@@ -60,13 +60,22 @@ function eventOf(doc, previous, changed) {
 }
 
 async function notify(events) {
+  const configured = Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
   try {
     const messages = buildNotifications(events);
-    if (!messages.length) return;
+    if (!messages.length) {
+      log.info('notify: nothing to send', { telegram: configured, events: events.length });
+      return;
+    }
     const results = await sendNotifications(messages);
-    log.info('notifications', { sent: results.filter((r) => r.sent).length, total: results.length });
+    log.info('notify: sent', {
+      telegram: configured,
+      messages: messages.length,
+      sent: results.filter((r) => r.sent).length,
+      reasons: [...new Set(results.map((r) => r.reason).filter(Boolean))],
+    });
   } catch (err) {
-    log.warn('notify failed', { message: err && err.message });
+    log.warn('notify failed', { telegram: configured, message: err && err.message });
   }
 }
 

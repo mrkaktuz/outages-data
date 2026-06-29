@@ -20,6 +20,7 @@ function parseArgs(argv) {
     if (flag === '--source') args.source = argv[(i += 1)];
     else if (flag === '--out') args.outDir = argv[(i += 1)];
     else if (flag === '--attempts') args.attempts = Number(argv[(i += 1)]);
+    else if (flag === '--notify-test') args.notifyTest = true;
     else if (flag === '--help' || flag === '-h') args.help = true;
   }
   return args;
@@ -45,6 +46,18 @@ async function main() {
   const args = parseArgs(process.argv);
   if (args.help) {
     printHelp();
+    return;
+  }
+
+  if (args.notifyTest) {
+    const { sendTelegram } = await import('./core/notify.js');
+    const configured = Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
+    const res = await sendTelegram({
+      text: `dtek-data: тест сповіщень ✅ (${new Date().toISOString()})`,
+      silent: false,
+    });
+    log.info('notify-test', { configured, ...res });
+    if (!res.sent) process.exitCode = 1; // surface misconfig in the workflow
     return;
   }
 
