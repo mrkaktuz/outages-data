@@ -86,12 +86,10 @@ async function fetchSnapshot(page, url) {
 
   try {
     await page.waitForFunction(
-      () =>
-        !!(
-          window.DisconSchedule &&
-          window.DisconSchedule.preset &&
-          Object.keys(window.DisconSchedule.preset).length > 0
-        ),
+      () => {
+        const data = window.DisconSchedule?.preset?.data;
+        return !!data && Object.keys(data).length > 0;
+      },
       { timeout: DATA_TIMEOUT_MS, polling: 2000 },
     );
   } catch {
@@ -111,10 +109,10 @@ async function fetchSnapshot(page, url) {
     const ds = window.DisconSchedule || {};
     return { preset: ds.preset ?? null, fact: ds.fact ?? null };
   });
-  if (!raw.preset || Object.keys(raw.preset).length === 0) {
-    throw new CollectError(STATUS.NO_DATA, 'preset is empty after page load');
+  if (!raw.preset || !raw.preset.data || Object.keys(raw.preset.data).length === 0) {
+    throw new CollectError(STATUS.NO_DATA, 'preset.data is empty after page load');
   }
-  raw.sourceUpdatedAt = await readUpdatedLabel(page);
+  raw.sourceUpdatedAt = (raw.fact && raw.fact.update) || (await readUpdatedLabel(page));
   return raw;
 }
 

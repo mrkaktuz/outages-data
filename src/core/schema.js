@@ -45,6 +45,7 @@ export const OUTAGE_TYPE = Object.freeze({
  * @typedef {Object} GroupSchedule
  * @property {string} group     Primary queue, e.g. "1".
  * @property {string} subgroup  Sub-queue, e.g. "1" (queue 1.1).
+ * @property {string|null} name Human label from the provider, e.g. "Черга 1.1".
  * @property {OutageInterval[]} intervals  Flattened, dated, time-ordered.
  */
 

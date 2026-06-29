@@ -1,11 +1,14 @@
 /**
  * Translate the DTEK `DisconSchedule` payload into the normalized schema.
  *
- * Upstream shape:
- *   preset[group][dow][hour]            -> weekly template (dow "1".."7", hour "1".."24")
- *   fact[timestamp].day_data[group][hour] -> actual outages for specific dates
+ * Upstream shape (confirmed against live data):
+ *   preset.data[groupKey][dow][hour]   -> weekly template
+ *   fact.data[unixSeconds][groupKey][hour] -> actual outages for specific dates
+ *   preset.sch_names[groupKey]         -> human label ("Черга 1.1")
+ *   fact.update                        -> "DD.MM.YYYY HH:mm" upstream timestamp
+ * where groupKey looks like "GPV1.1", dow is "1".."7", hour is "1".."24".
  *
- * Hour-slot codes (see docs/SPEC.md):
+ * Hour-slot codes (preset.time_type, see docs/SPEC.md):
  *   yes      -> power on (no interval)
  *   no       -> full-hour outage
  *   maybe    -> full-hour possible outage
@@ -40,7 +43,11 @@ const HOUR_SEGMENTS = {
   msecond: [{ from: 30, to: 60, kind: KIND.POSSIBLE }],
 };
 
-const GROUP_LABEL_RE = /^\d+(\.\d+)?$/;
+/** Pull the "1.1" label out of a "GPV1.1" group key. */
+function groupLabel(key) {
+  const match = String(key).match(/(\d+(?:\.\d+)?)\s*$/);
+  return match ? match[1] : null;
+}
 
 function defaultType(kind) {
   return kind === KIND.OFF ? OUTAGE_TYPE.PLANNED : OUTAGE_TYPE.POSSIBLE;
@@ -69,31 +76,15 @@ function buildDaySegments(hoursMap, date, origin, explicitType) {
   return segments;
 }
 
-/** Resolve the calendar date a fact entry refers to. */
-function resolveFactDate(timestampKey, entry) {
-  const candidate = entry && (entry.date || entry.day || entry.dt);
-  if (typeof candidate === 'string') {
-    const dmy = candidate.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-    if (dmy) return { year: +dmy[3], month: +dmy[2], day: +dmy[1] };
-    const ymd = candidate.match(/(\d{4})-(\d{2})-(\d{2})/);
-    if (ymd) return { year: +ymd[1], month: +ymd[2], day: +ymd[3] };
-  }
+/** Resolve the calendar date for a fact timestamp key (unix seconds). */
+function resolveFactDate(timestampKey) {
   const numeric = Number(timestampKey);
   if (Number.isFinite(numeric) && numeric > 0) {
     const ms = numeric > 1e12 ? numeric : numeric * 1000;
     return kyivDateParts(new Date(ms));
   }
-  return null;
-}
-
-/** Map a fact entry's type label onto our outage-type vocabulary. */
-function resolveFactType(entry) {
-  const raw = entry && (entry.type || entry.sub_type || entry.subType || entry.disconType);
-  if (typeof raw !== 'string') return null;
-  const value = raw.toLowerCase();
-  if (value.includes('emerg') || value.includes('аварій')) return OUTAGE_TYPE.EMERGENCY;
-  if (value.includes('stab') || value.includes('стабіл')) return OUTAGE_TYPE.STABILIZATION;
-  if (value.includes('plan') || value.includes('планов')) return OUTAGE_TYPE.PLANNED;
+  const dmy = String(timestampKey).match(/(\d{2})\.(\d{2})\.(\d{4})/);
+  if (dmy) return { year: +dmy[3], month: +dmy[2], day: +dmy[1] };
   return null;
 }
 
@@ -109,40 +100,40 @@ function compareGroupLabels(a, b) {
  * @returns {{groups: string[], schedules: Object.<string, import('../../core/schema.js').GroupSchedule>}}
  */
 export function normalize(raw, now = new Date()) {
-  const preset = raw && typeof raw.preset === 'object' && raw.preset ? raw.preset : {};
-  const factRoot = raw && typeof raw.fact === 'object' && raw.fact ? raw.fact : {};
+  const presetData =
+    raw && raw.preset && typeof raw.preset.data === 'object' && raw.preset.data ? raw.preset.data : {};
+  const schNames = (raw && raw.preset && raw.preset.sch_names) || {};
+  const factData =
+    raw && raw.fact && typeof raw.fact.data === 'object' && raw.fact.data ? raw.fact.data : {};
 
   const factEntries = [];
-  for (const [timestampKey, entry] of Object.entries(factRoot)) {
-    if (!entry || typeof entry !== 'object') continue;
-    const date = resolveFactDate(timestampKey, entry);
-    const dayData = entry.day_data || entry.dayData || entry.data;
-    if (!date || !dayData || typeof dayData !== 'object') continue;
-    factEntries.push({ date, dayData, type: resolveFactType(entry) });
+  for (const [timestampKey, groupMap] of Object.entries(factData)) {
+    if (!groupMap || typeof groupMap !== 'object') continue;
+    const date = resolveFactDate(timestampKey);
+    if (date) factEntries.push({ date, groupMap });
   }
 
-  const groupLabels = new Set(Object.keys(preset));
+  const rawGroupKeys = new Set(Object.keys(presetData));
   for (const fact of factEntries) {
-    for (const label of Object.keys(fact.dayData)) groupLabels.add(label);
+    for (const key of Object.keys(fact.groupMap)) rawGroupKeys.add(key);
   }
 
   const horizon = [];
   for (let offset = 0; offset < HORIZON_DAYS; offset++) horizon.push(kyivDateOffset(offset, now));
   const horizonKeys = new Set(horizon.map(dateKey));
 
-  const schedules = {};
-  const groups = [];
-
-  for (const label of groupLabels) {
-    if (!GROUP_LABEL_RE.test(label)) continue;
+  const byLabel = new Map();
+  for (const rawKey of rawGroupKeys) {
+    const label = groupLabel(rawKey);
+    if (!label) continue;
     const [group, subgroup = ''] = label.split('.');
 
     const factByDate = new Map();
     for (const fact of factEntries) {
-      const hoursMap = fact.dayData[label];
+      const hoursMap = fact.groupMap[rawKey];
       if (!hoursMap) continue;
       const key = dateKey(fact.date);
-      const segs = buildDaySegments(hoursMap, fact.date, 'fact', fact.type);
+      const segs = buildDaySegments(hoursMap, fact.date, 'fact', null);
       factByDate.set(key, (factByDate.get(key) || []).concat(segs));
     }
 
@@ -153,10 +144,9 @@ export function normalize(raw, now = new Date()) {
         segments = segments.concat(factByDate.get(key));
         continue;
       }
-      const weekdayMap = preset[label] && preset[label][String(isoWeekday(date))];
+      const weekdayMap = presetData[rawKey] && presetData[rawKey][String(isoWeekday(date))];
       segments = segments.concat(buildDaySegments(weekdayMap, date, 'preset'));
     }
-    // Fact dates outside the horizon window (defensive — normally none).
     for (const [key, segs] of factByDate) {
       if (!horizonKeys.has(key)) segments = segments.concat(segs);
     }
@@ -169,13 +159,17 @@ export function normalize(raw, now = new Date()) {
       origin: s.origin,
     }));
 
-    schedules[label] = { group, subgroup, intervals };
-    groups.push(label);
+    byLabel.set(label, {
+      group,
+      subgroup,
+      name: schNames[rawKey] || null,
+      intervals,
+    });
   }
 
-  groups.sort(compareGroupLabels);
-  const ordered = {};
-  for (const label of groups) ordered[label] = schedules[label];
+  const groups = [...byLabel.keys()].sort(compareGroupLabels);
+  const schedules = {};
+  for (const label of groups) schedules[label] = byLabel.get(label);
 
-  return { groups, schedules: ordered };
+  return { groups, schedules };
 }
