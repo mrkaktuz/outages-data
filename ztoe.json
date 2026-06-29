@@ -6,11 +6,11 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-06-29T23:34:30+03:00",
+  "updatedAt": "2026-06-30T00:00:29+03:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "no_data",
+    "message": "no schedule tables found on ZTOE page",
     "contentHash": "sha256:9f98279cc578eebc55cfdad6fa0b73c71bf7cc1b906a564511fce3dadfa0e204",
     "sourceUpdatedAt": "29.06.2026 23:30"
   },
