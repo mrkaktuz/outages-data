@@ -134,6 +134,11 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
 Optional Telegram alerts, env-gated and best-effort (never throw). `buildNotifications`
 (pure) maps per-source events to messages: data change on a healthy source → silent;
 ok→fail and fail→ok transitions → loud; otherwise nothing (no spam while broken).
+A failure is announced only on the ok→fail edge (`prevOk !== false`); while the
+source stays broken across consecutive runs it is silent, and recovery (first
+fail→ok) is always announced — `prevOk` is the previously *published* doc, which
+holds `ok:false` for the whole outage. Silent update messages carry a short diff
+from `summarizeChange(previous, doc)` (changed/added/removed queues + net off-hours).
 Pipeline computes events via `eventOf(doc, previous, changed)` (prevOk from the
 previously published doc). Credentials: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`,
 optional `TELEGRAM_THREAD_ID` (forum-group topic → `message_thread_id`). GitHub

@@ -22,7 +22,7 @@ import {
   writeOverallBadge,
   appendRunLog,
 } from './publish.js';
-import { buildNotifications, sendNotifications } from './notify.js';
+import { buildNotifications, sendNotifications, summarizeChange } from './notify.js';
 import { STATUS } from './schema.js';
 import { toKyivIso } from './time.js';
 import { log } from './logger.js';
@@ -56,6 +56,8 @@ function eventOf(doc, previous, changed) {
     code: doc.status.code,
     groups: doc.groups.length,
     sourceUpdatedAt: doc.status.sourceUpdatedAt,
+    // Only meaningful for a healthy run that actually changed; otherwise unused.
+    changeSummary: changed && doc.status.ok ? summarizeChange(previous, doc) : '',
   };
 }
 
