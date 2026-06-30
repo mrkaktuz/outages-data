@@ -121,15 +121,6 @@
         "6.2"
       ],
       "file": "ztoe.json"
-    },
-    {
-      "id": "chernihiv",
-      "name": "Чернігівобленерго",
-      "region": "Чернігівська область",
-      "updatedAt": "2026-06-30T05:57:46+03:00",
-      "status": "no_data",
-      "groups": [],
-      "file": "chernihiv.json"
     }
   ]
 }
