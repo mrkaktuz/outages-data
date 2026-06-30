@@ -5,7 +5,6 @@
 ![ДТЕК КРЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-krem.json&cacheSeconds=300)
 ![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
 ![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
-![Чернігівобленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fchernihiv.json&cacheSeconds=300)
 
 Універсальний збирач графіків відключень електроенергії. Рендерить сайти
 операторів реальним браузером, нормалізує дані в стабільний JSON і кожні ~5 хв
@@ -20,7 +19,6 @@
 | `dtek-krem` | ДТЕК Київські регіональні електромережі     | Київська область   |
 | `dtek-kem`  | ДТЕК Київські електромережі                  | місто Київ         |
 | `ztoe`      | Житомиробленерго                            | Житомирська область |
-| `chernihiv` | Чернігівобленерго                           | Чернігівська область |
 
 Незалежно від того, як саме оператор віддає дані, колектор зводить усе до одного
 формату. Джерела відрізняються механізмом отримання:
@@ -32,11 +30,6 @@
   кольоровими комірками (червона = відключення) по 48 півгодинних слотів на чергу.
   Колектор рендерить сторінку браузером (вона у `windows-1251`) і перетворює
   таблицю в ту саму структуру `DisconSchedule`, що й ДТЕК.
-- **Чернігівобленерго** (`chernihiv`) має JSON-API
-  (`POST /api/info_schedule_part`), який віддає розклад окремо по кожній черзі на
-  добу. Запити виконуються зі сторінки самого оператора через браузер (той
-  самостійно добудовує неповний ланцюжок TLS-сертифіката хосту, тож перевірку
-  сертифіката вимикати не треба).
 
 ## Опубліковані дані
 

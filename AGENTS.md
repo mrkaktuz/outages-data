@@ -36,9 +36,6 @@ src/
     ztoe/
       parse.js       ztoe coloured HTML table -> DisconSchedule snapshot
       ztoe.js        adapter: Житомиробленерго (reuses dtek/normalize.js)
-    chernihiv/
-      parse.js       Chernihiv JSON API intervals -> normalized schedule
-      chernihiv.js   adapter: Чернігівобленерго (browser-driven JSON API)
   index.js        CLI entry (parse args -> runPipeline)
 test/             node:test unit tests + fixtures (no browser needed)
 .github/workflows/collect.yml   scheduled run -> publishes to data branch
@@ -113,37 +110,21 @@ differ, so they share `sources/dtek/adapter.js`.
   code here is original. **Verified end-to-end in CI** both with no outages (ok, 0
   groups) and with a live schedule (ok, 12 groups).
 
-## chernihiv source — confirmed facts (Чернігівобленерго)
+## chernihiv (Чернігівобленерго) — DEFERRED, not implemented
 
-- JSON API `POST https://interruptions.energy.cn.ua/api/info_schedule_part` with
-  body `{"queue":"1/1","curr_dt":"YYYY-MM-DD"}`. Queues are **"1/1".."6/2"** (12;
-  labeled "1.1".."6.2"). One request = one queue for one day.
-- Response: `{status, aData:[{time_from:"HH:MM", time_to:"HH:MM", queue:<state>}],
-  aState:{"1":{name,color}...}}`. The per-interval `queue` field is a **state
-  code**: `1`=on (no interval), `2`="Розмін черги/підчерги" → `possible`,
-  `3`="Відключення" → `off/planned`. `time_to:"00:00"` means end-of-day (24:00).
-- The adapter collects every queue for **today+tomorrow** by running `fetch()`
-  **inside a page loaded on the operator's origin** (`/interruptions`). Two
-  reasons: the API only answers same-origin requests, and the host serves an
-  **incomplete TLS chain** — Chromium completes it via AIA, so we never disable
-  TLS verification (the HA integration we modeled on used `ssl=False`; we don't).
-- **BLOCKED as of 2026-06: the API is gated by Cloudflare Turnstile.** Every call
-  returns `HTTP 400 {"error":"No captcha"}` unless a valid Turnstile token is sent
-  in the request. CI probe confirmed the page loads
-  `challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback`
-  (no grecaptcha/hcaptcha). The `ha-chepower-integration` we modeled on sends no
-  token, so it is effectively broken too. The `parse.js`/normalize path is correct
-  and unit-tested; only the fetch is blocked. The adapter therefore fails
-  gracefully (NO_DATA, keeps previous data, never aborts the run) and logs a
-  `chernihiv api probe` line with the captcha env + first-request diagnostics.
-- Possible future paths (all unverified, none implemented): let the site's own
-  Turnstile widget mint a token and read `cf-turnstile-response` before calling the
-  API; switch to another source (chernigiv.energy-ua.info is Cloudflare-challenged,
-  cn.e-svitlo.com.ua needs login); or wait for an unprotected endpoint. Defeating
-  Turnstile from headless CI is fragile and is a product decision — leave it parked
-  unless the owner asks.
-- Not live-verifiable from the dev sandbox (the egress proxy rejects the host's
-  cert and blocks the archive); all of the above came from CI Actions logs.
+Investigated and intentionally **not added** (owner's call, 2026-06). Notes kept so
+the research isn't lost if it's revisited:
+
+- Source is the JSON API `POST https://interruptions.energy.cn.ua/api/info_schedule_part`
+  body `{"queue":"1/1","curr_dt":"YYYY-MM-DD"}`, queues "1/1".."6/2"; response
+  `{aData:[{time_from,time_to,queue:<state 1=on/2=swap/3=off>}], aState}`.
+- **Blocker:** the API is gated by **Cloudflare Turnstile** — any call without a
+  valid token returns `HTTP 400 {"error":"No captcha"}` (CI-confirmed; page loads
+  `challenges.cloudflare.com/turnstile/v0/api.js`). The host also serves an
+  incomplete TLS chain (needs a real browser / AIA). Beating Turnstile from
+  headless CI is fragile; alternatives are also protected (energy-ua.info →
+  Cloudflare, cn.e-svitlo.com.ua → login). Revisit only if an unprotected source
+  appears or the owner asks.
 
 ## Output schema (normalized)
 
