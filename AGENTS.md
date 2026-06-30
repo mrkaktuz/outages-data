@@ -100,7 +100,10 @@ differ, so they share `sources/dtek/adapter.js`.
   unix>][GPV1.1]`, so the **DTEK `normalize.js` is reused verbatim**. No weekly
   `preset` exists; `preset.data` is left empty and `sch_names` are synthesized
   ("Черга 1.1"). Update label parsed from "Дата оновлення інформації - HH:MM
-  DD.MM.YYYY" → `sourceUpdatedAt` as "DD.MM.YYYY HH:MM".
+  DD.MM.YYYY" → `sourceUpdatedAt` as "DD.MM.YYYY HH:MM". **Note:** ZTOE bumps this
+  label every ~30 min even when the grid is unchanged, so change-detection must
+  ignore it (see `reconcileDocument` below) — otherwise every poll spams an
+  "оновлено" notification.
 - **No-outage state:** when Ukrenergo has not ordered any GPV, ZTOE drops the
   schedule table entirely and shows a "...графіків погодинних відключень... не
   надходило" message. That is a *legitimately empty* schedule (status ok, 0
@@ -142,14 +145,21 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
 
 - On failure, keep previous `groups/schedules/raw`; update only `status` +
   `updatedAt` (`buildFailureDocument`). Never publish emptiness.
-- **No-churn**: `reconcileDocument`/`reconcileIndex` keep the previous file
-  byte-identical when only `updatedAt`/`generatedAt` would differ, so per-source
-  files (and `index.json`) only change on real change. `updatedAt` = last real change.
+- **No-churn**: `reconcileDocument` keeps the previous file when the *meaningful
+  view* — `groups`, `schedules` and `status.ok`/`code` — is unchanged, so the
+  upstream "оновлено" stamp (`status.sourceUpdatedAt`), `updatedAt` and the raw
+  snapshot are all ignored for change-detection (critical for ztoe, which ticks
+  its stamp every ~30 min). `reconcileIndex` ignores `generatedAt`. Per-source
+  files (and `index.json`) only change on real change; `updatedAt` = last real
+  change. A spurious change here = a spurious Telegram "оновлено" message.
 - **Run log**: `appendRunLog` writes one line per run to `data/log.jsonl`
   (capped `MAX_LOG_ENTRIES`=1000). Because it changes every run, the data branch
   gets one commit per run (a heartbeat). If commit volume becomes a problem,
   switch to logging only `changed`/non-ok runs.
-- Content hash (`computeHash`) is over `groups+schedules+raw` (excludes timestamps/status).
+- Content hash (`computeHash`, `status.contentHash`) is over `groups+schedules+raw`
+  and is informational only — it is NOT used for change-detection (it embeds raw
+  upstream timestamps, so it ticks even when the schedule is identical; reconcile
+  uses `meaningfulView` instead).
 - **Badges**: `writeBadge` emits a Shields.io endpoint JSON per source to
   `data/badges/<id>.json` (color by status, message = group count); content is
   timestamp-free so those change only on real status/size changes.

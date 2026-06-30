@@ -19,6 +19,20 @@ test('reconcileDocument keeps previous when only the timestamp differs', () => {
   assert.equal(reconcileDocument(candidate, previous), previous);
 });
 
+test('reconcileDocument keeps previous when only the upstream stamp/raw ticks (ztoe)', () => {
+  // Same schedule, but the operator bumped its "оновлено" label and raw snapshot.
+  const previous = baseDoc();
+  previous.status.sourceUpdatedAt = '30.06.2026 14:00';
+  previous.status.contentHash = 'sha256:aaa';
+  previous.raw = { preset: {}, fact: { update: '30.06.2026 14:00', today: 1 } };
+  const candidate = baseDoc();
+  candidate.updatedAt = '2026-06-30T14:30:00+03:00';
+  candidate.status.sourceUpdatedAt = '30.06.2026 14:30';
+  candidate.status.contentHash = 'sha256:bbb'; // would differ if raw is hashed
+  candidate.raw = { preset: {}, fact: { update: '30.06.2026 14:30', today: 1 } };
+  assert.equal(reconcileDocument(candidate, previous), previous);
+});
+
 test('reconcileDocument takes candidate when content changes', () => {
   const previous = baseDoc();
   const candidate = baseDoc();

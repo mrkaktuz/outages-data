@@ -86,11 +86,29 @@ function equalIgnoring(a, b, ignoreKeys) {
 }
 
 /**
- * Avoid churn: if the new document matches the previous one apart from its
- * timestamp, keep the previous one so the file (and git) stays unchanged.
+ * The data-bearing view of a document: the actual schedule plus health. A real
+ * change is a change here — NOT a change in the upstream "last updated" label
+ * (`status.sourceUpdatedAt`), the run timestamp (`updatedAt`) or the raw snapshot.
+ * Some operators (e.g. ztoe) bump their "оновлено" stamp every ~30 min while the
+ * grid stays identical; keying off that would spam a pointless update every poll.
+ */
+function meaningfulView(doc) {
+  return JSON.stringify({
+    groups: doc.groups,
+    schedules: doc.schedules,
+    ok: doc.status && doc.status.ok,
+    code: doc.status && doc.status.code,
+  });
+}
+
+/**
+ * Avoid churn: if the new document carries the same schedule and health as the
+ * previous one, keep the previous one so the file (and git) stays unchanged and
+ * no spurious "updated" notification fires.
  */
 export function reconcileDocument(candidate, previous) {
-  return equalIgnoring(candidate, previous, ['updatedAt']) ? previous : candidate;
+  if (previous && meaningfulView(candidate) === meaningfulView(previous)) return previous;
+  return candidate;
 }
 
 /** Same idea for the index, ignoring its generation timestamp. */
