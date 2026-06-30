@@ -6,12 +6,12 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-06-30T18:31:10+03:00",
+  "updatedAt": "2026-06-30T18:42:01+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:2105eba77669a7c761ec555035771042e819edf01b41a1633b3ab4ecba426498",
+    "contentHash": "sha256:2e1b7e01ff70308bfc9c7c172bda05752d91412e6074d3b243b54091c4ef4646",
     "sourceUpdatedAt": "30.06.2026 18:30"
   },
   "groups": [
@@ -55,7 +55,7 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-06-30T19:00:00+03:00",
+          "start": "2026-06-30T20:00:00+03:00",
           "end": "2026-06-30T21:00:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -219,7 +219,7 @@
             "17": "yes",
             "18": "yes",
             "19": "yes",
-            "20": "no",
+            "20": "yes",
             "21": "no",
             "22": "yes",
             "23": "yes",
