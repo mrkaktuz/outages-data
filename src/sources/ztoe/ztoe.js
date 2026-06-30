@@ -29,6 +29,15 @@ async function fetchSnapshot(page) {
   const raw = parseZtoeHtml(html);
   const dates = Object.keys(raw.fact.data);
   if (dates.length === 0) {
+    // No schedule table. ZTOE drops the table entirely when Ukrenergo has not
+    // ordered any outages ("...графіків погодинних відключень... не надходило").
+    // That is a legitimately empty schedule (power on everywhere), not a failure:
+    // publish it as ok-empty. Only a genuinely broken page is a NO_DATA error.
+    const looksLikePage = raw.sourceUpdatedAt || /відключен|надходил|погодинних/i.test(html);
+    if (looksLikePage) {
+      log.info('ztoe: no outage schedule published', { sourceUpdatedAt: raw.sourceUpdatedAt });
+      return raw; // empty fact.data -> normalize yields 0 groups, status stays ok
+    }
     throw new CollectError(STATUS.NO_DATA, 'no schedule tables found on ZTOE page');
   }
   log.info('ztoe parsed', { dates: dates.length, sourceUpdatedAt: raw.sourceUpdatedAt });

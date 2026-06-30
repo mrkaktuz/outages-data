@@ -58,6 +58,8 @@ async function fetchSnapshot(page) {
     async ({ apiPath, queues, dateStrs }) => {
       const out = {};
       let aState = null;
+      let okCount = 0;
+      const diag = [];
       for (const dt of dateStrs) {
         out[dt] = {};
         const responses = await Promise.all(
@@ -68,23 +70,35 @@ async function fetchSnapshot(page) {
                 headers: { 'Content-Type': 'application/json', Accept: '*/*' },
                 body: JSON.stringify({ queue: q.param, curr_dt: dt }),
               });
-              if (!res.ok) return { label: q.label, json: null };
-              return { label: q.label, json: await res.json() };
-            } catch {
-              return { label: q.label, json: null };
+              const text = await res.text();
+              let json = null;
+              try {
+                json = JSON.parse(text);
+              } catch {
+                /* non-JSON body */
+              }
+              return { label: q.label, ok: res.ok, status: res.status, ct: res.headers.get('content-type'), json, snippet: text.slice(0, 160) };
+            } catch (e) {
+              return { label: q.label, ok: false, status: 0, err: String(e && e.message) };
             }
           }),
         );
-        for (const { label, json } of responses) {
-          if (!json || !Array.isArray(json.aData)) continue;
-          out[dt][label] = json.aData;
-          if (!aState && json.aState) aState = json.aState;
+        for (const r of responses) {
+          if (r.json && Array.isArray(r.json.aData)) {
+            out[dt][r.label] = r.json.aData;
+            if (!aState && r.json.aState) aState = r.json.aState;
+            okCount += 1;
+          }
+          if (diag.length < 3) diag.push({ dt, label: r.label, ok: r.ok, status: r.status, ct: r.ct, err: r.err, snippet: r.snippet });
         }
       }
-      return { out, aState };
+      return { out, aState, okCount, diag };
     },
     { apiPath: API_PATH, queues, dateStrs: dates.map((d) => d.str) },
   );
+
+  // Surface what the API actually returned — invaluable while validating in CI.
+  log.info('chernihiv api probe', { okCount: collected.okCount, diag: collected.diag });
 
   const data = {};
   let total = 0;
@@ -96,8 +110,11 @@ async function fetchSnapshot(page) {
     total += labels.length;
   }
 
-  if (total === 0) {
-    throw new CollectError(STATUS.NO_DATA, 'Chernihiv API returned no schedule for any queue');
+  if (collected.okCount === 0) {
+    throw new CollectError(
+      STATUS.NO_DATA,
+      `Chernihiv API returned no valid response (diag: ${JSON.stringify(collected.diag)})`,
+    );
   }
 
   log.info('chernihiv parsed', { dates: Object.keys(data).length, queueDays: total });
