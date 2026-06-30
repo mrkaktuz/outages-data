@@ -50,12 +50,48 @@ function targetDates(now = new Date()) {
 
 async function fetchSnapshot(page) {
   await page.goto(PAGE_URL, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+  // The API is captcha-gated (HTTP 400 {"error":"No captcha"}). The site's own
+  // front-end mints a token for each request; we do the same from inside the page.
+  // Give its captcha script time to initialize before probing.
+  await page
+    .waitForFunction(() => window.grecaptcha || window.hcaptcha || window.turnstile, { timeout: 12000 })
+    .catch(() => {});
 
   const queues = queueList();
   const dates = targetDates();
 
   const collected = await page.evaluate(
     async ({ apiPath, queues, dateStrs }) => {
+      // Detect which captcha system the page uses and its site key.
+      const scriptSrcs = [...document.querySelectorAll('script[src]')]
+        .map((s) => s.src)
+        .filter((s) => /recaptcha|hcaptcha|captcha|turnstile/i.test(s));
+      let siteKey = (document.querySelector('[data-sitekey]') || {}).getAttribute?.('data-sitekey') || null;
+      for (const s of scriptSrcs) {
+        const m = s.match(/[?&]render=([\w-]+)/);
+        if (m) siteKey = m[1];
+      }
+      const env = {
+        hasGrecaptcha: typeof window.grecaptcha !== 'undefined',
+        hasHcaptcha: typeof window.hcaptcha !== 'undefined',
+        hasTurnstile: typeof window.turnstile !== 'undefined',
+        siteKey,
+        scriptSrcs: scriptSrcs.slice(0, 4),
+      };
+
+      // Mint a reCAPTCHA v3 token the same way the site's front-end does.
+      async function captchaToken(action) {
+        try {
+          if (window.grecaptcha && siteKey && typeof grecaptcha.execute === 'function') {
+            await new Promise((r) => (grecaptcha.ready ? grecaptcha.ready(r) : r()));
+            return await grecaptcha.execute(siteKey, { action });
+          }
+        } catch {
+          /* fall through */
+        }
+        return null;
+      }
+
       const out = {};
       let aState = null;
       let okCount = 0;
@@ -65,10 +101,13 @@ async function fetchSnapshot(page) {
         const responses = await Promise.all(
           queues.map(async (q) => {
             try {
+              const captcha = await captchaToken('schedule');
+              const body = { queue: q.param, curr_dt: dt };
+              if (captcha) body.captcha = captcha;
               const res = await fetch(apiPath, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: '*/*' },
-                body: JSON.stringify({ queue: q.param, curr_dt: dt }),
+                body: JSON.stringify(body),
               });
               const text = await res.text();
               let json = null;
@@ -77,7 +116,7 @@ async function fetchSnapshot(page) {
               } catch {
                 /* non-JSON body */
               }
-              return { label: q.label, ok: res.ok, status: res.status, ct: res.headers.get('content-type'), json, snippet: text.slice(0, 160) };
+              return { label: q.label, ok: res.ok, status: res.status, hadCaptcha: !!captcha, json, snippet: text.slice(0, 160) };
             } catch (e) {
               return { label: q.label, ok: false, status: 0, err: String(e && e.message) };
             }
@@ -89,16 +128,16 @@ async function fetchSnapshot(page) {
             if (!aState && r.json.aState) aState = r.json.aState;
             okCount += 1;
           }
-          if (diag.length < 3) diag.push({ dt, label: r.label, ok: r.ok, status: r.status, ct: r.ct, err: r.err, snippet: r.snippet });
+          if (diag.length < 3) diag.push({ dt, label: r.label, ok: r.ok, status: r.status, hadCaptcha: r.hadCaptcha, err: r.err, snippet: r.snippet });
         }
       }
-      return { out, aState, okCount, diag };
+      return { out, aState, okCount, diag, env };
     },
     { apiPath: API_PATH, queues, dateStrs: dates.map((d) => d.str) },
   );
 
-  // Surface what the API actually returned — invaluable while validating in CI.
-  log.info('chernihiv api probe', { okCount: collected.okCount, diag: collected.diag });
+  // Surface the captcha env + what the API actually returned — invaluable in CI.
+  log.info('chernihiv api probe', { okCount: collected.okCount, env: collected.env, diag: collected.diag });
 
   const data = {};
   let total = 0;
