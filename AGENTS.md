@@ -104,8 +104,14 @@ differ, so they share `sources/dtek/adapter.js`.
   `preset` exists; `preset.data` is left empty and `sch_names` are synthesized
   ("Черга 1.1"). Update label parsed from "Дата оновлення інформації - HH:MM
   DD.MM.YYYY" → `sourceUpdatedAt` as "DD.MM.YYYY HH:MM".
+- **No-outage state:** when Ukrenergo has not ordered any GPV, ZTOE drops the
+  schedule table entirely and shows a "...графіків погодинних відключень... не
+  надходило" message. That is a *legitimately empty* schedule (status ok, 0
+  groups), NOT a failure — `ztoe.js` detects it and returns an empty snapshot;
+  only a genuinely broken page is NO_DATA.
 - Modeled on two existing parsers (yaroslav2901/ZTOE_PARSER, IfRiTLove/ztoe-parser);
-  code here is original. Verified against a live page snapshot (12 queues parsed).
+  code here is original. **Verified end-to-end in CI** both with no outages (ok, 0
+  groups) and with a live schedule (ok, 12 groups).
 
 ## chernihiv source — confirmed facts (Чернігівобленерго)
 
@@ -121,11 +127,23 @@ differ, so they share `sources/dtek/adapter.js`.
   reasons: the API only answers same-origin requests, and the host serves an
   **incomplete TLS chain** — Chromium completes it via AIA, so we never disable
   TLS verification (the HA integration we modeled on used `ssl=False`; we don't).
-- **Not live-verifiable from the dev sandbox** (the egress proxy rejects the
-  host's cert and blocks the archive), so the shape is taken from
-  AlexiusFrostys/ha-chepower-integration. **Validate the first real run in CI**
-  (Actions logs / `git show origin/data:chernihiv.json`); if `aData`/state codes
-  differ, adjust `chernihiv/parse.js`.
+- **BLOCKED as of 2026-06: the API is gated by Cloudflare Turnstile.** Every call
+  returns `HTTP 400 {"error":"No captcha"}` unless a valid Turnstile token is sent
+  in the request. CI probe confirmed the page loads
+  `challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback`
+  (no grecaptcha/hcaptcha). The `ha-chepower-integration` we modeled on sends no
+  token, so it is effectively broken too. The `parse.js`/normalize path is correct
+  and unit-tested; only the fetch is blocked. The adapter therefore fails
+  gracefully (NO_DATA, keeps previous data, never aborts the run) and logs a
+  `chernihiv api probe` line with the captcha env + first-request diagnostics.
+- Possible future paths (all unverified, none implemented): let the site's own
+  Turnstile widget mint a token and read `cf-turnstile-response` before calling the
+  API; switch to another source (chernigiv.energy-ua.info is Cloudflare-challenged,
+  cn.e-svitlo.com.ua needs login); or wait for an unprotected endpoint. Defeating
+  Turnstile from headless CI is fragile and is a product decision — leave it parked
+  unless the owner asks.
+- Not live-verifiable from the dev sandbox (the egress proxy rejects the host's
+  cert and blocks the archive); all of the above came from CI Actions logs.
 
 ## Output schema (normalized)
 
