@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-07-01T00:01:17+03:00",
+  "updatedAt": "2026-07-01T16:46:14+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:f0c5e731f07a25a9818eaf306429e798d22995107dcc6fe8c7c1c07462456b33",
-    "sourceUpdatedAt": "01.07.2026 00:00"
+    "contentHash": "sha256:269019c48b389989e29145c2818e5b2b44abdf8bcd2a367e5189dd05815b443f",
+    "sourceUpdatedAt": "01.07.2026 16:30"
   },
   "groups": [
     "1.1",
@@ -59,8 +59,8 @@
       "name": "Черга 3.1",
       "intervals": [
         {
-          "start": "2026-07-01T17:00:00+03:00",
-          "end": "2026-07-01T18:30:00+03:00",
+          "start": "2026-07-01T18:00:00+03:00",
+          "end": "2026-07-01T19:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -71,15 +71,7 @@
       "group": "3",
       "subgroup": "2",
       "name": "Черга 3.2",
-      "intervals": [
-        {
-          "start": "2026-07-01T17:00:00+03:00",
-          "end": "2026-07-01T18:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "4.1": {
       "group": "4",
@@ -87,7 +79,7 @@
       "name": "Черга 4.1",
       "intervals": [
         {
-          "start": "2026-07-01T18:30:00+03:00",
+          "start": "2026-07-01T19:00:00+03:00",
           "end": "2026-07-01T20:30:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -99,15 +91,7 @@
       "group": "4",
       "subgroup": "2",
       "name": "Черга 4.2",
-      "intervals": [
-        {
-          "start": "2026-07-01T18:30:00+03:00",
-          "end": "2026-07-01T20:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "5.1": {
       "group": "5",
@@ -127,15 +111,7 @@
       "group": "5",
       "subgroup": "2",
       "name": "Черга 5.2",
-      "intervals": [
-        {
-          "start": "2026-07-01T20:30:00+03:00",
-          "end": "2026-07-01T22:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "6.1": {
       "group": "6",
@@ -293,8 +269,8 @@
             "15": "yes",
             "16": "yes",
             "17": "yes",
-            "18": "no",
-            "19": "first",
+            "18": "yes",
+            "19": "no",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -319,8 +295,8 @@
             "15": "yes",
             "16": "yes",
             "17": "yes",
-            "18": "no",
-            "19": "first",
+            "18": "yes",
+            "19": "yes",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -346,7 +322,7 @@
             "16": "yes",
             "17": "yes",
             "18": "yes",
-            "19": "second",
+            "19": "yes",
             "20": "no",
             "21": "first",
             "22": "yes",
@@ -372,9 +348,9 @@
             "16": "yes",
             "17": "yes",
             "18": "yes",
-            "19": "second",
-            "20": "no",
-            "21": "first",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
             "22": "yes",
             "23": "yes",
             "24": "yes"
@@ -426,8 +402,8 @@
             "18": "yes",
             "19": "yes",
             "20": "yes",
-            "21": "second",
-            "22": "no",
+            "21": "yes",
+            "22": "yes",
             "23": "yes",
             "24": "yes"
           },
@@ -485,7 +461,7 @@
           }
         }
       },
-      "update": "01.07.2026 00:00",
+      "update": "01.07.2026 16:30",
       "today": 1782853200
     }
   }
