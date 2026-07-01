@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-07-01T18:07:38+03:00",
+  "updatedAt": "2026-07-02T00:01:15+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:31c25c1a6d1fd16def8550696ebda85a84f887292fad5b5cb72d20f49cdf39ac",
-    "sourceUpdatedAt": "01.07.2026 18:00"
+    "contentHash": "sha256:d61db15176f4ad55005b4cc758b3a76f11c234f1137b6552810fa49342ba8286",
+    "sourceUpdatedAt": "02.07.2026 00:00"
   },
   "groups": [
     "1.1",
@@ -69,15 +69,7 @@
       "group": "4",
       "subgroup": "1",
       "name": "Черга 4.1",
-      "intervals": [
-        {
-          "start": "2026-07-01T19:00:00+03:00",
-          "end": "2026-07-01T20:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "4.2": {
       "group": "4",
@@ -89,15 +81,7 @@
       "group": "5",
       "subgroup": "1",
       "name": "Черга 5.1",
-      "intervals": [
-        {
-          "start": "2026-07-01T20:30:00+03:00",
-          "end": "2026-07-01T22:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "5.2": {
       "group": "5",
@@ -138,7 +122,7 @@
     },
     "fact": {
       "data": {
-        "1782853200": {
+        "1782939600": {
           "GPV1.1": {
             "1": "yes",
             "2": "yes",
@@ -315,8 +299,8 @@
             "17": "yes",
             "18": "yes",
             "19": "yes",
-            "20": "no",
-            "21": "first",
+            "20": "yes",
+            "21": "yes",
             "22": "yes",
             "23": "yes",
             "24": "yes"
@@ -368,8 +352,8 @@
             "18": "yes",
             "19": "yes",
             "20": "yes",
-            "21": "second",
-            "22": "no",
+            "21": "yes",
+            "22": "yes",
             "23": "yes",
             "24": "yes"
           },
@@ -453,8 +437,8 @@
           }
         }
       },
-      "update": "01.07.2026 18:00",
-      "today": 1782853200
+      "update": "02.07.2026 00:00",
+      "today": 1782939600
     }
   }
 }
