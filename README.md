@@ -4,6 +4,8 @@
 ![останнє оновлення](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fstatus.json&cacheSeconds=300)
 ![ДТЕК КРЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-krem.json&cacheSeconds=300)
 ![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
+![ДТЕК ДНЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dnem.json&cacheSeconds=300)
+![ДТЕК ОЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-oem.json&cacheSeconds=300)
 ![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
 
 Універсальний збирач графіків відключень електроенергії. Рендерить сайти
@@ -18,12 +20,14 @@
 |-------------|---------------------------------------------|--------------------|
 | `dtek-krem` | ДТЕК Київські регіональні електромережі     | Київська область   |
 | `dtek-kem`  | ДТЕК Київські електромережі                  | місто Київ         |
+| `dtek-dnem` | ДТЕК Дніпровські електромережі              | Дніпропетровська область |
+| `dtek-oem`  | ДТЕК Одеські електромережі                  | Одеська область    |
 | `ztoe`      | Житомиробленерго                            | Житомирська область |
 
 Незалежно від того, як саме оператор віддає дані, колектор зводить усе до одного
 формату. Джерела відрізняються механізмом отримання:
 
-- **ДТЕК** (`dtek-krem`, `dtek-kem`) вбудовує розклад у глобальний об'єкт
+- **ДТЕК** (`dtek-krem`, `dtek-kem`, `dtek-dnem`, `dtek-oem`) вбудовує розклад у глобальний об'єкт
   `window.DisconSchedule` і стоїть за анти-бот захистом Imperva Incapsula, тому
   потрібен headless-браузер — звичайний HTTP-запит повертає лише заглушку.
 - **Житомиробленерго** (`ztoe`) віддає розклад звичайним HTML — таблицею з

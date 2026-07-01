@@ -47,8 +47,11 @@ Published data lives ONLY on the `data` branch, never on `main`. `main`'s
 
 ## DTEK source — confirmed facts
 
-Both `dtek-krem` and `dtek-kem` are identical in structure; only the URL/region
-differ, so they share `sources/dtek/adapter.js`.
+All DTEK regions (`dtek-krem` Kyiv region, `dtek-kem` Kyiv city, `dtek-dnem`
+Dnipropetrovsk, `dtek-oem` Odesa) are identical in structure; only the URL/region
+differ, so they share `sources/dtek/adapter.js` via `createDtekAdapter`. Adding a
+DTEK region = one `dtek-<host>.js` config (URL `https://www.dtek-<host>.com.ua/ua/shutdowns`)
++ a line in `registry.js`.
 
 - **WAF: Imperva Incapsula.** A plain HTTP GET returns a ~212-byte stub with
   `<script src="/_Incapsula_Resource?...">` and sets `visid_incap_*` /
