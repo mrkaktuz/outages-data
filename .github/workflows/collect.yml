@@ -17,7 +17,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,6 +33,9 @@ jobs:
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
 
       # Persist cleared-challenge cookies between runs to reduce WAF challenges.
       - name: Restore browser state
@@ -63,12 +66,15 @@ jobs:
       - name: Collect schedules
         env:
           LOG_LEVEL: info
+          # Run a real, on-screen browser (via xvfb-run below) so Imperva
+          # Incapsula clears its JS challenge instead of blocking headless.
+          HEADFUL: '1'
           STORAGE_STATE_PATH: ${{ github.workspace }}/.cache/state.json
           # Optional Telegram notifications (set as repo secrets; never logged).
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
-        run: node src/index.js --out data-branch
+        run: xvfb-run -a node src/index.js --out data-branch
 
       - name: Publish if changed
         run: |

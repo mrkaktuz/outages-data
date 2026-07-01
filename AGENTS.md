@@ -74,16 +74,26 @@ differ, so they share `sources/dtek/adapter.js`.
 - An unused AJAX endpoint `/ua/ajax` (CSRF) exists for address lookup — not needed,
   we read all groups straight from `DisconSchedule`.
 
-### Fetch behavior (adapter.js)
+### Fetch behavior (adapter.js) — Incapsula bypass
 
-1. `goto(url, domcontentloaded)`, dismiss a `[data-micromodal-close]` modal if present.
-2. `waitForFunction` until `DisconSchedule.preset.data` is non-empty
-   (`DTEK_DATA_TIMEOUT_MS`, default 180000).
-3. In CI, Incapsula reloads the page and destroys the wait context, so the wait
-   often throws quickly → we **fall back to parsing `DisconSchedule.preset/.fact`
-   straight from the page HTML** via brace matching (`sliceBalanced`). This path is
-   the common success path in CI; it works because the data is inline in the HTML.
-   If the HTML is the short Incapsula stub → `CollectError(WAF_BLOCKED)`.
+Imperva **fingerprints headless Chromium and refuses to clear its JS challenge**,
+so DTEK started returning only the ~965-byte stub (`<script
+src="/_Incapsula_Resource?…">`, sets `visid_incap_*`/`incap_ses_*`, reloads).
+Two things clear it:
+
+1. **Headful browser under Xvfb.** `createSession` launches `headless:!HEADFUL`;
+   CI sets `HEADFUL=1` and runs `xvfb-run -a node src/index.js`. A real on-screen
+   Chromium passes the challenge that headless fails. `applyStealth` also masks
+   `navigator.webdriver`, plugins/mimeTypes, WebGL vendor, permissions.
+2. **Patient poll/reload loop** (replaces the old single `waitForFunction`, which
+   died the instant Incapsula reloaded → fast false `WAF_BLOCKED`). Per attempt,
+   until `DTEK_DATA_TIMEOUT_MS` (default 180000): read `DisconSchedule.preset.data`;
+   if present → return it; if on a stub/challenge page (has `_Incapsula_Resource`
+   or `<3000` chars) → wait ~3 s and `reload()` so the fresh cookies fetch the real
+   page; else (real page, app JS still loading, e.g. "please wait" under load) →
+   just wait. Only when the whole budget is exhausted do we try the inline-HTML
+   fallback (`sliceBalanced`/`extractFromHtml`) and then classify `WAF_BLOCKED`.
+   `fetchWithRetry` still retries the whole thing 3×.
 
 ## ztoe source — confirmed facts (Житомиробленерго)
 
@@ -221,8 +231,10 @@ too fragile.) Reminder: workflow_dispatch must exist on the default branch.
 ## Environment knobs
 
 `LOG_LEVEL` (debug|info|warn|error), `STORAGE_STATE_PATH` (persist cookies between
-runs), `DTEK_DATA_TIMEOUT_MS` (default 180000), `DTEK_NAV_TIMEOUT_MS` (45000),
-`CHROMIUM_EXECUTABLE` (override Chromium path — used for local sandboxes).
+runs), `HEADFUL` (`1`/`true` → launch a real on-screen browser; CI sets it and wraps
+the run in `xvfb-run` to clear Incapsula), `DTEK_DATA_TIMEOUT_MS` (default 180000),
+`DTEK_NAV_TIMEOUT_MS` (45000), `CHROMIUM_EXECUTABLE` (override Chromium path — used
+for local sandboxes).
 Secrets (CI): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, optional `TELEGRAM_THREAD_ID`.
 External scheduler holds its own PAT (not a repo secret).
 

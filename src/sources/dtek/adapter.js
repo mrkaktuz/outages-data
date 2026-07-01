@@ -76,49 +76,94 @@ async function readUpdatedLabel(page) {
     .catch(() => null);
 }
 
-/** Navigate, clear the challenge, and return the raw DisconSchedule snapshot. */
-async function fetchSnapshot(page, url) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
-  // A promo/info modal sometimes covers the page; dismiss it if present.
-  await page
-    .locator('[data-micromodal-close]')
-    .first()
-    .click({ timeout: 2000 })
-    .catch(() => {});
+/** Dismiss the promo/info modal that sometimes covers the page. */
+async function dismissModal(page) {
+  await page.locator('[data-micromodal-close]').first().click({ timeout: 1500 }).catch(() => {});
+}
 
-  try {
-    await page.waitForFunction(
-      () => {
-        const data = window.DisconSchedule?.preset?.data;
-        return !!data && Object.keys(data).length > 0;
-      },
-      { timeout: DATA_TIMEOUT_MS, polling: 2000 },
-    );
-  } catch {
-    const html = await page.content();
-    if (html.length < 2000 || html.includes('_Incapsula_Resource')) {
-      throw new CollectError(STATUS.WAF_BLOCKED, 'Incapsula challenge did not clear');
-    }
-    const fallback = extractFromHtml(html);
-    if (fallback) {
-      log.info('used HTML fallback extraction', { url });
-      return fallback;
-    }
-    throw new CollectError(STATUS.TIMEOUT, 'DisconSchedule did not populate in time');
-  }
-
-  const raw = await page.evaluate(() => {
-    const ds = window.DisconSchedule || {};
-    return { preset: ds.preset ?? null, fact: ds.fact ?? null };
-  });
-  if (!raw.preset || !raw.preset.data || Object.keys(raw.preset.data).length === 0) {
-    throw new CollectError(STATUS.NO_DATA, 'preset.data is empty after page load');
-  }
+/** Read the live DisconSchedule snapshot, or null if preset.data is still empty. */
+async function readSnapshot(page) {
+  const raw = await page
+    .evaluate(() => {
+      const ds = window.DisconSchedule || {};
+      return { preset: ds.preset ?? null, fact: ds.fact ?? null };
+    })
+    .catch(() => null);
+  if (!raw || !raw.preset || !raw.preset.data || Object.keys(raw.preset.data).length === 0) return null;
   raw.sourceUpdatedAt =
     (raw.fact && raw.fact.update) ||
     (raw.preset && raw.preset.updateFact) ||
     (await readUpdatedLabel(page));
   return raw;
+}
+
+/**
+ * Navigate and clear the Incapsula challenge, then return the raw snapshot.
+ *
+ * Incapsula serves a tiny stub whose script sets `visid_incap_*`/`incap_ses_*`
+ * cookies and reloads; under load it may also show a "please wait" page. Rather
+ * than a single wait that dies the moment the page reloads, we poll patiently:
+ * if we are still on a challenge/stub page we let its script run and reload with
+ * the fresh cookies; if the real page is up we wait for its JS to populate
+ * `DisconSchedule`. This keeps trying for the whole `DATA_TIMEOUT_MS` budget.
+ */
+async function fetchSnapshot(page, url) {
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+  await dismissModal(page);
+
+  const deadline = Date.now() + DATA_TIMEOUT_MS;
+  let sawChallenge = false;
+  let reloads = 0;
+
+  while (Date.now() < deadline) {
+    // A reload can destroy the evaluation context mid-flight → treat as "keep waiting".
+    const state = await page
+      .evaluate(() => ({
+        hasData: !!(
+          window.DisconSchedule &&
+          window.DisconSchedule.preset &&
+          window.DisconSchedule.preset.data &&
+          Object.keys(window.DisconSchedule.preset.data).length > 0
+        ),
+        stub: !!document.querySelector('script[src*="_Incapsula_Resource"]'),
+        len: document.documentElement ? document.documentElement.innerHTML.length : 0,
+      }))
+      .catch(() => null);
+
+    if (state && state.hasData) {
+      const raw = await readSnapshot(page);
+      if (raw) {
+        if (sawChallenge) log.info('Incapsula challenge cleared', { url, reloads });
+        return raw;
+      }
+    }
+
+    const onChallenge = !state || state.stub || state.len < 3000;
+    if (onChallenge) {
+      sawChallenge = true;
+      // Give Incapsula's script time to set cookies / auto-reload, then reload
+      // ourselves so the follow-up request carries them and returns the real page.
+      await page.waitForTimeout(3000);
+      reloads += 1;
+      await page.reload({ waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS }).catch(() => {});
+      await dismissModal(page);
+    } else {
+      // Real page is served; its app JS is still populating DisconSchedule.
+      await page.waitForTimeout(1500);
+    }
+  }
+
+  // Budget exhausted — one last HTML parse, otherwise classify the block.
+  const html = await page.content().catch(() => '');
+  if (!html || html.length < 3000 || html.includes('_Incapsula_Resource')) {
+    throw new CollectError(STATUS.WAF_BLOCKED, 'Incapsula challenge did not clear');
+  }
+  const fallback = extractFromHtml(html);
+  if (fallback) {
+    log.info('used HTML fallback extraction', { url });
+    return fallback;
+  }
+  throw new CollectError(STATUS.TIMEOUT, 'DisconSchedule did not populate in time');
 }
 
 /**
