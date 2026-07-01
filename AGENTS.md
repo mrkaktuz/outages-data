@@ -157,8 +157,9 @@ covers only DTEK dnipro/kyiv/kyiv-region/odesa — all already here):
   (DankRank/ckgpv scrapes them) or a Telegram channel (mcfedr/cherkasy-outage-ha).
 - **Chernivtsi** — denysdovhan/chernivtsi-outages publishes JSON but is **stale**
   (last data 2023).
-- **DTEK Donetsk** (`dtek-dem.com.ua`) — same DisconSchedule platform (HTTP 200), a
-  trivial add, but the oblast is largely occupied so schedule coverage is doubtful.
+- **DTEK Donetsk** (`dtek-dem`) — ADDED experimentally (same DisconSchedule platform).
+  Serves only the government-controlled part of the oblast; if it turns out to carry
+  no GPV data it will sit at waf_blocked/no_data — remove it then (like chernihiv).
 
 ## chernihiv (Чернігівобленерго) — DEFERRED, not implemented
 

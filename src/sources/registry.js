@@ -7,11 +7,12 @@ import dtekKrem from './dtek/dtek-krem.js';
 import dtekKem from './dtek/dtek-kem.js';
 import dtekDnem from './dtek/dtek-dnem.js';
 import dtekOem from './dtek/dtek-oem.js';
+import dtekDem from './dtek/dtek-dem.js';
 import ztoe from './ztoe/ztoe.js';
 import mykolaiv from './mykolaiv/mykolaiv.js';
 
 /** @type {import('../core/schema.js').SourceAdapter[]} */
-export const sources = [dtekKrem, dtekKem, dtekDnem, dtekOem, ztoe, mykolaiv];
+export const sources = [dtekKrem, dtekKem, dtekDnem, dtekOem, dtekDem, ztoe, mykolaiv];
 
 export function getSource(id) {
   return sources.find((source) => source.id === id);
