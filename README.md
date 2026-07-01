@@ -6,6 +6,7 @@
 ![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
 ![ДТЕК ДНЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dnem.json&cacheSeconds=300)
 ![ДТЕК ОЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-oem.json&cacheSeconds=300)
+![ДТЕК ДЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dem.json&cacheSeconds=300)
 ![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
 ![Миколаївобленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fmykolaiv.json&cacheSeconds=300)
 
