@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-01T17:31:58+03:00",
+  "generatedAt": "2026-07-01T17:47:28+03:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -126,7 +126,7 @@
       "id": "dtek-oem",
       "name": "ДТЕК Одеські електромережі",
       "region": "Одеська область",
-      "updatedAt": "2026-07-01T14:17:14+03:00",
+      "updatedAt": "2026-07-01T17:47:14+03:00",
       "status": "ok",
       "groups": [
         "1.1",
