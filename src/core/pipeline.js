@@ -48,14 +48,21 @@ function summarize(doc, changed) {
 }
 
 function eventOf(doc, previous, changed) {
+  // Did the operator's own "last updated" label move? At day rollover the rolling
+  // horizon re-dates the schedule (so `changed` is true) even though the operator
+  // published nothing new — in that case sourceUpdatedAt is unchanged and we must
+  // NOT fire an "оновлено" notification. `null` label ⇒ can't gate ⇒ treat as changed.
+  const now = doc.status.sourceUpdatedAt;
+  const sourceUpdatedChanged = !previous || now == null || previous.status.sourceUpdatedAt !== now;
   return {
     name: doc.source.name,
     changed,
+    sourceUpdatedChanged,
     prevOk: previous ? previous.status.ok : null,
     nowOk: doc.status.ok,
     code: doc.status.code,
     groups: doc.groups.length,
-    sourceUpdatedAt: doc.status.sourceUpdatedAt,
+    sourceUpdatedAt: now,
     // Only meaningful for a healthy run that actually changed; otherwise unused.
     changeSummary: changed && doc.status.ok ? summarizeChange(previous, doc) : '',
   };

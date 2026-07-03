@@ -157,9 +157,11 @@ covers only DTEK dnipro/kyiv/kyiv-region/odesa — all already here):
   (DankRank/ckgpv scrapes them) or a Telegram channel (mcfedr/cherkasy-outage-ha).
 - **Chernivtsi** — denysdovhan/chernivtsi-outages publishes JSON but is **stale**
   (last data 2023).
-- **DTEK Donetsk** (`dtek-dem`) — ADDED experimentally (same DisconSchedule platform).
-  Serves only the government-controlled part of the oblast; if it turns out to carry
-  no GPV data it will sit at waf_blocked/no_data — remove it then (like chernihiv).
+- **DTEK Donetsk** (`dtek-dem`) — tried and **removed**. It clears Incapsula and
+  returns 12 groups, but its `sourceUpdatedAt` is frozen at **16.12.2024**: it serves
+  a stale weekly `preset` from Dec 2024 that we'd expand onto today's dates (fake
+  "current" schedules). Worse than absent — do not re-add unless it starts publishing
+  live data.
 
 ## chernihiv (Чернігівобленерго) — DEFERRED, not implemented
 
@@ -242,7 +244,13 @@ fail→ok) is always announced — `prevOk` is the previously *published* doc, w
 holds `ok:false` for the whole outage. Silent update messages carry a short diff
 from `summarizeChange(previous, doc)` (changed/added/removed queues + net off-hours).
 Pipeline computes events via `eventOf(doc, previous, changed)` (prevOk from the
-previously published doc). Credentials: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`,
+previously published doc). **Horizon-rollover guard:** the preset sources (all
+DTEK) expand a weekly template over a rolling 7-day horizon, so at **midnight** the
+schedule re-dates and `changed` is true even though the operator published nothing.
+`eventOf` sets `sourceUpdatedChanged` (did `status.sourceUpdatedAt` move?), and a
+silent update is sent only when it is not `false` — so the daily rollover no longer
+spams "оновлено". Correspondingly `reconcileDocument` publishes the fresh dates but
+keeps the previous `updatedAt` on such a re-date. Credentials: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`,
 optional `TELEGRAM_THREAD_ID` (forum-group topic → `message_thread_id`). GitHub
 secrets; never committed. Absent creds ⇒ no-op.
 

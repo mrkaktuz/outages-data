@@ -24,6 +24,9 @@
  * @typedef {Object} SourceEvent
  * @property {string} name
  * @property {boolean} changed     Did the published file change this run?
+ * @property {boolean} [sourceUpdatedChanged] Did the operator's own "updated" label move?
+ *   When explicitly `false`, an otherwise-"changed" run is a pure horizon re-date
+ *   (day rollover) and must NOT produce an "оновлено" message.
  * @property {boolean|null} prevOk Previous status.ok (null if no previous doc).
  * @property {boolean} nowOk       Current status.ok.
  * @property {string} code         Current status code.
@@ -117,7 +120,9 @@ export function buildNotifications(events) {
   const failures = events.filter((e) => !e.nowOk && e.prevOk !== false);
   const recoveries = events.filter((e) => e.nowOk && e.prevOk === false);
   const recoveredNames = new Set(recoveries.map((e) => e.name));
-  const updates = events.filter((e) => e.changed && e.nowOk && !recoveredNames.has(e.name));
+  const updates = events.filter(
+    (e) => e.changed && e.nowOk && !recoveredNames.has(e.name) && e.sourceUpdatedChanged !== false,
+  );
 
   const messages = [];
 

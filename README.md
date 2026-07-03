@@ -6,7 +6,6 @@
 ![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
 ![ДТЕК ДНЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dnem.json&cacheSeconds=300)
 ![ДТЕК ОЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-oem.json&cacheSeconds=300)
-![ДТЕК ДЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dem.json&cacheSeconds=300)
 ![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
 ![Миколаївобленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fmykolaiv.json&cacheSeconds=300)
 
@@ -24,14 +23,13 @@
 | `dtek-kem`  | ДТЕК Київські електромережі                  | місто Київ         |
 | `dtek-dnem` | ДТЕК Дніпровські електромережі              | Дніпропетровська область |
 | `dtek-oem`  | ДТЕК Одеські електромережі                  | Одеська область    |
-| `dtek-dem`  | ДТЕК Донецькі електромережі                 | Донецька область (лише підконтрольна частина) |
 | `ztoe`      | Житомиробленерго                            | Житомирська область |
 | `mykolaiv`  | Миколаївобленерго                           | Миколаївська область |
 
 Незалежно від того, як саме оператор віддає дані, колектор зводить усе до одного
 формату. Джерела відрізняються механізмом отримання:
 
-- **ДТЕК** (`dtek-krem`, `dtek-kem`, `dtek-dnem`, `dtek-oem`, `dtek-dem`) вбудовує розклад у глобальний об'єкт
+- **ДТЕК** (`dtek-krem`, `dtek-kem`, `dtek-dnem`, `dtek-oem`) вбудовує розклад у глобальний об'єкт
   `window.DisconSchedule` і стоїть за анти-бот захистом Imperva Incapsula, тому
   потрібен headless-браузер — звичайний HTTP-запит повертає лише заглушку.
 - **Житомиробленерго** (`ztoe`) віддає розклад звичайним HTML — таблицею з

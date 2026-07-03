@@ -41,6 +41,21 @@ test('reconcileDocument takes candidate when content changes', () => {
   assert.equal(reconcileDocument(candidate, previous), candidate);
 });
 
+test('reconcileDocument keeps previous updatedAt on a horizon-only re-date', () => {
+  // Same operator label, but schedule re-dated for the new day: publish fresh
+  // content yet keep the previous "last real change" timestamp.
+  const previous = baseDoc();
+  previous.status.sourceUpdatedAt = '01.07.2026 20:02';
+  const candidate = baseDoc();
+  candidate.updatedAt = '2026-07-03T00:00:05+03:00';
+  candidate.status.sourceUpdatedAt = '01.07.2026 20:02'; // operator unchanged
+  candidate.schedules['1.1'].intervals.push({ start: 'x', end: 'y', kind: 'off' }); // re-dated
+  const out = reconcileDocument(candidate, previous);
+  assert.notEqual(out, previous); // fresh content is published
+  assert.equal(out.updatedAt, previous.updatedAt); // but timestamp preserved
+  assert.deepEqual(out.schedules, candidate.schedules);
+});
+
 test('reconcileDocument takes candidate when status changes (ok -> failure)', () => {
   const previous = baseDoc();
   const candidate = { ...baseDoc(), updatedAt: '2026-06-29T10:05:00+03:00', status: { ok: false, code: 'waf_blocked' } };

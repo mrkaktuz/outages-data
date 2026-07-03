@@ -26,6 +26,17 @@ test('data change on healthy source -> one silent message', () => {
   assert.match(msgs[0].text, /29\.06\.2026 10:23/);
 });
 
+test('horizon-only re-date (sourceUpdatedChanged=false) does NOT notify', () => {
+  // Day rollover: the file changed (re-dated) but the operator published nothing.
+  assert.deepEqual(buildNotifications([ev({ changed: true, sourceUpdatedChanged: false })]), []);
+});
+
+test('changed with sourceUpdatedChanged=true fires the silent update', () => {
+  const msgs = buildNotifications([ev({ changed: true, sourceUpdatedChanged: true })]);
+  assert.equal(msgs.length, 1);
+  assert.equal(msgs[0].silent, true);
+});
+
 test('ok -> failure is a loud message', () => {
   const msgs = buildNotifications([ev({ changed: true, prevOk: true, nowOk: false, code: 'waf_blocked' })]);
   assert.equal(msgs.length, 1);

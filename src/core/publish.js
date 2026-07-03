@@ -108,6 +108,20 @@ function meaningfulView(doc) {
  */
 export function reconcileDocument(candidate, previous) {
   if (previous && meaningfulView(candidate) === meaningfulView(previous)) return previous;
+  // Operator data unchanged but the rolling horizon re-dated the schedule (day
+  // rollover): publish the fresh dates but keep the previous "last real change"
+  // timestamp, so `updatedAt` stays meaningful instead of ticking every midnight.
+  if (
+    previous &&
+    candidate.status.ok &&
+    previous.status &&
+    previous.status.ok &&
+    candidate.status.code === previous.status.code &&
+    candidate.status.sourceUpdatedAt != null &&
+    candidate.status.sourceUpdatedAt === previous.status.sourceUpdatedAt
+  ) {
+    return { ...candidate, updatedAt: previous.updatedAt };
+  }
   return candidate;
 }
 
