@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-07-03T00:00:09+03:00",
+  "updatedAt": "2026-07-03T14:06:15+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:a12c4ccc316643df5b495b7fddc909f40a5d648af8faf4d1d308c879533b1788",
-    "sourceUpdatedAt": "01.07.2026 20:02"
+    "contentHash": "sha256:4a7fe26682fe5c5290204627a6b456b0fce4113096fc519183c84f1342f36421",
+    "sourceUpdatedAt": "03.07.2026 14:00"
   },
   "groups": [
     "1.1",
@@ -35,21 +35,14 @@
       "name": "Черга 1.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T04:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T17:30:00+03:00",
+          "end": "2026-07-03T21:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T07:30:00+03:00",
-          "end": "2026-07-03T14:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T18:00:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T01:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -161,21 +154,14 @@
       "name": "Черга 1.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T04:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T17:30:00+03:00",
+          "end": "2026-07-03T21:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T07:30:00+03:00",
-          "end": "2026-07-03T14:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T18:00:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T01:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -287,21 +273,14 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T04:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T17:30:00+03:00",
+          "end": "2026-07-03T21:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T07:30:00+03:00",
-          "end": "2026-07-03T14:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T18:00:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T01:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -413,21 +392,14 @@
       "name": "Черга 2.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T04:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T17:30:00+03:00",
+          "end": "2026-07-03T21:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T07:30:00+03:00",
-          "end": "2026-07-03T14:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T18:00:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T01:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -539,21 +511,14 @@
       "name": "Черга 3.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:30:00+03:00",
-          "end": "2026-07-03T07:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T14:00:00+03:00",
+          "end": "2026-07-03T15:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T11:00:00+03:00",
-          "end": "2026-07-03T18:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T21:30:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T04:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -658,21 +623,14 @@
       "name": "Черга 3.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:30:00+03:00",
-          "end": "2026-07-03T07:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T14:00:00+03:00",
+          "end": "2026-07-03T15:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T11:00:00+03:00",
-          "end": "2026-07-03T18:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T21:30:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T04:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -777,21 +735,14 @@
       "name": "Черга 4.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:30:00+03:00",
-          "end": "2026-07-03T07:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T14:00:00+03:00",
+          "end": "2026-07-03T15:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T11:00:00+03:00",
-          "end": "2026-07-03T18:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T21:30:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T04:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -896,21 +847,14 @@
       "name": "Черга 4.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:30:00+03:00",
-          "end": "2026-07-03T07:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-07-03T14:00:00+03:00",
+          "end": "2026-07-03T15:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-07-03T11:00:00+03:00",
-          "end": "2026-07-03T18:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T21:30:00+03:00",
+          "start": "2026-07-04T00:00:00+03:00",
           "end": "2026-07-04T04:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -1015,25 +959,11 @@
       "name": "Черга 5.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T00:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T04:00:00+03:00",
-          "end": "2026-07-03T11:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-07-03T14:30:00+03:00",
-          "end": "2026-07-03T21:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-07-03T18:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-07-04T01:00:00+03:00",
@@ -1141,25 +1071,11 @@
       "name": "Черга 5.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T00:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T04:00:00+03:00",
-          "end": "2026-07-03T11:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-07-03T14:30:00+03:00",
-          "end": "2026-07-03T21:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-07-03T18:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-07-04T01:00:00+03:00",
@@ -1267,25 +1183,11 @@
       "name": "Черга 6.1",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T00:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T04:00:00+03:00",
-          "end": "2026-07-03T11:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-07-03T14:30:00+03:00",
-          "end": "2026-07-03T21:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-07-03T18:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-07-04T01:00:00+03:00",
@@ -1393,25 +1295,11 @@
       "name": "Черга 6.2",
       "intervals": [
         {
-          "start": "2026-07-03T00:00:00+03:00",
-          "end": "2026-07-03T00:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-07-03T04:00:00+03:00",
-          "end": "2026-07-03T11:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-07-03T14:30:00+03:00",
-          "end": "2026-07-03T21:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-07-03T18:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-07-04T01:00:00+03:00",
@@ -3889,11 +3777,326 @@
           }
         }
       },
-      "updateFact": "01.07.2026 20:02"
+      "updateFact": "03.07.2026 14:00"
     },
     "fact": {
-      "data": [],
-      "update": "01.07.2026 20:02",
+      "data": {
+        "1783026000": {
+          "GPV1.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "second",
+            "19": "no",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV1.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "second",
+            "19": "no",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV2.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "second",
+            "19": "no",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV2.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "second",
+            "19": "no",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV3.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "no",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV3.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "no",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV4.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "no",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV4.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "no",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV5.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "second",
+            "16": "no",
+            "17": "no",
+            "18": "no",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV5.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "second",
+            "16": "no",
+            "17": "no",
+            "18": "no",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV6.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "second",
+            "16": "no",
+            "17": "no",
+            "18": "no",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV6.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "second",
+            "16": "no",
+            "17": "no",
+            "18": "no",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          }
+        }
+      },
+      "update": "03.07.2026 14:00",
       "today": 1783026000
     }
   }
