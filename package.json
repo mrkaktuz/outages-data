@@ -1,5 +1,5 @@
 {
-  "name": "dtek-data",
+  "name": "outages-data",
   "version": "0.1.0",
   "description": "Universal power-outage schedule collector that publishes machine- and human-friendly JSON.",
   "type": "module",
