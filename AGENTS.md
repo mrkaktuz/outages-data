@@ -48,6 +48,16 @@ data/ (orphan branch only)      <source>.json, index.json, log.jsonl, badges/<so
 Published data lives ONLY on the `data` branch, never on `main`. `main`'s
 `.gitignore` excludes `/data/`.
 
+The orphan **`web`** branch holds a static GitHub Pages viewer (`index.html`,
+no build step): region + date selectors and a queues×hours grid with half-hour
+detail. It fetches the `data` branch client-side via raw.githubusercontent.com
+(CORS is open) and re-fetches every ~5 min, so Pages never needs rebuilding
+for data updates — only for changes to the page itself. Pages must be enabled
+once by the owner (Settings → Pages → Deploy from a branch → `web` / root; the
+MCP token cannot change repo settings). Local dev: copy the data files into
+`./data/` next to `index.html` and serve with `python3 -m http.server` — off
+github.io the page auto-switches to that relative path.
+
 ## DTEK source — confirmed facts
 
 All DTEK regions (`dtek-krem` Kyiv region, `dtek-kem` Kyiv city, `dtek-dnem`
