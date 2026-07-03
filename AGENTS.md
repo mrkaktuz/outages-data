@@ -1,4 +1,4 @@
-# AGENTS.md — context for future work on dtek-data
+# AGENTS.md — context for future work on outages-data
 
 Operational context and hard-won facts for anyone (human or agent) continuing
 this project. Read this before changing the collector. User-facing docs are in
@@ -260,7 +260,7 @@ The only trigger is `workflow_dispatch`. GitHub cron and the push trigger were
 removed (cron is throttled for low-traffic repos; GitHub guarantees no interval).
 Runs are started by an **external scheduler** — the owner runs a systemd timer on
 their Ubuntu box that POSTs to
-`/repos/<owner>/dtek-data/actions/workflows/collect.yml/dispatches`
+`/repos/<owner>/outages-data/actions/workflows/collect.yml/dispatches`
 (`Authorization: Bearer <PAT>`, fine-grained, Actions: read+write; body
 `{"ref":"main"}` → 204). No token-less trigger URL exists.
 

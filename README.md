@@ -1,13 +1,13 @@
-# dtek-data
+# outages-data
 
-[![Збір розкладів](https://github.com/mrkaktuz/dtek-data/actions/workflows/collect.yml/badge.svg)](https://github.com/mrkaktuz/dtek-data/actions/workflows/collect.yml)
-![останнє оновлення](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fstatus.json&cacheSeconds=300)
-![ДТЕК КРЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-krem.json&cacheSeconds=300)
-![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
-![ДТЕК ДНЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-dnem.json&cacheSeconds=300)
-![ДТЕК ОЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fdtek-oem.json&cacheSeconds=300)
-![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
-![Миколаївобленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Fdtek-data%2Fdata%2Fbadges%2Fmykolaiv.json&cacheSeconds=300)
+[![Збір розкладів](https://github.com/mrkaktuz/outages-data/actions/workflows/collect.yml/badge.svg)](https://github.com/mrkaktuz/outages-data/actions/workflows/collect.yml)
+![останнє оновлення](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fstatus.json&cacheSeconds=300)
+![ДТЕК КРЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fdtek-krem.json&cacheSeconds=300)
+![ДТЕК КЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fdtek-kem.json&cacheSeconds=300)
+![ДТЕК ДНЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fdtek-dnem.json&cacheSeconds=300)
+![ДТЕК ОЕМ](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fdtek-oem.json&cacheSeconds=300)
+![Житомиробленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fztoe.json&cacheSeconds=300)
+![Миколаївобленерго](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrkaktuz%2Foutages-data%2Fdata%2Fbadges%2Fmykolaiv.json&cacheSeconds=300)
 
 Універсальний збирач графіків відключень електроенергії. Рендерить сайти
 операторів реальним браузером, нормалізує дані в стабільний JSON і кожні ~5 хв
@@ -54,7 +54,7 @@
 Споживати напряму, напр.:
 
 ```
-https://raw.githubusercontent.com/mrkaktuz/dtek-data/data/dtek-krem.json
+https://raw.githubusercontent.com/mrkaktuz/outages-data/data/dtek-krem.json
 ```
 
 ### Формат документа (`<source>.json`)
@@ -176,7 +176,7 @@ cron-job.org, UptimeRobot тощо) через GitHub API.
 Безтокенового URL немає — потрібен fine-grained PAT на цей репозиторій з правом
 **Actions: read and write**:
 
-- **URL:** `https://api.github.com/repos/<owner>/dtek-data/actions/workflows/collect.yml/dispatches`
+- **URL:** `https://api.github.com/repos/<owner>/outages-data/actions/workflows/collect.yml/dispatches`
 - **Method:** `POST`, **Body:** `{"ref":"main"}`
 - **Headers:** `Authorization: Bearer <PAT>`, `Accept: application/vnd.github+json`,
   `X-GitHub-Api-Version: 2022-11-28`
@@ -188,7 +188,7 @@ cron-job.org, UptimeRobot тощо) через GitHub API.
 активний — тоді фактичний інтервал ніколи не буде меншим за тривалість збірки:
 
 ```bash
-API=https://api.github.com/repos/<owner>/dtek-data/actions/workflows/collect.yml
+API=https://api.github.com/repos/<owner>/outages-data/actions/workflows/collect.yml
 active=$(curl -fsS -K dispatch.curl.conf "$API/runs?per_page=20" \
   | jq '[.workflow_runs[]|select(.status=="queued" or .status=="in_progress")]|length')
 [ "${active:-0}" -gt 0 ] && { echo "busy"; exit 0; }

@@ -17,7 +17,7 @@ const REQUEST_TIMEOUT_MS = Number(process.env.MYKOLAIV_TIMEOUT_MS || 20000);
 
 async function getJson(path) {
   const res = await fetch(BASE_URL + path, {
-    headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0 (dtek-data collector)' },
+    headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0 (outages-data collector)' },
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
   });
   if (!res.ok) throw new CollectError(STATUS.NO_DATA, `Mykolaiv API ${path} -> HTTP ${res.status}`);

@@ -53,7 +53,7 @@ async function main() {
     const { sendTelegram } = await import('./core/notify.js');
     const configured = Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
     const res = await sendTelegram({
-      text: `dtek-data: тест сповіщень ✅ (${new Date().toISOString()})`,
+      text: `outages-data: тест сповіщень ✅ (${new Date().toISOString()})`,
       silent: false,
     });
     log.info('notify-test', { configured, ...res });
