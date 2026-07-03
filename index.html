@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Графіки відключень електроенергії</title>
+<meta name="description" content="Графіки погодинних відключень електроенергії по всіх групах — дані оновлюються кожні ~5 хвилин.">
+<style>
+  :root {
+    --bg: #eef1f6; --panel: #ffffff; --ink: #1a2233; --ink-2: #5b6474;
+    --line: #dde3ec; --head: #f4f6fa;
+    --off: #414b5e; --off-soft: #e8eaef;
+    --pos: #b45309; --pos-bg: #fdf3e3;
+    --accent: #2457c5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f141c; --panel: #171e29; --ink: #e7ecf4; --ink-2: #97a1b3;
+      --line: #2a3444; --head: #1c2532;
+      --off: #b9c2d2; --off-soft: #232c3a;
+      --pos: #e8a33d; --pos-bg: #2e2412;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 20px clamp(10px, 3vw, 32px) 48px;
+  }
+  h1 { font-size: clamp(19px, 3.2vw, 26px); margin: 0 0 6px; }
+  .meta { color: var(--ink-2); font-size: 13px; margin: 0 0 14px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; margin: 0 0 14px; }
+  .controls label { display: block; font-size: 12px; color: var(--ink-2); margin: 0 0 3px; }
+  .controls select {
+    font: inherit; color: var(--ink); background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 150px;
+  }
+  .controls select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .banner {
+    display: none; margin: 0 0 14px; padding: 10px 14px; border-radius: 8px; font-size: 14px;
+    background: var(--pos-bg); border: 1px solid var(--pos); color: var(--ink);
+  }
+  .banner.show { display: block; }
+  .tablewrap {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    overflow-x: auto; max-width: 100%;
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 900px; }
+  th, td { border: 1px solid var(--line); }
+  thead th {
+    position: sticky; top: 0; z-index: 2; background: var(--head);
+    font-size: 12px; font-weight: 600; color: var(--ink-2); padding: 8px 2px;
+  }
+  thead th.corner { left: 0; z-index: 3; min-width: 108px; }
+  thead th span { writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: .4px; }
+  tbody th {
+    position: sticky; left: 0; z-index: 1; background: var(--head);
+    font-size: 13px; font-weight: 600; text-align: left; padding: 6px 12px; white-space: nowrap;
+  }
+  td.slot { padding: 0; height: 38px; min-width: 34px; position: relative; }
+  td.slot .halves { position: absolute; inset: 0; display: flex; }
+  td.slot .h { flex: 1; }
+  .h.off { background: var(--off-soft); }
+  .h.off::after {
+    content: ""; position: absolute; inset: 0; margin: auto; width: 16px; height: 16px;
+    background: var(--off);
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
+            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
+  }
+  /* half-hour: icon only in the affected half */
+  td.slot .h.off { position: relative; }
+  td.slot .h.off::after { width: 13px; height: 13px; }
+  td.slot.full .h.off:first-child::after { left: 0; right: -100%; width: 16px; height: 16px; }
+  td.slot.full .h.off:last-child::after { display: none; }
+  .h.pos {
+    background: repeating-linear-gradient(45deg, var(--pos-bg) 0 4px, color-mix(in srgb, var(--pos) 45%, var(--pos-bg)) 4px 6px);
+  }
+  tfoot td { border: none; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 14px 4px 0; font-size: 13px; color: var(--ink-2); }
+  .legend .item { display: flex; align-items: center; gap: 8px; }
+  .legend .sw {
+    width: 30px; height: 22px; border: 1px solid var(--line); border-radius: 4px;
+    position: relative; overflow: hidden; display: inline-flex; background: var(--panel);
+  }
+  .legend .sw > i { display: block; flex: 1; position: relative; }
+  .empty { padding: 26px 18px; color: var(--ink-2); font-size: 15px; }
+  .foot { margin-top: 18px; font-size: 12.5px; color: var(--ink-2); }
+  .foot a { color: var(--accent); }
+</style>
+</head>
+<body>
+<h1 id="title">Графіки відключень електроенергії</h1>
+<p class="meta" id="meta">Завантаження…</p>
+
+<div class="controls">
+  <div>
+    <label for="region">Регіон</label>
+    <select id="region"></select>
+  </div>
+  <div>
+    <label for="date">Дата</label>
+    <select id="date"></select>
+  </div>
+</div>
+
+<div class="banner" id="banner"></div>
+<div class="tablewrap" id="tablewrap"></div>
+
+<div class="legend" id="legend">
+  <span class="item"><span class="sw"><i></i></span> Світло є</span>
+  <span class="item"><span class="sw"><i class="h off"></i></span> Світла нема</span>
+  <span class="item"><span class="sw"><i class="h off"></i><i></i></span> Нема перші 30 хв.</span>
+  <span class="item"><span class="sw"><i></i><i class="h off"></i></span> Нема другі 30 хв.</span>
+  <span class="item"><span class="sw"><i class="h pos"></i><i class="h pos"></i></span> Можливе відключення</span>
+</div>
+
+<p class="foot">
+  Дані: гілка <a href="https://github.com/mrkaktuz/outages-data/tree/data" rel="noopener">data</a>
+  репозиторію <a href="https://github.com/mrkaktuz/outages-data" rel="noopener">outages-data</a>,
+  оновлюються кожні ~5 хв. Сторінка перечитує дані автоматично.
+</p>
+
+<script>
+(() => {
+  'use strict';
+  // Served from github.io → fetch the data branch via raw.githubusercontent;
+  // local dev (python -m http.server) → relative ./data/ copy.
+  const DATA_BASE = /\.github\.io$/.test(location.hostname)
+    ? 'https://raw.githubusercontent.com/mrkaktuz/outages-data/data/'
+    : './data/';
+
+  const $ = (id) => document.getElementById(id);
+  const els = { region: $('region'), date: $('date'), meta: $('meta'), banner: $('banner'),
+                wrap: $('tablewrap'), title: $('title') };
+  const DOW = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+  const state = { index: null, doc: null, region: null, date: null, timer: null };
+
+  const kyivToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Kyiv' }).format(new Date());
+  const addDays = (ymd, n) => {
+    const d = new Date(ymd + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  };
+  const dateLabel = (ymd) => {
+    const d = new Date(ymd + 'T00:00:00Z');
+    return `${DOW[d.getUTCDay()]}, ${ymd.slice(8, 10)}.${ymd.slice(5, 7)}.${ymd.slice(0, 4)}`;
+  };
+  const minutesOf = (iso) => Number(iso.slice(11, 13)) * 60 + Number(iso.slice(14, 16));
+
+  async function fetchJson(file) {
+    const res = await fetch(DATA_BASE + file, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status} для ${file}`);
+    return res.json();
+  }
+
+  // Clip an interval to one Kyiv date; ISO strings already carry the Kyiv
+  // offset, so wall-clock parsing is plain text slicing.
+  function clipToDate(iv, ymd) {
+    const sd = iv.start.slice(0, 10), ed = iv.end.slice(0, 10);
+    if (sd > ymd || ed < ymd || (ed === ymd && minutesOf(iv.end) === 0)) return null;
+    const from = sd < ymd ? 0 : minutesOf(iv.start);
+    const to = ed > ymd ? 1440 : minutesOf(iv.end);
+    return to > from ? [from, to] : null;
+  }
+
+  // 48 half-hour slots: 0 = on, 1 = possible, 2 = off (off wins).
+  function slotsFor(intervals, ymd) {
+    const slots = new Array(48).fill(0);
+    for (const iv of intervals) {
+      const clip = clipToDate(iv, ymd);
+      if (!clip) continue;
+      const rank = iv.kind === 'off' ? 2 : 1;
+      for (let i = Math.floor(clip[0] / 30); i < Math.ceil(clip[1] / 30); i++)
+        slots[i] = Math.max(slots[i], rank);
+    }
+    return slots;
+  }
+
+  function availableDates(doc) {
+    const dates = new Set([kyivToday(), addDays(kyivToday(), 1)]);
+    for (const g of Object.values(doc.schedules || {}))
+      for (const iv of g.intervals || []) {
+        let d = iv.start.slice(0, 10);
+        const last = minutesOf(iv.end) === 0 ? addDays(iv.end.slice(0, 10), -1) : iv.end.slice(0, 10);
+        for (; d <= last; d = addDays(d, 1)) dates.add(d);
+      }
+    return [...dates].sort();
+  }
+
+  function fillSelect(sel, options, value) {
+    sel.innerHTML = '';
+    for (const { v, label } of options) {
+      const o = document.createElement('option');
+      o.value = v; o.textContent = label;
+      sel.appendChild(o);
+    }
+    sel.value = options.some((o) => o.v === value) ? value : (options[0]?.v ?? '');
+    return sel.value;
+  }
+
+  function statusText(st) {
+    return { waf_blocked: 'джерело тимчасово блокує збір (WAF)', timeout: 'джерело не відповіло вчасно',
+             parse_error: 'помилка розбору даних джерела', no_data: 'джерело не віддало даних' }[st] || st;
+  }
+
+  function render() {
+    const doc = state.doc, ymd = state.date;
+    const src = state.index.sources.find((s) => s.id === state.region);
+    els.title.textContent = `Графік відключень — ${src ? src.region : ''}`;
+    document.title = `Відключення світла — ${src ? src.region : ''}`;
+
+    const upd = doc.status?.sourceUpdatedAt ||
+      (doc.updatedAt ? doc.updatedAt.replace('T', ' ').slice(0, 16) : '—');
+    els.meta.textContent = `Дата та час останнього оновлення інформації на графіку: ${upd}`;
+
+    els.banner.classList.toggle('show', !doc.status?.ok);
+    if (!doc.status?.ok)
+      els.banner.textContent = `⚠ Останній збір не вдався (${statusText(doc.status?.code)}). ` +
+        `Показано останні успішно зібрані дані.`;
+
+    const groups = doc.groups || [];
+    if (!groups.length) {
+      els.wrap.innerHTML = '<div class="empty">Наразі графіки погодинних відключень для цього регіону не опубліковані — застосовуються, лише коли є відповідна команда Укренерго.</div>';
+      return;
+    }
+
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const hr = document.createElement('tr');
+    hr.innerHTML = '<th class="corner">Черга \\ Час</th>' +
+      Array.from({ length: 24 }, (_, h) =>
+        `<th scope="col"><span>${String(h).padStart(2, '0')}-${String(h + 1).padStart(2, '0')}</span></th>`).join('');
+    thead.appendChild(hr);
+    table.appendChild(thead);
+
+    const NAMES = ['', 'можливе відключення', 'світла нема'];
+    const tbody = document.createElement('tbody');
+    for (const label of groups) {
+      const g = doc.schedules[label] || { name: `Черга ${label}`, intervals: [] };
+      const slots = slotsFor(g.intervals || [], ymd);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<th scope="row">${g.name || `Черга ${label}`}</th>`;
+      for (let h = 0; h < 24; h++) {
+        const a = slots[2 * h], b = slots[2 * h + 1];
+        const td = document.createElement('td');
+        td.className = 'slot' + (a === b && a === 2 ? ' full' : '');
+        const cls = (s) => s === 2 ? 'h off' : s === 1 ? 'h pos' : 'h';
+        td.innerHTML = `<div class="halves"><span class="${cls(a)}"></span><span class="${cls(b)}"></span></div>`;
+        const hh = String(h).padStart(2, '0'), h2 = String(h + 1).padStart(2, '0');
+        let tip = 'світло є';
+        if (a || b) {
+          tip = a === b ? NAMES[a]
+            : `${a ? NAMES[a] : 'світло є'} перші 30 хв, ${b ? NAMES[b] : 'світло є'} другі 30 хв`;
+        }
+        td.title = `${g.name || label} · ${hh}:00–${h2}:00 — ${tip}`;
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    els.wrap.innerHTML = '';
+    els.wrap.appendChild(table);
+  }
+
+  function syncUrl() {
+    const q = new URLSearchParams({ region: state.region, date: state.date });
+    history.replaceState(null, '', location.pathname + '?' + q);
+  }
+
+  async function loadRegion(id, keepDate) {
+    state.region = id;
+    state.doc = await fetchJson(state.index.sources.find((s) => s.id === id)?.file || `${id}.json`);
+    const dates = availableDates(state.doc);
+    const want = keepDate && dates.includes(state.date) ? state.date : kyivToday();
+    state.date = fillSelect(els.date, dates.map((d) => ({ v: d, label: dateLabel(d) })), want);
+    render();
+    syncUrl();
+  }
+
+  async function boot() {
+    const q = new URLSearchParams(location.search);
+    state.index = await fetchJson('index.json');
+    const regions = state.index.sources.map((s) => ({ v: s.id, label: `${s.region} — ${s.name}` }));
+    state.region = fillSelect(els.region, regions, q.get('region'));
+    if (q.get('date')) state.date = q.get('date');
+    await loadRegion(state.region, Boolean(q.get('date')));
+
+    els.region.addEventListener('change', () => loadRegion(els.region.value).catch(fail));
+    els.date.addEventListener('change', () => { state.date = els.date.value; render(); syncUrl(); });
+
+    // the collector publishes every ~5 min — re-fetch on the same cadence
+    state.timer = setInterval(() => loadRegion(state.region, true).catch(() => {}), 5 * 60 * 1000);
+  }
+
+  function fail(err) {
+    els.meta.textContent = '';
+    els.banner.textContent = `Не вдалося завантажити дані: ${err.message}. Спробуйте оновити сторінку.`;
+    els.banner.classList.add('show');
+  }
+
+  boot().catch(fail);
+})();
+</script>
+</body>
+</html>
