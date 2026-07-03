@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Графіки відключень електроенергії</title>
 <meta name="description" content="Графіки погодинних відключень електроенергії по всіх групах — дані оновлюються кожні ~5 хвилин.">
+<script>
+  // до першого рендера, щоб тема з куки не блимала
+  (() => {
+    const m = document.cookie.match(/(?:^|;\s*)theme=(dark|light)/);
+    if (m) document.documentElement.dataset.theme = m[1];
+  })();
+</script>
 <style>
   :root {
     --bg: #eef1f6; --panel: #ffffff; --ink: #1a2233; --ink-2: #5b6474;
@@ -13,8 +20,14 @@
     --pos: #b45309; --pos-bg: #fdf3e3;
     --accent: #2457c5;
   }
+  :root[data-theme="dark"] {
+    --bg: #0f141c; --panel: #171e29; --ink: #e7ecf4; --ink-2: #97a1b3;
+    --line: #2a3444; --head: #1c2532;
+    --off: #b9c2d2; --off-soft: #232c3a;
+    --pos: #e8a33d; --pos-bg: #2e2412;
+  }
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
       --bg: #0f141c; --panel: #171e29; --ink: #e7ecf4; --ink-2: #97a1b3;
       --line: #2a3444; --head: #1c2532;
       --off: #b9c2d2; --off-soft: #232c3a;
@@ -28,15 +41,25 @@
     font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     padding: 20px clamp(10px, 3vw, 32px) 48px;
   }
+  .topbar { display: flex; align-items: flex-start; gap: 12px; }
+  .topbar h1 { flex: 1; }
   h1 { font-size: clamp(19px, 3.2vw, 26px); margin: 0 0 6px; }
   .meta { color: var(--ink-2); font-size: 13px; margin: 0 0 14px; }
-  .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; margin: 0 0 14px; }
+  #themeBtn {
+    flex: none; font: inherit; line-height: 1; cursor: pointer;
+    background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px;
+  }
+  #themeBtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; margin: 0 0 14px; }
   .controls label { display: block; font-size: 12px; color: var(--ink-2); margin: 0 0 3px; }
   .controls select {
     font: inherit; color: var(--ink); background: var(--panel);
     border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 150px;
   }
   .controls select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .controls .check { display: flex; align-items: center; gap: 7px; padding: 8px 0; font-size: 14px; color: var(--ink); margin: 0; }
+  .controls .check input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
   .banner {
     display: none; margin: 0 0 14px; padding: 10px 14px; border-radius: 8px; font-size: 14px;
     background: var(--pos-bg); border: 1px solid var(--pos); color: var(--ink);
@@ -58,39 +81,50 @@
     position: sticky; left: 0; z-index: 1; background: var(--head);
     font-size: 13px; font-weight: 600; text-align: left; padding: 6px 12px; white-space: nowrap;
   }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+  tbody tr.sel td { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  tbody tr.sel th { background: color-mix(in srgb, var(--accent) 18%, var(--head)); }
   td.slot { padding: 0; height: 38px; min-width: 34px; position: relative; }
-  td.slot .halves { position: absolute; inset: 0; display: flex; }
+  td.slot .halves { position: absolute; inset: 0; display: flex; z-index: 0; }
   td.slot .h { flex: 1; }
   .h.off { background: var(--off-soft); }
-  .h.off::after {
-    content: ""; position: absolute; inset: 0; margin: auto; width: 16px; height: 16px;
+  .h.pos {
+    background: repeating-linear-gradient(45deg, var(--pos-bg) 0 4px, color-mix(in srgb, var(--pos) 45%, var(--pos-bg)) 4px 6px);
+  }
+  /* Іконка "світла нема" — окремий шар поверх комірки, щоб ніколи не різалась
+     межею половинок: на всю комірку (повна година) або по центру половини. */
+  .ic { position: absolute; top: 0; bottom: 0; z-index: 1; pointer-events: none; }
+  .ic::after {
+    content: ""; position: absolute; inset: 0; margin: auto; width: 13px; height: 13px;
     background: var(--off);
     -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
             mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
   }
-  /* half-hour: icon only in the affected half */
-  td.slot .h.off { position: relative; }
-  td.slot .h.off::after { width: 13px; height: 13px; }
-  td.slot.full .h.off:first-child::after { left: 0; right: -100%; width: 16px; height: 16px; }
-  td.slot.full .h.off:last-child::after { display: none; }
-  .h.pos {
-    background: repeating-linear-gradient(45deg, var(--pos-bg) 0 4px, color-mix(in srgb, var(--pos) 45%, var(--pos-bg)) 4px 6px);
-  }
-  tfoot td { border: none; }
-  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 14px 4px 0; font-size: 13px; color: var(--ink-2); }
+  .ic.l { left: 0; width: 50%; }
+  .ic.r { left: 50%; width: 50%; }
+  .ic.w { left: 0; width: 100%; }
+  .ic.w::after { width: 16px; height: 16px; }
+  .below { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline; padding: 14px 4px 0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--ink-2); }
   .legend .item { display: flex; align-items: center; gap: 8px; }
   .legend .sw {
     width: 30px; height: 22px; border: 1px solid var(--line); border-radius: 4px;
     position: relative; overflow: hidden; display: inline-flex; background: var(--panel);
   }
-  .legend .sw > i { display: block; flex: 1; position: relative; }
+  .legend .sw > i { display: block; flex: 1; }
+  .legend .sw .ic { flex: none; }
+  .legend .sw .ic::after { width: 12px; height: 12px; }
   .empty { padding: 26px 18px; color: var(--ink-2); font-size: 15px; }
-  .foot { margin-top: 18px; font-size: 12.5px; color: var(--ink-2); }
+  .foot { flex: 1 1 240px; margin: 0 0 0 auto; font-size: 12.5px; color: var(--ink-2); text-align: right; }
   .foot a { color: var(--accent); }
 </style>
 </head>
 <body>
-<h1 id="title">Графіки відключень електроенергії</h1>
+<div class="topbar">
+  <h1 id="title">Графіки відключень електроенергії</h1>
+  <button id="themeBtn" type="button" aria-label="Перемкнути тему">🌙</button>
+</div>
 <p class="meta" id="meta">Завантаження…</p>
 
 <div class="controls">
@@ -102,24 +136,26 @@
     <label for="date">Дата</label>
     <select id="date"></select>
   </div>
+  <label class="check"><input type="checkbox" id="hideEmpty"> Приховати черги без відключень</label>
 </div>
 
 <div class="banner" id="banner"></div>
 <div class="tablewrap" id="tablewrap"></div>
 
-<div class="legend" id="legend">
-  <span class="item"><span class="sw"><i></i></span> Світло є</span>
-  <span class="item"><span class="sw"><i class="h off"></i></span> Світла нема</span>
-  <span class="item"><span class="sw"><i class="h off"></i><i></i></span> Нема перші 30 хв.</span>
-  <span class="item"><span class="sw"><i></i><i class="h off"></i></span> Нема другі 30 хв.</span>
-  <span class="item"><span class="sw"><i class="h pos"></i><i class="h pos"></i></span> Можливе відключення</span>
+<div class="below">
+  <div class="legend" id="legend">
+    <span class="item"><span class="sw"><i></i></span> Світло є</span>
+    <span class="item"><span class="sw"><i class="h off"></i><i class="ic w"></i></span> Світла нема</span>
+    <span class="item"><span class="sw"><i class="h off"></i><i></i><i class="ic l"></i></span> Нема перші 30 хв.</span>
+    <span class="item"><span class="sw"><i></i><i class="h off"></i><i class="ic r"></i></span> Нема другі 30 хв.</span>
+    <span class="item"><span class="sw"><i class="h pos"></i><i class="h pos"></i></span> Можливе відключення</span>
+  </div>
+  <p class="foot">
+    Дані: гілка <a href="https://github.com/mrkaktuz/outages-data/tree/data" rel="noopener">data</a>
+    репозиторію <a href="https://github.com/mrkaktuz/outages-data" rel="noopener">outages-data</a>,
+    оновлюються кожні ~5 хв. Сторінка перечитує дані автоматично.
+  </p>
 </div>
-
-<p class="foot">
-  Дані: гілка <a href="https://github.com/mrkaktuz/outages-data/tree/data" rel="noopener">data</a>
-  репозиторію <a href="https://github.com/mrkaktuz/outages-data" rel="noopener">outages-data</a>,
-  оновлюються кожні ~5 хв. Сторінка перечитує дані автоматично.
-</p>
 
 <script>
 (() => {
@@ -132,10 +168,31 @@
 
   const $ = (id) => document.getElementById(id);
   const els = { region: $('region'), date: $('date'), meta: $('meta'), banner: $('banner'),
-                wrap: $('tablewrap'), title: $('title') };
+                wrap: $('tablewrap'), title: $('title'), hideEmpty: $('hideEmpty'),
+                themeBtn: $('themeBtn') };
   const DOW = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-  const state = { index: null, doc: null, region: null, date: null, timer: null };
+  const state = { index: null, doc: null, region: null, date: null, selected: new Set() };
 
+  // --- тема ---------------------------------------------------------------
+  const isDark = () => document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  const paintThemeBtn = () => { els.themeBtn.textContent = isDark() ? '☀️' : '🌙'; };
+  els.themeBtn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    document.cookie = `theme=${next};max-age=31536000;path=/;SameSite=Lax`;
+    paintThemeBtn();
+  });
+  paintThemeBtn();
+
+  // --- перемикач "приховати пусті" (стан у куці) ---------------------------
+  els.hideEmpty.checked = /(?:^|;\s*)hideEmpty=1/.test(document.cookie);
+  els.hideEmpty.addEventListener('change', () => {
+    document.cookie = `hideEmpty=${els.hideEmpty.checked ? 1 : 0};max-age=31536000;path=/;SameSite=Lax`;
+  });
+
+  // --- дати/час -----------------------------------------------------------
   const kyivToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Kyiv' }).format(new Date());
   const addDays = (ymd, n) => {
     const d = new Date(ymd + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n);
@@ -235,17 +292,24 @@
 
     const NAMES = ['', 'можливе відключення', 'світла нема'];
     const tbody = document.createElement('tbody');
+    let shown = 0;
     for (const label of groups) {
       const g = doc.schedules[label] || { name: `Черга ${label}`, intervals: [] };
       const slots = slotsFor(g.intervals || [], ymd);
+      if (els.hideEmpty.checked && !slots.some(Boolean)) continue;
+      shown++;
       const tr = document.createElement('tr');
+      tr.dataset.label = label;
+      if (state.selected.has(label)) tr.classList.add('sel');
       tr.innerHTML = `<th scope="row">${g.name || `Черга ${label}`}</th>`;
       for (let h = 0; h < 24; h++) {
         const a = slots[2 * h], b = slots[2 * h + 1];
         const td = document.createElement('td');
-        td.className = 'slot' + (a === b && a === 2 ? ' full' : '');
+        td.className = 'slot';
         const cls = (s) => s === 2 ? 'h off' : s === 1 ? 'h pos' : 'h';
-        td.innerHTML = `<div class="halves"><span class="${cls(a)}"></span><span class="${cls(b)}"></span></div>`;
+        const icon = a === 2 && b === 2 ? '<i class="ic w"></i>'
+          : (a === 2 ? '<i class="ic l"></i>' : '') + (b === 2 ? '<i class="ic r"></i>' : '');
+        td.innerHTML = `<div class="halves"><span class="${cls(a)}"></span><span class="${cls(b)}"></span></div>${icon}`;
         const hh = String(h).padStart(2, '0'), h2 = String(h + 1).padStart(2, '0');
         let tip = 'світло є';
         if (a || b) {
@@ -257,8 +321,20 @@
       }
       tbody.appendChild(tr);
     }
+    // виділення рядка кліком (повторний клік знімає)
+    tbody.addEventListener('click', (e) => {
+      const tr = e.target.closest('tr');
+      if (!tr || window.getSelection()?.toString()) return;
+      const label = tr.dataset.label;
+      tr.classList.toggle('sel');
+      tr.classList.contains('sel') ? state.selected.add(label) : state.selected.delete(label);
+    });
     table.appendChild(tbody);
     els.wrap.innerHTML = '';
+    if (!shown) {
+      els.wrap.innerHTML = '<div class="empty">На обрану дату відключень не заплановано.</div>';
+      return;
+    }
     els.wrap.appendChild(table);
   }
 
@@ -287,9 +363,10 @@
 
     els.region.addEventListener('change', () => loadRegion(els.region.value).catch(fail));
     els.date.addEventListener('change', () => { state.date = els.date.value; render(); syncUrl(); });
+    els.hideEmpty.addEventListener('change', render);
 
     // the collector publishes every ~5 min — re-fetch on the same cadence
-    state.timer = setInterval(() => loadRegion(state.region, true).catch(() => {}), 5 * 60 * 1000);
+    setInterval(() => loadRegion(state.region, true).catch(() => {}), 5 * 60 * 1000);
   }
 
   function fail(err) {
