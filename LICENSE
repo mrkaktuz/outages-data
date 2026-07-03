@@ -1,0 +1,51 @@
+Ліцензія outages-data / svitlo.yydev.top
+=========================================
+
+© 2026 mrkaktuz (https://github.com/mrkaktuz). Усі права застережено.
+
+Цей репозиторій містить дві різні за умовами частини:
+
+1. ОПУБЛІКОВАНІ ДАНІ — гілка `data` (JSON-файли графіків відключень,
+   зведення, бейджі)
+   -------------------------------------------------------------------
+   Ліцензія: Creative Commons Attribution 4.0 International (CC BY 4.0),
+   https://creativecommons.org/licenses/by/4.0/
+
+   Дані можна вільно використовувати, копіювати, поширювати і обробляти
+   (зокрема комерційно) за єдиної умови — вказання джерела:
+   «outages-data, https://github.com/mrkaktuz/outages-data» або
+   посилання на https://svitlo.yydev.top.
+
+2. КОД КОЛЕКТОРА (гілка `main`) І ВЕБ-СТОРІНКА (гілка `web`)
+   -------------------------------------------------------------------
+   Source-available: код відкритий для перегляду, але НЕ є вільним ПЗ.
+
+   Дозволено без окремого дозволу:
+   - переглядати та вивчати код;
+   - запускати його локально для власних некомерційних потреб;
+   - робити форки в межах GitHub з метою підготовки pull request
+     до цього репозиторію.
+
+   Заборонено без попереднього письмового дозволу власника:
+   - публічно розгортати копії веб-сторінки або її похідних
+     (на будь-якому домені чи хостингу);
+   - публікувати копії або похідні коду поза форками для PR;
+   - видаляти чи змінювати згадки про авторство, посилання на цей
+     репозиторій, блок підтримки («Подякувати») та зворотного зв'язку;
+   - використовувати код або сторінку в комерційних цілях.
+
+   Порушення цих умов є порушенням авторських прав (ст. 50 Закону
+   України «Про авторське право і суміжні права», Бернська конвенція).
+
+Запити на дозвіл: через issue у репозиторії
+https://github.com/mrkaktuz/outages-data/issues
+
+---
+
+English summary (non-binding): the published data (`data` branch) is
+licensed under CC BY 4.0. The collector code (`main`) and the web page
+(`web`) are source-available, all rights reserved: viewing, local
+non-commercial use and forking for pull requests are allowed; public
+redeployment, redistribution, commercial use, and removal of authorship
+or the support/feedback links are prohibited without prior written
+permission.

@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+  Графіки відключень електроенергії — svitlo.yydev.top
+  © 2026 mrkaktuz (https://github.com/mrkaktuz/outages-data)
+
+  Source-available. Публічне розгортання копій, видалення авторства чи
+  блоку підтримки заборонені — див. файл LICENSE у репозиторії.
+  Опубліковані дані (гілка data) — вільні, CC BY 4.0.
+-->
 <html lang="uk">
 <head>
 <meta charset="utf-8">
@@ -123,6 +131,24 @@
   .empty { padding: 26px 18px; color: var(--ink-2); font-size: 15px; }
   .foot { flex: 1 1 240px; margin: 0 0 0 auto; font-size: 12.5px; color: var(--ink-2); text-align: right; }
   .foot a { color: var(--accent); }
+  .support {
+    display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center;
+    justify-content: center; margin-top: 30px;
+  }
+  .support .btn {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    font: inherit; font-size: 14px; text-decoration: none; line-height: 1;
+    color: var(--ink); background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 16px;
+  }
+  .support .btn[hidden] { display: none; }
+  .support .btn:hover { border-color: var(--accent); }
+  .support .btn.donate {
+    background: #ffdf3d; border-color: #ffdf3d; color: #1c1c1c; font-weight: 600;
+  }
+  .support .btn.donate:hover { background: #ffd51a; border-color: #ffd51a; }
+  .support .copy { width: 100%; text-align: center; font-size: 12px; color: var(--ink-2); margin: 2px 0 0; }
+  .support .copy a { color: var(--ink-2); }
 </style>
 </head>
 <body>
@@ -166,6 +192,16 @@
   </p>
 </div>
 
+<div class="support">
+  <a class="btn donate" id="donateBtn" hidden href="#">🙏 Подякувати</a>
+  <a class="btn" href="https://github.com/mrkaktuz/outages-data/issues/new" target="_blank" rel="noopener">💬 Зворотній зв'язок</a>
+  <p class="copy">
+    © 2026 <a href="https://github.com/mrkaktuz" rel="noopener">mrkaktuz</a> ·
+    <a href="https://github.com/mrkaktuz/outages-data/blob/web/LICENSE" rel="noopener">ліцензія</a> ·
+    дані відкриті (CC BY 4.0)
+  </p>
+</div>
+
 <script>
 (() => {
   'use strict';
@@ -174,6 +210,9 @@
   const DATA_BASE = ['localhost', '127.0.0.1', ''].includes(location.hostname)
     ? './data/'
     : 'https://raw.githubusercontent.com/mrkaktuz/outages-data/data/';
+
+  // посилання на банку монобанки; коли з'явиться — кнопка увімкнеться сама
+  const DONATE_URL = '';
 
   const $ = (id) => document.getElementById(id);
   const els = { region: $('region'), date: $('date'), meta: $('meta'), banner: $('banner'),
@@ -213,6 +252,12 @@
     paintThemeBtn();
   });
   paintThemeBtn();
+
+  if (DONATE_URL) {
+    const d = $('donateBtn');
+    d.href = DONATE_URL; d.hidden = false;
+    d.target = '_blank'; d.rel = 'noopener';
+  }
 
   // --- перемикач "приховати пусті" (стан у куці) ---------------------------
   els.hideEmpty.checked = /(?:^|;\s*)hideEmpty=1/.test(document.cookie);
