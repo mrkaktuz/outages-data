@@ -15,24 +15,24 @@
 <style>
   :root {
     --bg: #eef1f6; --panel: #ffffff; --ink: #1a2233; --ink-2: #5b6474;
-    --line: #dde3ec; --head: #f4f6fa;
-    --off: #414b5e; --off-soft: #e8eaef;
+    --line: #c6cedd; --head: #f2f4f9;
+    --off: #333d4f; --off-soft: #dbe0e9;
     --pos: #b45309; --pos-bg: #fdf3e3;
     --bolt: #e5a400;
     --accent: #2457c5;
   }
   :root[data-theme="dark"] {
     --bg: #0f141c; --panel: #171e29; --ink: #e7ecf4; --ink-2: #97a1b3;
-    --line: #2a3444; --head: #1c2532;
-    --off: #b9c2d2; --off-soft: #232c3a;
+    --line: #38455c; --head: #1c2532;
+    --off: #cdd6e4; --off-soft: #303c50;
     --pos: #e8a33d; --pos-bg: #2e2412;
     --bolt: #f2c14e;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #0f141c; --panel: #171e29; --ink: #e7ecf4; --ink-2: #97a1b3;
-      --line: #2a3444; --head: #1c2532;
-      --off: #b9c2d2; --off-soft: #232c3a;
+      --line: #38455c; --head: #1c2532;
+      --off: #cdd6e4; --off-soft: #303c50;
       --pos: #e8a33d; --pos-bg: #2e2412;
       --bolt: #f2c14e;
     }
@@ -119,6 +119,10 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="icL"><rect x="0" y="0" width="12" height="24"/></clipPath>
+  <clipPath id="icR"><rect x="12" y="0" width="12" height="24"/></clipPath>
+</defs></svg>
 <div class="topbar">
   <h1 id="title">Графіки відключень електроенергії</h1>
   <button id="themeBtn" type="button" aria-label="Перемкнути тему">🌙</button>
@@ -171,14 +175,20 @@
   const DOW = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
   const state = { index: null, doc: null, region: null, date: null };
 
-  // --- іконки (стиль ДТЕК): перекреслена блискавка; для пів-години поруч
-  // маленька жовта блискавка з того боку, де світло Є -------------------------
-  const BOLT = 'M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z';
+  // --- іконки (стиль ДТЕК): одна блискавка на всі випадки; для пів-години
+  // вона розрізана навпіл — половина без світла темна й перекреслена,
+  // половина зі світлом жовта і не перекреслена ------------------------------
+  // симетрична відносно x=12, щоб розріз навпіл давав рівні половини
+  const BOLT = 'M14.5 1 5 13.5h5.3L9.5 23 19 10.5h-5.3L14.5 1z';
   function icon(kind) { // 'w' повна година | 'l' нема перші 30 хв | 'r' нема другі 30 хв
-    const main = `<path d="${BOLT}" fill="var(--off)"/>` +
+    const dark = `<path d="${BOLT}" fill="var(--off)"/>` +
       `<path d="M3.5 3.5 20.5 20.5" stroke="var(--off)" stroke-width="2.2" stroke-linecap="round"/>`;
-    const mini = (x) => `<g transform="translate(${x} 10.5) scale(.55)"><path d="${BOLT}" fill="var(--bolt)"/></g>`;
-    const body = kind === 'w' ? main : main + (kind === 'l' ? mini(11.5) : mini(-1.5));
+    const gold = `<path d="${BOLT}" fill="var(--bolt)"/>`;
+    // кліп-пати #icL/#icR оголошені один раз у прихованому svg в <body>
+    const half = (clip, inner) => `<g clip-path="url(#${clip})">${inner}</g>`;
+    const body = kind === 'w' ? dark
+      : kind === 'l' ? half('icL', dark) + half('icR', gold)
+      : half('icL', gold) + half('icR', dark);
     return `<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${body}</svg></span>`;
   }
   document.querySelectorAll('.sw[data-ic]').forEach((el) =>
