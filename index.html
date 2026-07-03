@@ -55,10 +55,17 @@
   }
   #themeBtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; margin: 0 0 14px; }
+  .controls > div { min-width: 0; max-width: 100%; }
   .controls label { display: block; font-size: 12px; color: var(--ink-2); margin: 0 0 3px; }
   .controls select {
     font: inherit; color: var(--ink); background: var(--panel);
     border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 150px;
+    max-width: 100%;
+  }
+  @media (max-width: 640px) {
+    .controls .f-region { flex: 1 1 100%; }
+    .controls .f-region select { width: 100%; }
+    .controls .check { flex: 1 1 0; min-width: 0; }
   }
   .controls select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .controls .check { display: flex; align-items: center; gap: 7px; padding: 8px 0; font-size: 14px; color: var(--ink); margin: 0; }
@@ -130,11 +137,11 @@
 <p class="meta" id="meta">Завантаження…</p>
 
 <div class="controls">
-  <div>
+  <div class="f-region">
     <label for="region">Регіон</label>
     <select id="region"></select>
   </div>
-  <div>
+  <div class="f-date">
     <label for="date">Дата</label>
     <select id="date"></select>
   </div>
