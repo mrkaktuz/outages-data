@@ -197,11 +197,68 @@ export function buildBadge(doc) {
   };
 }
 
+// Hex values for the Shields.io colour names used above.
+const BADGE_HEX = {
+  brightgreen: '#4c1',
+  orange: '#fe7d37',
+  red: '#e05d44',
+  lightgrey: '#9f9f9f',
+};
+
+const escapeXml = (s) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Rough Verdana 11px advance widths; textLength in the SVG stretches the text
+// to the estimate, so being a pixel off is invisible.
+function textWidth(text) {
+  let w = 0;
+  for (const ch of String(text)) {
+    if (/[ ·.,:;!'|iIljt1]/.test(ch)) w += 4;
+    else if (/[mwMW@ДЖШЩЮМФ]/.test(ch)) w += 11;
+    else w += 7;
+  }
+  return w;
+}
+
+/**
+ * Render a flat Shields-style badge as standalone SVG so the README can embed
+ * it straight from raw.githubusercontent.com — img.shields.io/endpoint proved
+ * unreliable (GitHub rate-limits Shields' shared fetch IPs → "resource not
+ * found" even though the JSON is fine).
+ */
+export function renderBadgeSvg({ label, message, color }) {
+  const hex = BADGE_HEX[color] || BADGE_HEX.lightgrey;
+  const lw = textWidth(label) + 10;
+  const mw = textWidth(message) + 10;
+  const w = lw + mw;
+  const title = escapeXml(`${label}: ${message}`);
+  const text = (str, x, len) =>
+    `<text aria-hidden="true" x="${x * 10}" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="${len * 10}">${str}</text>` +
+    `<text x="${x * 10}" y="140" transform="scale(.1)" fill="#fff" textLength="${len * 10}">${str}</text>`;
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="20" role="img" aria-label="${title}">` +
+    `<title>${title}</title>` +
+    `<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>` +
+    `<clipPath id="r"><rect width="${w}" height="20" rx="3" fill="#fff"/></clipPath>` +
+    `<g clip-path="url(#r)">` +
+    `<rect width="${lw}" height="20" fill="#555"/>` +
+    `<rect x="${lw}" width="${mw}" height="20" fill="${hex}"/>` +
+    `<rect width="${w}" height="20" fill="url(#s)"/>` +
+    `</g>` +
+    `<g text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">` +
+    text(escapeXml(label), lw / 2, lw - 10) +
+    text(escapeXml(message), lw + mw / 2, mw - 10) +
+    `</g></svg>\n`
+  );
+}
+
 export async function writeBadge(outDir, doc) {
   const dir = path.join(outDir, 'badges');
   await mkdir(dir, { recursive: true });
+  const badge = buildBadge(doc);
   const file = path.join(dir, `${doc.source.id}.json`);
-  await writeFile(file, JSON.stringify(buildBadge(doc)) + '\n', 'utf8');
+  await writeFile(file, JSON.stringify(badge) + '\n', 'utf8');
+  await writeFile(path.join(dir, `${doc.source.id}.svg`), renderBadgeSvg(badge), 'utf8');
   return file;
 }
 
@@ -221,6 +278,7 @@ export async function writeOverallBadge(outDir, badge) {
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, 'status.json');
   await writeFile(file, JSON.stringify(badge) + '\n', 'utf8');
+  await writeFile(path.join(dir, 'status.svg'), renderBadgeSvg(badge), 'utf8');
   return file;
 }
 

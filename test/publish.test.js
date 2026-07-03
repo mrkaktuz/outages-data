@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { reconcileDocument, reconcileIndex, buildBadge, buildOverallBadge } from '../src/core/publish.js';
+import { reconcileDocument, reconcileIndex, buildBadge, buildOverallBadge, renderBadgeSvg } from '../src/core/publish.js';
 
 const baseDoc = () => ({
   schemaVersion: '1.0',
@@ -88,6 +88,20 @@ test('buildOverallBadge reflects ok ratio and run time', () => {
 
   const down = buildOverallBadge({ stamp: '2026-06-29 14:10', okCount: 0, total: 2 });
   assert.equal(down.color, 'red');
+});
+
+test('renderBadgeSvg emits standalone flat SVG with label, message and colour', () => {
+  const svg = renderBadgeSvg({ label: 'dtek-krem', message: 'ok · 12 груп', color: 'brightgreen' });
+  assert.match(svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" width="\d+" height="20"/);
+  assert.match(svg, /aria-label="dtek-krem: ok · 12 груп"/);
+  assert.match(svg, /fill="#4c1"/);
+  assert.ok(svg.includes('>dtek-krem</text>'));
+  assert.ok(svg.includes('>ok · 12 груп</text>'));
+  // unknown colour falls back to lightgrey; markup is XML-escaped
+  const grey = renderBadgeSvg({ label: 'a<b', message: '&', color: 'nope' });
+  assert.match(grey, /fill="#9f9f9f"/);
+  assert.ok(grey.includes('a&lt;b'));
+  assert.ok(!grey.includes('<b'));
 });
 
 test('reconcileIndex ignores generatedAt', () => {

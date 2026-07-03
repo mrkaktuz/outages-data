@@ -210,11 +210,16 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   and is informational only — it is NOT used for change-detection (it embeds raw
   upstream timestamps, so it ticks even when the schedule is identical; reconcile
   uses `meaningfulView` instead).
-- **Badges**: `writeBadge` emits a Shields.io endpoint JSON per source to
-  `data/badges/<id>.json` (color by status, message = group count); content is
-  timestamp-free so those change only on real status/size changes.
-  `writeOverallBadge` emits `data/badges/status.json` ("оновлено" + run time +
-  ok ratio) every run.
+- **Badges**: `writeBadge` emits, per source, a Shields.io endpoint JSON
+  (`data/badges/<id>.json`) **and** a self-rendered flat SVG
+  (`data/badges/<id>.svg` via `renderBadgeSvg`); content is timestamp-free so
+  those change only on real status/size changes. `writeOverallBadge` emits
+  `data/badges/status.json` + `status.svg` ("оновлено" + run time + ok ratio)
+  every run. The README embeds the **SVGs straight from
+  raw.githubusercontent.com** — do not switch back to
+  `img.shields.io/endpoint?url=raw...`: GitHub rate-limits Shields' shared
+  fetch IPs, so those badges intermittently render "resource not found"
+  even though the JSON is reachable (observed 2026-07).
 
 ## CI / Actions (collect.yml)
 
