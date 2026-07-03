@@ -18,6 +18,7 @@
     --line: #dde3ec; --head: #f4f6fa;
     --off: #414b5e; --off-soft: #e8eaef;
     --pos: #b45309; --pos-bg: #fdf3e3;
+    --bolt: #e5a400;
     --accent: #2457c5;
   }
   :root[data-theme="dark"] {
@@ -25,6 +26,7 @@
     --line: #2a3444; --head: #1c2532;
     --off: #b9c2d2; --off-soft: #232c3a;
     --pos: #e8a33d; --pos-bg: #2e2412;
+    --bolt: #f2c14e;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -32,6 +34,7 @@
       --line: #2a3444; --head: #1c2532;
       --off: #b9c2d2; --off-soft: #232c3a;
       --pos: #e8a33d; --pos-bg: #2e2412;
+      --bolt: #f2c14e;
     }
   }
   * { box-sizing: border-box; }
@@ -92,19 +95,14 @@
   .h.pos {
     background: repeating-linear-gradient(45deg, var(--pos-bg) 0 4px, color-mix(in srgb, var(--pos) 45%, var(--pos-bg)) 4px 6px);
   }
-  /* Іконка "світла нема" — окремий шар поверх комірки, щоб ніколи не різалась
-     межею половинок: на всю комірку (повна година) або по центру половини. */
-  .ic { position: absolute; top: 0; bottom: 0; z-index: 1; pointer-events: none; }
-  .ic::after {
-    content: ""; position: absolute; inset: 0; margin: auto; width: 13px; height: 13px;
-    background: var(--off);
-    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
-            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z" fill="black"/><path d="M3 3l18 18" stroke="black" stroke-width="2.4"/></svg>') center/contain no-repeat;
+  /* Іконка стану — inline-SVG по центру комірки, один розмір для всіх
+     випадків (як у ДТЕК): перекреслена блискавка, а для пів-години поруч
+     маленька жовта блискавка з боку, де світло є. */
+  .ic {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    display: flex; align-items: center; justify-content: center;
   }
-  .ic.l { left: 0; width: 50%; }
-  .ic.r { left: 50%; width: 50%; }
-  .ic.w { left: 0; width: 100%; }
-  .ic.w::after { width: 16px; height: 16px; }
+  .ic svg { width: 18px; height: 18px; display: block; }
   .below { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline; padding: 14px 4px 0; }
   .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--ink-2); }
   .legend .item { display: flex; align-items: center; gap: 8px; }
@@ -114,7 +112,7 @@
   }
   .legend .sw > i { display: block; flex: 1; }
   .legend .sw .ic { flex: none; }
-  .legend .sw .ic::after { width: 12px; height: 12px; }
+  .legend .sw .ic svg { width: 15px; height: 15px; }
   .empty { padding: 26px 18px; color: var(--ink-2); font-size: 15px; }
   .foot { flex: 1 1 240px; margin: 0 0 0 auto; font-size: 12.5px; color: var(--ink-2); text-align: right; }
   .foot a { color: var(--accent); }
@@ -145,9 +143,9 @@
 <div class="below">
   <div class="legend" id="legend">
     <span class="item"><span class="sw"><i></i></span> Світло є</span>
-    <span class="item"><span class="sw"><i class="h off"></i><i class="ic w"></i></span> Світла нема</span>
-    <span class="item"><span class="sw"><i class="h off"></i><i></i><i class="ic l"></i></span> Нема перші 30 хв.</span>
-    <span class="item"><span class="sw"><i></i><i class="h off"></i><i class="ic r"></i></span> Нема другі 30 хв.</span>
+    <span class="item"><span class="sw" data-ic="w"><i class="h off"></i><i class="h off"></i></span> Світла нема</span>
+    <span class="item"><span class="sw" data-ic="l"><i class="h off"></i><i></i></span> Нема перші 30 хв.</span>
+    <span class="item"><span class="sw" data-ic="r"><i></i><i class="h off"></i></span> Нема другі 30 хв.</span>
     <span class="item"><span class="sw"><i class="h pos"></i><i class="h pos"></i></span> Можливе відключення</span>
   </div>
   <p class="foot">
@@ -171,7 +169,20 @@
                 wrap: $('tablewrap'), title: $('title'), hideEmpty: $('hideEmpty'),
                 themeBtn: $('themeBtn') };
   const DOW = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-  const state = { index: null, doc: null, region: null, date: null, selected: new Set() };
+  const state = { index: null, doc: null, region: null, date: null };
+
+  // --- іконки (стиль ДТЕК): перекреслена блискавка; для пів-години поруч
+  // маленька жовта блискавка з того боку, де світло Є -------------------------
+  const BOLT = 'M13 2 5 13h4.5L9 22l8-11h-4.5L13 2z';
+  function icon(kind) { // 'w' повна година | 'l' нема перші 30 хв | 'r' нема другі 30 хв
+    const main = `<path d="${BOLT}" fill="var(--off)"/>` +
+      `<path d="M3.5 3.5 20.5 20.5" stroke="var(--off)" stroke-width="2.2" stroke-linecap="round"/>`;
+    const mini = (x) => `<g transform="translate(${x} 10.5) scale(.55)"><path d="${BOLT}" fill="var(--bolt)"/></g>`;
+    const body = kind === 'w' ? main : main + (kind === 'l' ? mini(11.5) : mini(-1.5));
+    return `<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${body}</svg></span>`;
+  }
+  document.querySelectorAll('.sw[data-ic]').forEach((el) =>
+    el.insertAdjacentHTML('beforeend', icon(el.dataset.ic)));
 
   // --- тема ---------------------------------------------------------------
   const isDark = () => document.documentElement.dataset.theme
@@ -299,17 +310,14 @@
       if (els.hideEmpty.checked && !slots.some(Boolean)) continue;
       shown++;
       const tr = document.createElement('tr');
-      tr.dataset.label = label;
-      if (state.selected.has(label)) tr.classList.add('sel');
       tr.innerHTML = `<th scope="row">${g.name || `Черга ${label}`}</th>`;
       for (let h = 0; h < 24; h++) {
         const a = slots[2 * h], b = slots[2 * h + 1];
         const td = document.createElement('td');
         td.className = 'slot';
         const cls = (s) => s === 2 ? 'h off' : s === 1 ? 'h pos' : 'h';
-        const icon = a === 2 && b === 2 ? '<i class="ic w"></i>'
-          : (a === 2 ? '<i class="ic l"></i>' : '') + (b === 2 ? '<i class="ic r"></i>' : '');
-        td.innerHTML = `<div class="halves"><span class="${cls(a)}"></span><span class="${cls(b)}"></span></div>${icon}`;
+        const ic = a === 2 && b === 2 ? icon('w') : a === 2 ? icon('l') : b === 2 ? icon('r') : '';
+        td.innerHTML = `<div class="halves"><span class="${cls(a)}"></span><span class="${cls(b)}"></span></div>${ic}`;
         const hh = String(h).padStart(2, '0'), h2 = String(h + 1).padStart(2, '0');
         let tip = 'світло є';
         if (a || b) {
@@ -321,14 +329,6 @@
       }
       tbody.appendChild(tr);
     }
-    // виділення рядка кліком (повторний клік знімає)
-    tbody.addEventListener('click', (e) => {
-      const tr = e.target.closest('tr');
-      if (!tr || window.getSelection()?.toString()) return;
-      const label = tr.dataset.label;
-      tr.classList.toggle('sel');
-      tr.classList.contains('sel') ? state.selected.add(label) : state.selected.delete(label);
-    });
     table.appendChild(tbody);
     els.wrap.innerHTML = '';
     if (!shown) {
@@ -364,6 +364,15 @@
     els.region.addEventListener('change', () => loadRegion(els.region.value).catch(fail));
     els.date.addEventListener('change', () => { state.date = els.date.value; render(); syncUrl(); });
     els.hideEmpty.addEventListener('change', render);
+
+    // одинарне виділення рядка: клік — виділити, повторний клік по ньому
+    // або клік будь-де інде — зняти; ререндер його не зберігає
+    document.addEventListener('click', (e) => {
+      const tr = e.target.closest('#tablewrap tbody tr');
+      const cur = els.wrap.querySelector('tbody tr.sel');
+      if (cur && cur !== tr) cur.classList.remove('sel');
+      if (tr) tr.classList.toggle('sel', cur !== tr);
+    });
 
     // авто-оновлення кожні 30 с; фактична свіжість обмежена кешем raw (~5 хв).
     // Ререндеримо лише за реальної зміни, щоб не скидати скрол таблиці.
