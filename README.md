@@ -47,11 +47,8 @@
 півгодинною деталізацією. Дані вона читає напряму з гілки `data`
 (клієнтом, без сервера) і перечитує кожні ~5 хв.
 
-Постійна адреса після ввімкнення GitHub Pages:
-`https://mrkaktuz.github.io/outages-data/`
-
-Увімкнути один раз: **Settings → Pages → Build and deployment →
-Deploy from a branch → `web` / `(root)`**.
+Постійна адреса: **https://svitlo.yydev.top** (GitHub Pages з гілки `web`,
+власний домен через CNAME; `mrkaktuz.github.io/outages-data` редіректить туди).
 
 ## Опубліковані дані
 
@@ -207,6 +204,16 @@ active=$(curl -fsS -K dispatch.curl.conf "$API/runs?per_page=20" \
 [ "${active:-0}" -gt 0 ] && { echo "busy"; exit 0; }
 curl -fsS -K dispatch.curl.conf -X POST "$API/dispatches" -d '{"ref":"main"}'
 ```
+
+## Ліцензія
+
+- **Дані** (гілка `data`) — вільні, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/):
+  використовуйте як завгодно зі згадкою джерела.
+- **Код колектора** (`main`) і **веб-сторінка** (`web`) — source-available:
+  перегляд, локальний запуск і форки для PR дозволені; публічне розгортання
+  копій, комерційне використання та видалення авторства — заборонені.
+
+Повний текст — у [LICENSE](LICENSE).
 
 ## Примітки
 
