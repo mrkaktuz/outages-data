@@ -153,18 +153,18 @@
   <p class="foot">
     Дані: гілка <a href="https://github.com/mrkaktuz/outages-data/tree/data" rel="noopener">data</a>
     репозиторію <a href="https://github.com/mrkaktuz/outages-data" rel="noopener">outages-data</a>,
-    оновлюються кожні ~5 хв. Сторінка перечитує дані автоматично.
+    сторінка оновлюється автоматично.
   </p>
 </div>
 
 <script>
 (() => {
   'use strict';
-  // Served from github.io → fetch the data branch via raw.githubusercontent;
-  // local dev (python -m http.server) → relative ./data/ copy.
-  const DATA_BASE = /\.github\.io$/.test(location.hostname)
-    ? 'https://raw.githubusercontent.com/mrkaktuz/outages-data/data/'
-    : './data/';
+  // Local dev (python -m http.server) → relative ./data/ copy; будь-який
+  // продакшн-хост (github.io чи власний домен) → гілка data через raw.
+  const DATA_BASE = ['localhost', '127.0.0.1', ''].includes(location.hostname)
+    ? './data/'
+    : 'https://raw.githubusercontent.com/mrkaktuz/outages-data/data/';
 
   const $ = (id) => document.getElementById(id);
   const els = { region: $('region'), date: $('date'), meta: $('meta'), banner: $('banner'),
@@ -365,8 +365,20 @@
     els.date.addEventListener('change', () => { state.date = els.date.value; render(); syncUrl(); });
     els.hideEmpty.addEventListener('change', render);
 
-    // the collector publishes every ~5 min — re-fetch on the same cadence
-    setInterval(() => loadRegion(state.region, true).catch(() => {}), 5 * 60 * 1000);
+    // авто-оновлення кожні 30 с; фактична свіжість обмежена кешем raw (~5 хв).
+    // Ререндеримо лише за реальної зміни, щоб не скидати скрол таблиці.
+    setInterval(async () => {
+      try {
+        const file = state.index.sources.find((s) => s.id === state.region)?.file || `${state.region}.json`;
+        const doc = await fetchJson(file);
+        if (doc.updatedAt === state.doc?.updatedAt && doc.status?.code === state.doc?.status?.code) return;
+        state.doc = doc;
+        const dates = availableDates(doc);
+        const want = dates.includes(state.date) ? state.date : kyivToday();
+        state.date = fillSelect(els.date, dates.map((d) => ({ v: d, label: dateLabel(d) })), want);
+        render();
+      } catch { /* тимчасова помилка мережі — спробуємо наступного разу */ }
+    }, 30 * 1000);
   }
 
   function fail(err) {
