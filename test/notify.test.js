@@ -133,6 +133,29 @@ test('summarizeChange reports added and removed queues', () => {
   assert.match(out, /прибрано: 1\.2/);
 });
 
+test('summarizeChange: schedule appears with no outages -> "опубліковано графік" wording', () => {
+  const previous = doc({ groups: [], schedules: {} });
+  const current = doc({
+    schedules: { '1.1': { intervals: [] }, '1.2': { intervals: [] } },
+  });
+  assert.equal(
+    summarizeChange(previous, current),
+    'опубліковано графік (2 черги), відключень наразі не заплановано',
+  );
+});
+
+test('summarizeChange: schedule appears with outages -> queue count and hours', () => {
+  const previous = doc({ groups: [], schedules: {} });
+  const current = doc(); // 1.1 has a 3h off interval
+  assert.equal(summarizeChange(previous, current), 'опубліковано графік: 2 черги, ~3 год відключень');
+});
+
+test('summarizeChange: schedule disappears entirely', () => {
+  const previous = doc();
+  const current = doc({ groups: [], schedules: {} });
+  assert.equal(summarizeChange(previous, current), 'графік знято — відключення не заплановані');
+});
+
 test('summarizeChange returns empty string when nothing material changed', () => {
   assert.equal(summarizeChange(doc(), doc()), '');
 });

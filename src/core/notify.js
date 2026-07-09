@@ -89,6 +89,19 @@ export function summarizeChange(previous, doc) {
   const added = groups.filter((g) => !prevGroups.has(g));
   const removed = (previous.groups || []).filter((g) => !currGroups.has(g));
 
+  // Поява/зникнення графіка цілком (типово для ztoe: таблиці нема, поки нема
+  // команди Укренерго) — перелік «нових» черг тут лише заплутує.
+  if (!prevGroups.size && groups.length) {
+    const hrs = offHours(doc);
+    const queues = `${groups.length} ${queueWord(groups.length)}`;
+    return hrs >= 0.5
+      ? `опубліковано графік: ${queues}, ~${formatHours(hrs)} год відключень`
+      : `опубліковано графік (${queues}), відключень наразі не заплановано`;
+  }
+  if (prevGroups.size && !groups.length) {
+    return 'графік знято — відключення не заплановані';
+  }
+
   let changedCount = 0;
   for (const label of groups) {
     if (!prevGroups.has(label)) continue;

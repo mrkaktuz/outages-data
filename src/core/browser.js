@@ -10,7 +10,7 @@
 import { chromium } from 'playwright';
 import { log } from './logger.js';
 import { STATUS } from './schema.js';
-import { CollectError } from './errors.js';
+import { CollectError, toCollectError } from './errors.js';
 
 export { CollectError };
 
@@ -112,8 +112,7 @@ export async function fetchWithRetry(context, adapter, { attempts = 3, backoffMs
       const raw = await adapter.fetch(page);
       return raw;
     } catch (err) {
-      lastError =
-        err instanceof CollectError ? err : new CollectError(STATUS.PARSE_ERROR, String(err && err.message));
+      lastError = toCollectError(err);
       log.warn('fetch attempt failed', {
         source: adapter.id,
         attempt,
