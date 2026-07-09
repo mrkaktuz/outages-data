@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-09T08:32:18+03:00",
+  "generatedAt": "2026-07-09T08:33:56+03:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -104,8 +104,8 @@
       "id": "dtek-dnem",
       "name": "ДТЕК Дніпровські електромережі",
       "region": "Дніпропетровська область",
-      "updatedAt": "2026-07-09T08:29:47+03:00",
-      "status": "parse_error",
+      "updatedAt": "2026-07-09T08:33:49+03:00",
+      "status": "ok",
       "groups": [
         "1.1",
         "1.2",
@@ -126,8 +126,8 @@
       "id": "dtek-oem",
       "name": "ДТЕК Одеські електромережі",
       "region": "Одеська область",
-      "updatedAt": "2026-07-09T08:32:15+03:00",
-      "status": "parse_error",
+      "updatedAt": "2026-07-09T08:33:53+03:00",
+      "status": "ok",
       "groups": [
         "1.1",
         "1.2",
