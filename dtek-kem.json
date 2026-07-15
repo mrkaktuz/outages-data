@@ -6,11 +6,11 @@
     "region": "місто Київ",
     "url": "https://www.dtek-kem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-07-09T00:03:14+03:00",
+  "updatedAt": "2026-07-15T14:45:42+03:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "timeout",
+    "message": "page.goto: Timeout 45000ms exceeded. Call log: - navigating to \"https://www.dtek-kem.com.ua/ua/shutdowns\", waiting until \"domcontentloaded\"",
     "contentHash": "sha256:9d28c142e577bc7c6e62db47ae98925695d799040f130afde34757b054dcd569",
     "sourceUpdatedAt": "25.06.2026 14:56"
   },
