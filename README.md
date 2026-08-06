@@ -195,15 +195,60 @@ cron-job.org, UptimeRobot тощо) через GitHub API.
 **Без накладок.** Одна збірка триває ~3–4 хв. Workflow має
 `concurrency: collect` (паралельні запуски не виконуються — максимум один у
 черзі), а на сервері варто додатково пропускати dispatch, якщо запуск уже
-активний — тоді фактичний інтервал ніколи не буде меншим за тривалість збірки:
+активний — тоді фактичний інтервал ніколи не буде меншим за тривалість збірки.
+Готовий скрипт для таймера — [`scripts/dispatch.sh`](scripts/dispatch.sh):
 
 ```bash
-API=https://api.github.com/repos/<owner>/outages-data/actions/workflows/collect.yml
-active=$(curl -fsS -K dispatch.curl.conf "$API/runs?per_page=20" \
-  | jq '[.workflow_runs[]|select(.status=="queued" or .status=="in_progress")]|length')
-[ "${active:-0}" -gt 0 ] && { echo "busy"; exit 0; }
-curl -fsS -K dispatch.curl.conf -X POST "$API/dispatches" -d '{"ref":"main"}'
+GITHUB_TOKEN=<PAT> ./scripts/dispatch.sh
 ```
+
+⚠️ **Важлива деталь перевірки «чи вже щось виконується».** Запуск, який стоїть
+у черзі через `concurrency`, має статус **`pending`**, а не `queued`. Умова
+`status == "queued" or status == "in_progress"` його не бачить, тому в дні,
+коли Actions гальмують, планувальник продовжує слати dispatch, кожен новий
+скасовує попередній `pending`, і в історії з'являється стіна
+`cancelled`/`failure`. Правильна перевірка — «все, що не `completed`»:
+
+```bash
+jq '[.workflow_runs[] | select(.status != "completed")] | length'
+```
+
+Скрипт додатково раз на годину попереджає в Telegram, якщо гілку `data` давно
+не оновлювали (`STALE_MINUTES`, типово 30 хв) — це єдиний спосіб дізнатися про
+збір, який стоїть, бо запуск, що не отримав раннера, не надсилає нічого.
+
+## Коли щось ламається
+
+**Листи «Run failed» від GitHub.** GitHub надсилає лист на кожен невдалий
+запуск, а при 5-хвилинному інтервалі та проблемах на його ж боці це сотні
+листів за день. Вимикається лише в налаштуваннях акаунта (не в репозиторії):
+**[github.com/settings/notifications](https://github.com/settings/notifications)
+→ блок Actions** — зняти галку **Email** (залишити **Web**, щоб фейли було
+видно в дзвіночку) і ввімкнути **Only notify for failed workflows**. Налаштування
+глобальне для акаунта; окремо для одного репозиторію воно не задається.
+
+Натомість про справді важливе повідомляє Telegram:
+
+| Що сталося | Сигнал |
+|---|---|
+| Джерело перестало віддавати графік (`ok → fail`) | гучне повідомлення з `notify.js` |
+| Джерело відновилось (`fail → ok`) | гучне повідомлення |
+| Впав сам workflow (`npm ci`, Playwright, push) | крок `Notify on job failure` у `collect.yml` |
+| Збір стоїть — запуски не стартують взагалі | попередження про застарілу `data` зі `scripts/dispatch.sh` |
+
+Розділення навмисне: **невдалий збір не валить workflow**. `src/index.js`
+завершується з кодом 0, а статус (`timeout`, `blocked`, `error`) записується в
+JSON — споживачі бачать його в `status.code`, а старі дані лишаються на місці.
+Червоний запуск в Actions означає інфраструктурну проблему, а не «сайт ДТЕК
+не відповів».
+
+**Якщо запуски масово `failure`/`cancelled`.** Спершу
+[githubstatus.com](https://www.githubstatus.com/) — під час аварій Actions
+типові симптоми: `Failed to resolve action download info: Service Unavailable`
+(падає ще до першого кроку, на резолві `actions/checkout` тощо) та job, який
+висить у `queued` без раннера по 15+ хв. Робити з цим нічого не треба, окрім
+одного: переконатися, що планувальник не додає до черги нові запуски (див.
+пастку з `pending` вище).
 
 ## Ліцензія
 

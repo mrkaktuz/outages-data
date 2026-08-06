@@ -41,6 +41,8 @@ src/
       mykolaiv.js    adapter: Миколаївобленерго (plain JSON API, no browser)
   index.js        CLI entry (parse args -> runPipeline)
 test/             node:test unit tests + fixtures (no browser needed)
+scripts/
+  dispatch.sh     external scheduler: busy-check + dispatch + data staleness alert
 .github/workflows/collect.yml   scheduled run -> publishes to data branch
 data/ (orphan branch only)      <source>.json, index.json, log.jsonl, badges/<source>.json
 ```
@@ -280,9 +282,30 @@ their Ubuntu box that POSTs to
 `{"ref":"main"}` → 204). No token-less trigger URL exists.
 
 Overlap protection: workflow has `concurrency: collect` (no parallel runs, at
-most one queued), and the server's dispatch script skips POST when a run is
-already queued/in_progress (GET .../runs), so the effective interval is never
-shorter than one collection (~3–4 min) regardless of the timer period.
+most one queued), and the server's dispatch script skips POST while a run is
+still open (GET .../runs), so the effective interval is never shorter than one
+collection (~3–4 min) regardless of the timer period. Reference implementation:
+`scripts/dispatch.sh` (the server runs its own copy).
+
+**Gotcha — `pending` is not `queued`.** A run held back by `concurrency` is
+reported with status **`pending`**; `queued` means "waiting for a runner". A
+busy-check written as `status == "queued" or status == "in_progress"` therefore
+sees an idle workflow while a run is in fact blocked, and keeps dispatching.
+GitHub keeps only one pending run per concurrency group, so every new dispatch
+cancels the previous one — during the 2026-08-06 Actions outage this turned a
+slow queue into ~50% `cancelled` + `failure` runs (and a mailbox full of
+"Run failed" notices). Use `select(.status != "completed")`, which also covers
+`waiting`/`requested`/`action_required`.
+
+Failure signalling: collection failures deliberately do **not** fail the job
+(`src/index.js` exits 0; the status lands in the document and, on an ok→fail
+transition, in Telegram). A red run therefore means infrastructure, and the
+`Notify on job failure` step in `collect.yml` pings Telegram with the run URL —
+plain `curl`, so it survives a broken checkout/setup-node. It cannot cover the
+one failure mode that matters most (job never starts ⇒ nothing runs at all);
+that is what the staleness check in `scripts/dispatch.sh` is for. Owners who
+turn off GitHub's Actions e-mails (Settings → Notifications → Actions) rely on
+exactly these two.
 
 Note for CI verification from here: with no push trigger, commits to main no
 longer auto-run the workflow; the server's timer drives runs, or trigger one via

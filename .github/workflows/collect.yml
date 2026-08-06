@@ -86,3 +86,31 @@ jobs:
             git commit -m "data: update outage schedules ($(date -u +%FT%TZ))"
             git push origin HEAD:data
           fi
+
+      # Replaces GitHub's "workflow failed" e-mails (which can be turned off in
+      # Settings -> Notifications -> Actions). Plain curl, not `node`, so it
+      # still fires when checkout / npm / Playwright install is what broke.
+      # Never fails the job, never runs on a cancelled (superseded) run.
+      - name: Notify on job failure
+        if: failure()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram not configured; skipping failure notice."
+            exit 0
+          fi
+          jq -nc \
+            --arg chat "$TELEGRAM_CHAT_ID" \
+            --arg thread "${TELEGRAM_THREAD_ID:-}" \
+            --arg text "⚠️ outages-data: збірка впала (run #${RUN_NUMBER})
+          ${RUN_URL}" \
+            '{chat_id: $chat, text: $text, disable_web_page_preview: true}
+             + (if $thread == "" then {} else {message_thread_id: ($thread | tonumber)} end)' \
+            | curl -sS -m 20 -o /dev/null -X POST -H 'content-type: application/json' -d @- \
+                "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" || true
