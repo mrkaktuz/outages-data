@@ -6,11 +6,11 @@
     "region": "місто Київ",
     "url": "https://www.dtek-kem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-08-29T05:55:23+03:00",
+  "updatedAt": "2026-09-02T22:12:35+03:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "parse_error",
+    "message": "browserContext.newPage: Target page, context or browser has been closed",
     "contentHash": "sha256:cef705e98a82a7c90a3d94b908ff6691c46b07c8be937bb7a79cbfae31b56765",
     "sourceUpdatedAt": "25.06.2026 14:56"
   },
