@@ -6,12 +6,12 @@
     "region": "Миколаївська область",
     "url": "https://off.energy.mk.ua/"
   },
-  "updatedAt": "2026-09-02T22:12:35+03:00",
+  "updatedAt": "2026-09-02T22:18:01+03:00",
   "status": {
-    "ok": false,
-    "code": "parse_error",
-    "message": "browserContext.newPage: Target page, context or browser has been closed",
-    "contentHash": "sha256:1e23b3ca88ae1b75cc1f964cf83df606b3131191c15193a5a2f442928043ca23",
+    "ok": true,
+    "code": "ok",
+    "message": null,
+    "contentHash": "sha256:847b5d3466f16778042ef6e92c80ff9914b9c0d11c415f80d2f71024576f2d97",
     "sourceUpdatedAt": null
   },
   "groups": [],
@@ -25,7 +25,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -34,7 +34,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -43,7 +43,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -52,7 +52,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -61,7 +61,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -70,7 +70,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -79,7 +79,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -88,7 +88,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -97,7 +97,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -106,7 +106,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -115,7 +115,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         },
         {
@@ -124,7 +124,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-07-01T19:00:48.000000Z",
+          "updated_at": "2026-08-29T15:35:56.000000Z",
           "deleted": 0
         }
       ],
