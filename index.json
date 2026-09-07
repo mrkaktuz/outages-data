@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-07T07:15:54+03:00",
+  "generatedAt": "2026-09-08T01:12:34+03:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -104,8 +104,8 @@
       "id": "dtek-dnem",
       "name": "ДТЕК Дніпровські електромережі",
       "region": "Дніпропетровська область",
-      "updatedAt": "2026-09-04T06:29:30+03:00",
-      "status": "ok",
+      "updatedAt": "2026-09-08T01:10:05+03:00",
+      "status": "timeout",
       "groups": [
         "1.1",
         "1.2",
