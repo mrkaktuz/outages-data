@@ -239,8 +239,19 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   → install Chromium + Xvfb → restore browser-state cache → add `data` worktree
   (orphan on first run) → `node src/index.js --out data-branch` → commit & push
   to `data` if `git` sees a diff.
-- Actions are pinned at `checkout@v5` / `setup-node@v5` (the `@v4` pair ran on
-  the deprecated Node 20 runtime); `cache@v4` was not affected and stays.
+- Actions are pinned at `checkout@v5` / `setup-node@v5` / `cache@v5` — every
+  `@v4` ran on the deprecated Node 20 runtime. (The runner's warning lists only
+  the actions it hasn't already re-pointed, so it named `cache@v4` only *after*
+  the other two were bumped — don't read one clean warning as "the rest are
+  fine". `cache@v6` exists too; v5 was the smaller step.)
+- **Gotcha (push):** GitHub sometimes rejects the publish push with
+  `remote: Internal Server Error` (seen 2026-09-09 23:08) — collection had
+  succeeded, only the push died, and that failed the whole run and threw away
+  the data. The publish step retries 5× with backoff; before each retry it
+  checks `git merge-base --is-ancestor HEAD origin/data`, because the server
+  sometimes *applies* the push and still answers 500 — retrying blindly there
+  would duplicate the commit. Both paths are covered by a local simulation
+  (fake `git` wrapper), not just by reading the code.
 - **Gotcha (apt):** `playwright install --with-deps` shells out to `apt-get
   update`, so ANY broken apt source on the runner kills the whole run before
   collection starts (job fails in ~20 s, "Failed to install browsers … exited

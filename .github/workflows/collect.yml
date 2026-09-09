@@ -51,7 +51,7 @@ jobs:
 
       # Persist cleared-challenge cookies between runs to reduce WAF challenges.
       - name: Restore browser state
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .cache
           key: browser-state-${{ github.run_id }}
@@ -88,13 +88,34 @@ jobs:
           TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
         run: xvfb-run -a node src/index.js --out data-branch
 
+      # GitHub occasionally answers a push with `remote: Internal Server Error`
+      # (seen 2026-09-09 23:08) — the collection itself was fine, only the push
+      # was rejected, and a single failure like that fails the whole run and
+      # loses the collected data. So retry, and first check whether the server
+      # actually applied the push despite the error before retrying it.
       - name: Publish if changed
         run: |
           cd data-branch
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to publish."
-          else
-            git commit -m "data: update outage schedules ($(date -u +%FT%TZ))"
-            git push origin HEAD:data
+            exit 0
           fi
+          git commit -m "data: update outage schedules ($(date -u +%FT%TZ))"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:data; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed" >&2
+            sleep $((attempt * 5))
+            git fetch origin data || true
+            if git merge-base --is-ancestor HEAD origin/data 2>/dev/null; then
+              echo "Commit is already on origin/data — the server applied it despite the error."
+              exit 0
+            fi
+            # Another run (or a partially applied push) moved the branch: replay
+            # our commit on top so the retry is a fast-forward.
+            git rebase origin/data || git rebase --abort || true
+          done
+          echo "::error::Could not push to data after 5 attempts"
+          exit 1
