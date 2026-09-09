@@ -235,10 +235,12 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
 
 - Triggers: `schedule */5`, `workflow_dispatch`, and `push` to `main` (dev convenience,
   paths-filtered to src/workflow/package files).
-- Steps: checkout → setup-node → `npm ci` → install Chromium + Xvfb → restore
-  browser-state cache → add `data` worktree (orphan on first run) →
-  `node src/index.js --out data-branch` → commit & push to `data` if `git`
-  sees a diff.
+- Steps: checkout → setup-node (Node 22; `engines` still allows ≥20) → `npm ci`
+  → install Chromium + Xvfb → restore browser-state cache → add `data` worktree
+  (orphan on first run) → `node src/index.js --out data-branch` → commit & push
+  to `data` if `git` sees a diff.
+- Actions are pinned at `checkout@v5` / `setup-node@v5` (the `@v4` pair ran on
+  the deprecated Node 20 runtime); `cache@v4` was not affected and stays.
 - **Gotcha (apt):** `playwright install --with-deps` shells out to `apt-get
   update`, so ANY broken apt source on the runner kills the whole run before
   collection starts (job fails in ~20 s, "Failed to install browsers … exited
