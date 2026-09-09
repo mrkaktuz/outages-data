@@ -31,11 +31,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Install Xvfb
-        run: sudo apt-get update && sudo apt-get install -y xvfb
+      # `playwright install --with-deps` runs apt-get update internally, so a
+      # single broken apt source takes the whole run down. The runner image
+      # ships a Google Chrome repo that intermittently serves a Packages index
+      # whose hash doesn't match its Release file ("Hash Sum mismatch") — that
+      # failed every run on 2026-09-09. We don't use that repo, so drop it, and
+      # retry the update in case a mirror is momentarily out of sync.
+      - name: Install Chromium and Xvfb
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/google-chrome*.list \
+                     /etc/apt/sources.list.d/google-chrome*.sources
+          for attempt in 1 2 3; do
+            sudo apt-get update && break
+            echo "apt-get update failed (attempt $attempt), retrying…" >&2
+            sleep $((attempt * 5))
+          done
+          sudo apt-get install -y xvfb
+          npx playwright install --with-deps chromium
 
       # Persist cleared-challenge cookies between runs to reduce WAF challenges.
       - name: Restore browser state

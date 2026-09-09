@@ -235,10 +235,19 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
 
 - Triggers: `schedule */5`, `workflow_dispatch`, and `push` to `main` (dev convenience,
   paths-filtered to src/workflow/package files).
-- Steps: checkout → setup-node → `npm ci` → `npx playwright install --with-deps
-  chromium` → restore browser-state cache → add `data` worktree (orphan on first
-  run) → `node src/index.js --out data-branch` → commit & push to `data` if `git`
+- Steps: checkout → setup-node → `npm ci` → install Chromium + Xvfb → restore
+  browser-state cache → add `data` worktree (orphan on first run) →
+  `node src/index.js --out data-branch` → commit & push to `data` if `git`
   sees a diff.
+- **Gotcha (apt):** `playwright install --with-deps` shells out to `apt-get
+  update`, so ANY broken apt source on the runner kills the whole run before
+  collection starts (job fails in ~20 s, "Failed to install browsers … exited
+  with code: 100"). Seen 2026-09-09: the runner image's Google Chrome repo
+  served a `Packages.gz` whose hash didn't match its `Release` file (**Hash Sum
+  mismatch**) for ~40 min, failing every run. The install step therefore
+  deletes `/etc/apt/sources.list.d/google-chrome*` (we don't use it) and retries
+  `apt-get update` 3× before installing. If a *different* third-party repo ever
+  breaks the same way, drop that one too rather than pinning Playwright.
 - Publishes with the built-in `GITHUB_TOKEN` (`permissions: contents: write`).
   **No PAT needed** to push to `data` in this repo.
 - `schedule`/`workflow_dispatch` only register from the **default branch**
