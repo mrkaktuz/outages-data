@@ -59,8 +59,33 @@ export function loadIndex(outDir) {
 /** How many run-log entries to retain (JSON Lines, newest at the end). */
 export const MAX_LOG_ENTRIES = 1000;
 
-/** Append one run entry to log.jsonl, trimming to the most recent entries. */
-export async function appendRunLog(outDir, entry, maxEntries = MAX_LOG_ENTRIES) {
+/** Hour a run falls in, e.g. "2026-09-10T02" — the status badge is cut the same way. */
+const hourBucket = (iso) => String(iso).slice(0, 13);
+
+/**
+ * Should this run go into the log?
+ *
+ * `log.jsonl` changes on every write and the data branch commits every change,
+ * so logging all ~270 daily polls cost ~270 commits/day while only ~4% of them
+ * carried news. A run is recorded when it has something to say (data changed,
+ * or something failed) and otherwise once an hour, which keeps the log usable
+ * as proof the collector is alive.
+ *
+ * The heartbeat deliberately fires on the *same hour boundary* the status badge
+ * uses rather than "an hour since the last entry": the two then change in the
+ * same run and share one commit instead of drifting apart into two.
+ */
+export function shouldLogRun(entry, lastEntry) {
+  if (entry.changed || !entry.ok) return true;
+  if (!lastEntry || !lastEntry.runAt) return true;
+  return hourBucket(entry.runAt) !== hourBucket(lastEntry.runAt);
+}
+
+/**
+ * Append one run entry to log.jsonl, trimming to the most recent entries.
+ * Uneventful runs are skipped (see {@link shouldLogRun}); returns null then.
+ */
+export async function appendRunLog(outDir, entry, { maxEntries = MAX_LOG_ENTRIES } = {}) {
   const file = path.join(outDir, 'log.jsonl');
   let lines = [];
   try {
@@ -68,6 +93,17 @@ export async function appendRunLog(outDir, entry, maxEntries = MAX_LOG_ENTRIES) 
   } catch {
     lines = [];
   }
+
+  let lastEntry = null;
+  if (lines.length) {
+    try {
+      lastEntry = JSON.parse(lines[lines.length - 1]);
+    } catch {
+      lastEntry = null;
+    }
+  }
+  if (!shouldLogRun(entry, lastEntry)) return null;
+
   lines.push(JSON.stringify(entry));
   if (lines.length > maxEntries) lines = lines.slice(lines.length - maxEntries);
   await mkdir(outDir, { recursive: true });

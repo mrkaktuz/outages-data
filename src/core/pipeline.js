@@ -180,9 +180,16 @@ async function persistIndex(outDir, docs) {
   await writeIndex(outDir, index);
 }
 
-/** Write the overall "last updated" badge (run time + ok count). */
+/**
+ * Write the overall "last updated" badge (run time + ok count).
+ *
+ * The run time is rounded down to the hour on purpose: at minute precision the
+ * badge changed on every poll, and since the data branch commits every change,
+ * that alone produced a commit per run. Hourly granularity is plenty for a
+ * README badge and keeps uneventful runs commit-free.
+ */
 async function writeStatusBadge(outDir, startedAt, summaries) {
-  const stamp = toKyivIso(startedAt).slice(0, 16).replace('T', ' ');
+  const stamp = toKyivIso(startedAt).slice(0, 13).replace('T', ' ') + ':00';
   const okCount = summaries.filter((s) => s.ok).length;
   await writeOverallBadge(outDir, buildOverallBadge({ stamp, okCount, total: summaries.length }));
 }

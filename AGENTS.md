@@ -212,10 +212,19 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   its stamp every ~30 min). `reconcileIndex` ignores `generatedAt`. Per-source
   files (and `index.json`) only change on real change; `updatedAt` = last real
   change. A spurious change here = a spurious Telegram "оновлено" message.
-- **Run log**: `appendRunLog` writes one line per run to `data/log.jsonl`
-  (capped `MAX_LOG_ENTRIES`=1000). Because it changes every run, the data branch
-  gets one commit per run (a heartbeat). If commit volume becomes a problem,
-  switch to logging only `changed`/non-ok runs.
+- **Run log / commit volume**: `appendRunLog` writes to `data/log.jsonl` (capped
+  `MAX_LOG_ENTRIES`=1000) only when `shouldLogRun` says the run has news —
+  `changed` or non-ok — plus one heartbeat per hour. This used to log every run,
+  which (together with the status badge below) produced **one commit per poll**:
+  ~270 commits/day, of which measurements on the real log showed only **3.6%**
+  carried any change or failure. Now ~30/day.
+  Both writers must stay quiet for an uneventful run — silencing only one of
+  them changes nothing, since a commit happens if *any* file differs. They are
+  deliberately keyed to the **same hour boundary** (`shouldLogRun`'s hour bucket
+  = the badge's `slice(0, 13)` stamp) so the hourly heartbeat and the badge tick
+  in the same run and share one commit; keying the log to "an hour since the
+  last entry" instead makes them drift apart and costs ~50% more commits
+  (measured: 51/day vs 33/day).
 - Content hash (`computeHash`, `status.contentHash`) is over `groups+schedules+raw`
   and is informational only — it is NOT used for change-detection (it embeds raw
   upstream timestamps, so it ticks even when the schedule is identical; reconcile
@@ -225,7 +234,9 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   (`data/badges/<id>.svg` via `renderBadgeSvg`); content is timestamp-free so
   those change only on real status/size changes. `writeOverallBadge` emits
   `data/badges/status.json` + `status.svg` ("оновлено" + run time + ok ratio)
-  every run. The README embeds the **SVGs straight from
+  every run — but the run time is **rounded down to the hour** (`slice(0, 13)`),
+  so the file only actually differs once an hour. At the original minute
+  precision this badge alone forced a commit on every poll. The README embeds the **SVGs straight from
   raw.githubusercontent.com** — do not switch back to
   `img.shields.io/endpoint?url=raw...`: GitHub rate-limits Shields' shared
   fetch IPs, so those badges intermittently render "resource not found"
