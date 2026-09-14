@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:d0aec087e83e4cd15a7bc1f745a1f2168e72a21f46e919b8d4d412aaf9b3e14e",
+    "contentHash": "sha256:e076c67302235e6096bc41a1e40737bfaa0e2f0bcc67e204be14d8312fc32d48",
     "sourceUpdatedAt": "25.06.2026 14:56"
   },
   "groups": [
@@ -95,21 +95,7 @@
       "name": "Черга 1.2",
       "intervals": [
         {
-          "start": "2026-09-14T00:00:00+03:00",
-          "end": "2026-09-14T04:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T08:00:00+03:00",
-          "end": "2026-09-14T15:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T18:30:00+03:00",
+          "start": "2026-09-15T00:00:00+03:00",
           "end": "2026-09-15T01:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -208,7 +194,21 @@
         },
         {
           "start": "2026-09-20T21:30:00+03:00",
-          "end": "2026-09-21T00:00:00+03:00",
+          "end": "2026-09-21T04:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T08:00:00+03:00",
+          "end": "2026-09-21T15:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T18:30:00+03:00",
+          "end": "2026-09-22T00:00:00+03:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -227,21 +227,7 @@
       "name": "Черга 2.2",
       "intervals": [
         {
-          "start": "2026-09-14T00:00:00+03:00",
-          "end": "2026-09-14T04:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T08:00:00+03:00",
-          "end": "2026-09-14T15:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T18:30:00+03:00",
+          "start": "2026-09-15T00:00:00+03:00",
           "end": "2026-09-15T01:30:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -340,7 +326,21 @@
         },
         {
           "start": "2026-09-20T21:30:00+03:00",
-          "end": "2026-09-21T00:00:00+03:00",
+          "end": "2026-09-21T04:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T08:00:00+03:00",
+          "end": "2026-09-21T15:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T18:30:00+03:00",
+          "end": "2026-09-22T00:00:00+03:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -359,21 +359,7 @@
       "name": "Черга 3.2",
       "intervals": [
         {
-          "start": "2026-09-14T01:00:00+03:00",
-          "end": "2026-09-14T08:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T11:30:00+03:00",
-          "end": "2026-09-14T18:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T22:00:00+03:00",
+          "start": "2026-09-15T00:00:00+03:00",
           "end": "2026-09-15T05:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -466,6 +452,27 @@
         {
           "start": "2026-09-20T14:30:00+03:00",
           "end": "2026-09-20T21:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T01:00:00+03:00",
+          "end": "2026-09-21T08:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T11:30:00+03:00",
+          "end": "2026-09-21T18:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T22:00:00+03:00",
+          "end": "2026-09-22T00:00:00+03:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -484,21 +491,7 @@
       "name": "Черга 4.2",
       "intervals": [
         {
-          "start": "2026-09-14T01:00:00+03:00",
-          "end": "2026-09-14T08:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T11:30:00+03:00",
-          "end": "2026-09-14T18:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T22:00:00+03:00",
+          "start": "2026-09-15T00:00:00+03:00",
           "end": "2026-09-15T05:00:00+03:00",
           "kind": "possible",
           "type": "possible",
@@ -594,6 +587,27 @@
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T01:00:00+03:00",
+          "end": "2026-09-21T08:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T11:30:00+03:00",
+          "end": "2026-09-21T18:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T22:00:00+03:00",
+          "end": "2026-09-22T00:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -608,27 +622,6 @@
       "subgroup": "2",
       "name": "Черга 5.2",
       "intervals": [
-        {
-          "start": "2026-09-14T00:00:00+03:00",
-          "end": "2026-09-14T01:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T04:30:00+03:00",
-          "end": "2026-09-14T11:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T15:00:00+03:00",
-          "end": "2026-09-14T22:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
         {
           "start": "2026-09-15T01:30:00+03:00",
           "end": "2026-09-15T08:30:00+03:00",
@@ -722,7 +715,21 @@
         },
         {
           "start": "2026-09-20T18:00:00+03:00",
-          "end": "2026-09-21T00:00:00+03:00",
+          "end": "2026-09-21T01:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T04:30:00+03:00",
+          "end": "2026-09-21T11:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T15:00:00+03:00",
+          "end": "2026-09-21T22:00:00+03:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -741,27 +748,6 @@
       "name": "Черга 6.2",
       "intervals": [
         {
-          "start": "2026-09-14T00:00:00+03:00",
-          "end": "2026-09-14T01:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T04:30:00+03:00",
-          "end": "2026-09-14T11:30:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-09-14T15:00:00+03:00",
-          "end": "2026-09-14T22:00:00+03:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-09-15T01:30:00+03:00",
           "end": "2026-09-15T08:30:00+03:00",
           "kind": "possible",
@@ -854,7 +840,21 @@
         },
         {
           "start": "2026-09-20T18:00:00+03:00",
-          "end": "2026-09-21T00:00:00+03:00",
+          "end": "2026-09-21T01:00:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T04:30:00+03:00",
+          "end": "2026-09-21T11:30:00+03:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-09-21T15:00:00+03:00",
+          "end": "2026-09-21T22:00:00+03:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -13610,7 +13610,7 @@
     "fact": {
       "data": [],
       "update": "25.06.2026 14:56",
-      "today": 1789333200
+      "today": 1789419600
     }
   }
 }
