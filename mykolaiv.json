@@ -6,11 +6,11 @@
     "region": "Миколаївська область",
     "url": "https://off.energy.mk.ua/"
   },
-  "updatedAt": "2026-09-17T16:41:56+03:00",
+  "updatedAt": "2026-09-17T16:46:10+03:00",
   "status": {
-    "ok": false,
-    "code": "timeout",
-    "message": "The operation was aborted due to timeout",
+    "ok": true,
+    "code": "ok",
+    "message": null,
     "contentHash": "sha256:847b5d3466f16778042ef6e92c80ff9914b9c0d11c415f80d2f71024576f2d97",
     "sourceUpdatedAt": null
   },
