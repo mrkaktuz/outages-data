@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-09-23T15:58:26+03:00",
+  "updatedAt": "2026-09-23T18:29:24+03:00",
   "status": {
-    "ok": false,
-    "code": "parse_error",
-    "message": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.ztoe.com.ua/unhooking-search.php Call log: - navigating to \"https://www.ztoe.com.ua/unhooking-search.php\", waiting until \"domcontentloaded\"",
-    "contentHash": "sha256:62c4f83bbccac13c7a005b7b46e86159cca4d1b9c02e16ea99da77daf44642a6",
-    "sourceUpdatedAt": "23.09.2026 15:00"
+    "ok": true,
+    "code": "ok",
+    "message": null,
+    "contentHash": "sha256:bd1a0cbdf27aab8cdb602f995a82475394aaa8b159b29bcf39ca6a361b741363",
+    "sourceUpdatedAt": "23.09.2026 18:00"
   },
   "groups": [
     "1.1",
@@ -437,7 +437,7 @@
           }
         }
       },
-      "update": "23.09.2026 15:00",
+      "update": "23.09.2026 18:00",
       "today": 1790110800
     }
   }
