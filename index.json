@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T22:22:22+03:00",
+  "generatedAt": "2026-09-30T23:04:20+03:00",
   "sources": [
     {
       "id": "dtek-krem",
       "name": "ДТЕК Київські регіональні електромережі",
       "region": "Київська область",
-      "updatedAt": "2026-09-30T22:17:06+03:00",
-      "status": "ok",
+      "updatedAt": "2026-09-30T23:03:42+03:00",
+      "status": "timeout",
       "groups": [
         "1.1",
         "1.2",

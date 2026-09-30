@@ -6,11 +6,11 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-09-30T22:17:06+03:00",
+  "updatedAt": "2026-09-30T23:03:42+03:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "timeout",
+    "message": "page.goto: Timeout 45000ms exceeded. Call log: - navigating to \"https://www.dtek-krem.com.ua/ua/shutdowns\", waiting until \"domcontentloaded\"",
     "contentHash": "sha256:6a195928f9d05c820d9ccb225837b713706c08bfc59d43f89586de250ad9719f",
     "sourceUpdatedAt": "30.09.2026 22:11"
   },
