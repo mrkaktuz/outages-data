@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-02T09:43:00+03:00",
+  "generatedAt": "2026-10-02T09:46:31+03:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -160,8 +160,8 @@
       "id": "ztoe",
       "name": "Житомиробленерго",
       "region": "Житомирська область",
-      "updatedAt": "2026-10-02T09:42:58+03:00",
-      "status": "parse_error",
+      "updatedAt": "2026-10-02T09:46:30+03:00",
+      "status": "ok",
       "groups": [
         "1.1",
         "1.2",
