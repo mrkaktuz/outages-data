@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:490b391bcefe89df4ed6b1ce1e7e10fb1d65ad163e6957a585f4d516fc920f50",
+    "contentHash": "sha256:f2a20bd2f988d6f2c82fce53aa2b8e0e64472aa9d416775321d073637d0d3b73",
     "sourceUpdatedAt": "06.10.2026 13:00"
   },
   "groups": [
@@ -35,13 +35,6 @@
       "name": "Черга 1.1",
       "intervals": [
         {
-          "start": "2026-10-06T09:00:00+03:00",
-          "end": "2026-10-06T09:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-10-06T15:00:00+03:00",
           "end": "2026-10-06T17:00:00+03:00",
           "kind": "off",
@@ -55,13 +48,6 @@
       "subgroup": "2",
       "name": "Черга 1.2",
       "intervals": [
-        {
-          "start": "2026-10-06T09:30:00+03:00",
-          "end": "2026-10-06T11:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
         {
           "start": "2026-10-06T15:00:00+03:00",
           "end": "2026-10-06T17:00:00+03:00",
@@ -227,7 +213,7 @@
             "7": "yes",
             "8": "yes",
             "9": "yes",
-            "10": "first",
+            "10": "yes",
             "11": "yes",
             "12": "yes",
             "13": "yes",
@@ -253,8 +239,8 @@
             "7": "yes",
             "8": "yes",
             "9": "yes",
-            "10": "second",
-            "11": "no",
+            "10": "yes",
+            "11": "yes",
             "12": "yes",
             "13": "yes",
             "14": "yes",
