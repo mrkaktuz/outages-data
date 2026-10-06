@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-06T13:04:32+03:00",
+  "updatedAt": "2026-10-06T18:21:28+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:f2a20bd2f988d6f2c82fce53aa2b8e0e64472aa9d416775321d073637d0d3b73",
-    "sourceUpdatedAt": "06.10.2026 13:00"
+    "contentHash": "sha256:307fedf32189843d44804dc20c8a892103fbfc5c3d243a5bee3f95551d4dcf56",
+    "sourceUpdatedAt": "06.10.2026 18:00"
   },
   "groups": [
     "1.1",
@@ -51,6 +51,13 @@
         {
           "start": "2026-10-06T15:00:00+03:00",
           "end": "2026-10-06T17:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-06T22:00:00+03:00",
+          "end": "2026-10-07T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -173,13 +180,29 @@
       "group": "6",
       "subgroup": "1",
       "name": "Черга 6.1",
-      "intervals": []
+      "intervals": [
+        {
+          "start": "2026-10-06T18:00:00+03:00",
+          "end": "2026-10-06T20:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        }
+      ]
     },
     "6.2": {
       "group": "6",
       "subgroup": "2",
       "name": "Черга 6.2",
-      "intervals": []
+      "intervals": [
+        {
+          "start": "2026-10-06T20:00:00+03:00",
+          "end": "2026-10-06T22:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        }
+      ]
     }
   },
   "raw": {
@@ -252,8 +275,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV2.1": {
             "1": "yes",
@@ -482,8 +505,8 @@
             "16": "yes",
             "17": "yes",
             "18": "yes",
-            "19": "yes",
-            "20": "yes",
+            "19": "no",
+            "20": "no",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -510,14 +533,14 @@
             "18": "yes",
             "19": "yes",
             "20": "yes",
-            "21": "yes",
-            "22": "yes",
+            "21": "no",
+            "22": "no",
             "23": "yes",
             "24": "yes"
           }
         }
       },
-      "update": "06.10.2026 13:00",
+      "update": "06.10.2026 18:00",
       "today": 1791234000
     }
   }
