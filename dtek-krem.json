@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-07T09:03:23+03:00",
+  "updatedAt": "2026-10-07T10:59:46+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:7d2089f38a224419c3572dc004700e348048cb91473d3db7e4161834cfaad52c",
-    "sourceUpdatedAt": "07.10.2026 08:57"
+    "contentHash": "sha256:ef61c27e4fa0a1855ca23b415610ef2829006aef17fb03963e93abe0d20aad30",
+    "sourceUpdatedAt": "07.10.2026 10:56"
   },
   "groups": [
     "1.1",
@@ -147,6 +147,13 @@
           "origin": "fact"
         },
         {
+          "start": "2026-10-08T21:00:00+03:00",
+          "end": "2026-10-09T00:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
           "start": "2026-10-09T00:00:00+03:00",
           "end": "2026-10-09T04:00:00+03:00",
           "kind": "possible",
@@ -247,13 +254,6 @@
         {
           "start": "2026-10-08T10:30:00+03:00",
           "end": "2026-10-08T14:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-08T21:00:00+03:00",
-          "end": "2026-10-09T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3721,7 +3721,7 @@
           }
         }
       },
-      "updateFact": "07.10.2026 08:57"
+      "updateFact": "07.10.2026 10:56"
     },
     "fact": {
       "data": {
@@ -4088,9 +4088,9 @@
             "19": "yes",
             "20": "yes",
             "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "22": "no",
+            "23": "no",
+            "24": "no"
           },
           "GPV2.1": {
             "1": "yes",
@@ -4114,9 +4114,9 @@
             "19": "yes",
             "20": "yes",
             "21": "yes",
-            "22": "no",
-            "23": "no",
-            "24": "no"
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
           },
           "GPV2.2": {
             "1": "yes",
@@ -4354,7 +4354,7 @@
           }
         }
       },
-      "update": "07.10.2026 08:57",
+      "update": "07.10.2026 10:56",
       "today": 1791320400
     }
   }
