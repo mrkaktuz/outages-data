@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-09T01:14:41+03:00",
+  "updatedAt": "2026-10-09T01:29:44+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:75cda8226bb676b32134529176bb53ddda2d15a50eb99a71d6f915eed122f869",
-    "sourceUpdatedAt": "09.10.2026 01:09"
+    "contentHash": "sha256:ebc4ad7e0d2867e48694d2b6ba47a8b39c3a662474d33fa345cc2a79428caa07",
+    "sourceUpdatedAt": "09.10.2026 01:22"
   },
   "groups": [
     "1.1",
@@ -547,7 +547,7 @@
       "intervals": [
         {
           "start": "2026-10-09T00:30:00+03:00",
-          "end": "2026-10-09T04:30:00+03:00",
+          "end": "2026-10-09T01:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1232,7 +1232,7 @@
       "name": "Черга 6.1",
       "intervals": [
         {
-          "start": "2026-10-09T04:00:00+03:00",
+          "start": "2026-10-09T06:00:00+03:00",
           "end": "2026-10-09T08:00:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -3840,7 +3840,7 @@
           }
         }
       },
-      "updateFact": "09.10.2026 01:09"
+      "updateFact": "09.10.2026 01:22"
     },
     "fact": {
       "data": {
@@ -3951,10 +3951,10 @@
           },
           "GPV3.1": {
             "1": "second",
-            "2": "no",
-            "3": "no",
-            "4": "no",
-            "5": "first",
+            "2": "first",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
             "6": "yes",
             "7": "yes",
             "8": "yes",
@@ -4110,8 +4110,8 @@
             "2": "yes",
             "3": "yes",
             "4": "yes",
-            "5": "no",
-            "6": "no",
+            "5": "yes",
+            "6": "yes",
             "7": "no",
             "8": "no",
             "9": "yes",
@@ -4159,7 +4159,7 @@
           }
         }
       },
-      "update": "09.10.2026 01:09",
+      "update": "09.10.2026 01:22",
       "today": 1791493200
     }
   }
