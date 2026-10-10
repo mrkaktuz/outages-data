@@ -6,13 +6,13 @@
     "region": "місто Київ",
     "url": "https://www.dtek-kem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-10T22:27:46+03:00",
+  "updatedAt": "2026-10-10T22:43:04+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:bc9d8b4ae7502f72c81e2db8e4832ba78674f2f5128ebe30d26709a6b2d94de2",
-    "sourceUpdatedAt": "10.10.2026 22:16"
+    "contentHash": "sha256:ce23543a07fcd2912ce547d3e606a62433b505d1a8776fc8cc76906184f09049",
+    "sourceUpdatedAt": "10.10.2026 22:29"
   },
   "groups": [
     "1.1",
@@ -1018,13 +1018,6 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
-        },
-        {
-          "start": "2026-10-11T00:00:00+03:00",
-          "end": "2026-10-11T00:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
         }
       ]
     },
@@ -1302,13 +1295,6 @@
         {
           "start": "2026-10-10T21:00:00+03:00",
           "end": "2026-10-10T22:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-11T00:00:00+03:00",
-          "end": "2026-10-11T00:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1599,13 +1585,6 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
-        },
-        {
-          "start": "2026-10-11T00:00:00+03:00",
-          "end": "2026-10-11T00:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
         }
       ]
     },
@@ -1893,13 +1872,6 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
-        },
-        {
-          "start": "2026-10-11T00:00:00+03:00",
-          "end": "2026-10-11T00:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
         }
       ]
     },
@@ -2184,13 +2156,6 @@
         {
           "start": "2026-10-10T21:00:00+03:00",
           "end": "2026-10-10T22:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-11T00:00:00+03:00",
-          "end": "2026-10-11T00:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -14687,7 +14652,7 @@
           }
         }
       },
-      "updateFact": "10.10.2026 22:16"
+      "updateFact": "10.10.2026 22:29"
     },
     "fact": {
       "data": {
@@ -16593,7 +16558,7 @@
             "24": "yes"
           },
           "GPV21.1": {
-            "1": "first",
+            "1": "yes",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -16931,7 +16896,7 @@
             "24": "yes"
           },
           "GPV33.1": {
-            "1": "first",
+            "1": "yes",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -17269,7 +17234,7 @@
             "24": "yes"
           },
           "GPV45.1": {
-            "1": "first",
+            "1": "yes",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -17607,7 +17572,7 @@
             "24": "yes"
           },
           "GPV57.1": {
-            "1": "first",
+            "1": "yes",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -17789,7 +17754,7 @@
             "24": "yes"
           },
           "GPV9.1": {
-            "1": "first",
+            "1": "yes",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -17816,7 +17781,7 @@
           }
         }
       },
-      "update": "10.10.2026 22:16",
+      "update": "10.10.2026 22:29",
       "today": 1791579600
     }
   }
