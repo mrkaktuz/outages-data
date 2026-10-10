@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-10T06:00:20+03:00",
+  "updatedAt": "2026-10-10T06:35:36+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:707b95e0e83bd644dcea6a6ae385c4aab4c7ded9a2fb55c56ea445b80b3bb3bc",
-    "sourceUpdatedAt": "10.10.2026 05:55"
+    "contentHash": "sha256:c1c41a53cff6226f852242fce4412ef9f3bbdb2fdaa02b48bd5bb4d048584d0d",
+    "sourceUpdatedAt": "10.10.2026 06:30"
   },
   "groups": [
     "1.1",
@@ -35,7 +35,14 @@
       "name": "Черга 1.1",
       "intervals": [
         {
-          "start": "2026-10-10T07:30:00+03:00",
+          "start": "2026-10-10T08:00:00+03:00",
+          "end": "2026-10-10T08:30:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-10T09:00:00+03:00",
           "end": "2026-10-10T09:30:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -266,8 +273,8 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-10-10T07:00:00+03:00",
-          "end": "2026-10-10T08:30:00+03:00",
+          "start": "2026-10-10T08:00:00+03:00",
+          "end": "2026-10-10T09:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -385,7 +392,7 @@
       "name": "Черга 2.2",
       "intervals": [
         {
-          "start": "2026-10-10T07:00:00+03:00",
+          "start": "2026-10-10T08:00:00+03:00",
           "end": "2026-10-10T08:30:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -3826,7 +3833,7 @@
           }
         }
       },
-      "updateFact": "10.10.2026 05:55"
+      "updateFact": "10.10.2026 06:30"
     },
     "fact": {
       "data": {
@@ -3839,8 +3846,8 @@
             "5": "yes",
             "6": "yes",
             "7": "yes",
-            "8": "second",
-            "9": "no",
+            "8": "yes",
+            "9": "first",
             "10": "first",
             "11": "yes",
             "12": "yes",
@@ -3891,8 +3898,8 @@
             "5": "yes",
             "6": "yes",
             "7": "yes",
-            "8": "no",
-            "9": "first",
+            "8": "yes",
+            "9": "no",
             "10": "yes",
             "11": "yes",
             "12": "yes",
@@ -3917,7 +3924,7 @@
             "5": "yes",
             "6": "yes",
             "7": "yes",
-            "8": "no",
+            "8": "yes",
             "9": "first",
             "10": "yes",
             "11": "yes",
@@ -4145,7 +4152,7 @@
           }
         }
       },
-      "update": "10.10.2026 05:55",
+      "update": "10.10.2026 06:30",
       "today": 1791579600
     }
   }
