@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-10T10:39:28+03:00",
+  "updatedAt": "2026-10-10T11:41:23+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:e72757c206cfb081cbbd2c1ef890b6f41b310c09d2ca431f36ab8cd15b8c8faa",
-    "sourceUpdatedAt": "10.10.2026 10:37"
+    "contentHash": "sha256:ddb074f029ddca393fabbfc717decd833d40f3cbd5b6084bea35c76897f888fc",
+    "sourceUpdatedAt": "10.10.2026 11:34"
   },
   "groups": [
     "1.1",
@@ -980,7 +980,7 @@
       "name": "Черга 5.1",
       "intervals": [
         {
-          "start": "2026-10-10T11:30:00+03:00",
+          "start": "2026-10-10T15:00:00+03:00",
           "end": "2026-10-10T15:30:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -1099,7 +1099,7 @@
       "name": "Черга 5.2",
       "intervals": [
         {
-          "start": "2026-10-10T12:00:00+03:00",
+          "start": "2026-10-10T15:00:00+03:00",
           "end": "2026-10-10T15:30:00+03:00",
           "kind": "off",
           "type": "planned",
@@ -3805,7 +3805,7 @@
           }
         }
       },
-      "updateFact": "10.10.2026 10:37"
+      "updateFact": "10.10.2026 11:34"
     },
     "fact": {
       "data": {
@@ -4030,10 +4030,10 @@
             "9": "yes",
             "10": "yes",
             "11": "yes",
-            "12": "second",
-            "13": "no",
-            "14": "no",
-            "15": "no",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
             "16": "first",
             "17": "yes",
             "18": "yes",
@@ -4057,9 +4057,9 @@
             "10": "yes",
             "11": "yes",
             "12": "yes",
-            "13": "no",
-            "14": "no",
-            "15": "no",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
             "16": "first",
             "17": "yes",
             "18": "yes",
@@ -4124,7 +4124,7 @@
           }
         }
       },
-      "update": "10.10.2026 10:37",
+      "update": "10.10.2026 11:34",
       "today": 1791579600
     }
   }
