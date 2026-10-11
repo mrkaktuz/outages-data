@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-11T00:00:29+03:00",
+  "updatedAt": "2026-10-11T11:19:52+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:d528567604c0b49e741cfb7f733b66709053e25aa71eeaff64190b57df080ad0",
-    "sourceUpdatedAt": "11.10.2026 00:00"
+    "contentHash": "sha256:e889f9dd2b433c3091095f2489ad5b8415ece41654ba64ef304274137d0965b6",
+    "sourceUpdatedAt": "11.10.2026 11:00"
   },
   "groups": [
     "1.1",
@@ -35,6 +35,13 @@
       "name": "Черга 1.1",
       "intervals": [
         {
+          "start": "2026-10-11T11:00:00+03:00",
+          "end": "2026-10-11T13:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
           "start": "2026-10-11T20:00:00+03:00",
           "end": "2026-10-11T22:00:00+03:00",
           "kind": "off",
@@ -48,6 +55,13 @@
       "subgroup": "2",
       "name": "Черга 1.2",
       "intervals": [
+        {
+          "start": "2026-10-11T11:00:00+03:00",
+          "end": "2026-10-11T13:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
         {
           "start": "2026-10-11T20:00:00+03:00",
           "end": "2026-10-11T22:00:00+03:00",
@@ -223,8 +237,8 @@
             "9": "yes",
             "10": "yes",
             "11": "yes",
-            "12": "yes",
-            "13": "yes",
+            "12": "no",
+            "13": "no",
             "14": "yes",
             "15": "yes",
             "16": "yes",
@@ -249,8 +263,8 @@
             "9": "yes",
             "10": "yes",
             "11": "yes",
-            "12": "yes",
-            "13": "yes",
+            "12": "no",
+            "13": "no",
             "14": "yes",
             "15": "yes",
             "16": "yes",
@@ -525,7 +539,7 @@
           }
         }
       },
-      "update": "11.10.2026 00:00",
+      "update": "11.10.2026 11:00",
       "today": 1791666000
     }
   }
