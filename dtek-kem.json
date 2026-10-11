@@ -6,13 +6,13 @@
     "region": "місто Київ",
     "url": "https://www.dtek-kem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-11T11:30:11+03:00",
+  "updatedAt": "2026-10-11T12:47:02+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:146e420c56c70e437fde4e1d693f84d562159787523ebdebfcaa386c040430fb",
-    "sourceUpdatedAt": "11.10.2026 11:26"
+    "contentHash": "sha256:da41c5388a0e35479ac5b398d33af3b8b0d41511dcc075c020ce0ca3ad31cb60",
+    "sourceUpdatedAt": "11.10.2026 12:37"
   },
   "groups": [
     "1.1",
@@ -345,15 +345,7 @@
       "group": "3",
       "subgroup": "1",
       "name": "Черга 3.1",
-      "intervals": [
-        {
-          "start": "2026-10-11T14:00:00+03:00",
-          "end": "2026-10-11T16:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "3.2": {
       "group": "3",
@@ -978,7 +970,7 @@
       "intervals": [
         {
           "start": "2026-10-11T11:30:00+03:00",
-          "end": "2026-10-11T14:30:00+03:00",
+          "end": "2026-10-11T13:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1030,15 +1022,7 @@
       "group": "15",
       "subgroup": "1",
       "name": "Черга 15.1",
-      "intervals": [
-        {
-          "start": "2026-10-11T14:00:00+03:00",
-          "end": "2026-10-11T16:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "16.1": {
       "group": "16",
@@ -1159,7 +1143,7 @@
       "intervals": [
         {
           "start": "2026-10-11T11:30:00+03:00",
-          "end": "2026-10-11T14:30:00+03:00",
+          "end": "2026-10-11T13:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -14105,7 +14089,7 @@
           }
         }
       },
-      "updateFact": "11.10.2026 11:26"
+      "updateFact": "11.10.2026 12:37"
     },
     "fact": {
       "data": {
@@ -14176,8 +14160,8 @@
             "11": "yes",
             "12": "second",
             "13": "no",
-            "14": "no",
-            "15": "first",
+            "14": "yes",
+            "15": "yes",
             "16": "yes",
             "17": "yes",
             "18": "yes",
@@ -14281,9 +14265,9 @@
             "12": "yes",
             "13": "yes",
             "14": "yes",
-            "15": "no",
-            "16": "no",
-            "17": "first",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
             "18": "yes",
             "19": "yes",
             "20": "yes",
@@ -14514,8 +14498,8 @@
             "11": "yes",
             "12": "second",
             "13": "no",
-            "14": "no",
-            "15": "first",
+            "14": "yes",
+            "15": "yes",
             "16": "yes",
             "17": "yes",
             "18": "yes",
@@ -14697,9 +14681,9 @@
             "12": "yes",
             "13": "yes",
             "14": "yes",
-            "15": "no",
-            "16": "no",
-            "17": "first",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
             "18": "yes",
             "19": "yes",
             "20": "yes",
@@ -15672,7 +15656,7 @@
           }
         }
       },
-      "update": "11.10.2026 11:26",
+      "update": "11.10.2026 12:37",
       "today": 1791666000
     }
   }
