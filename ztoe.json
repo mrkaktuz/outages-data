@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-16T16:19:40+03:00",
+  "updatedAt": "2026-10-16T21:41:19+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:aa602eba35d0edc0206d0a50b11326307af9014af5e0037ee5b02d1c1528424b",
-    "sourceUpdatedAt": "16.10.2026 16:00"
+    "contentHash": "sha256:4c5e01ca7d87bb7cd670097707fc8560cf54acd28e8407ddb067dc6c2aac03c4",
+    "sourceUpdatedAt": "16.10.2026 21:30"
   },
   "groups": [
     "1.1",
@@ -54,6 +54,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-16T22:00:00+03:00",
+          "end": "2026-10-17T00:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -72,6 +79,13 @@
         {
           "start": "2026-10-16T16:30:00+03:00",
           "end": "2026-10-16T20:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-16T22:00:00+03:00",
+          "end": "2026-10-17T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -100,6 +114,13 @@
         {
           "start": "2026-10-16T18:30:00+03:00",
           "end": "2026-10-16T20:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-16T22:00:00+03:00",
+          "end": "2026-10-17T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -257,6 +278,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-16T22:00:00+03:00",
+          "end": "2026-10-17T00:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -382,8 +410,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV1.2": {
             "1": "yes",
@@ -408,8 +436,8 @@
             "20": "no",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV2.1": {
             "1": "yes",
@@ -434,8 +462,8 @@
             "20": "no",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV2.2": {
             "1": "yes",
@@ -590,8 +618,8 @@
             "20": "no",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV5.2": {
             "1": "yes",
@@ -673,7 +701,7 @@
           }
         }
       },
-      "update": "16.10.2026 16:00",
+      "update": "16.10.2026 21:30",
       "today": 1792098000
     }
   }
