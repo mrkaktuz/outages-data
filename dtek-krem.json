@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-17T11:57:52+03:00",
+  "updatedAt": "2026-10-17T14:19:17+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:40f606b4537a717dda3bd89ac452924876d484b2ce1e7191cb31a609ddc9f4cc",
-    "sourceUpdatedAt": "17.10.2026 11:55"
+    "contentHash": "sha256:b72e6a730a0b73771d50ce0e280823442dd70076fb00ddefb826b60fc1b97c45",
+    "sourceUpdatedAt": "17.10.2026 14:15"
   },
   "groups": [
     "1.1",
@@ -394,6 +394,13 @@
         {
           "start": "2026-10-17T00:00:00+03:00",
           "end": "2026-10-17T01:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-17T15:00:00+03:00",
+          "end": "2026-10-17T17:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1045,6 +1052,13 @@
         {
           "start": "2026-10-17T11:30:00+03:00",
           "end": "2026-10-17T12:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-17T14:30:00+03:00",
+          "end": "2026-10-17T15:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3903,7 +3917,7 @@
           }
         }
       },
-      "updateFact": "17.10.2026 11:55"
+      "updateFact": "17.10.2026 14:15"
     },
     "fact": {
       "data": {
@@ -4002,8 +4016,8 @@
             "13": "yes",
             "14": "yes",
             "15": "yes",
-            "16": "yes",
-            "17": "yes",
+            "16": "no",
+            "17": "no",
             "18": "yes",
             "19": "yes",
             "20": "yes",
@@ -4131,8 +4145,8 @@
             "12": "second",
             "13": "yes",
             "14": "yes",
-            "15": "yes",
-            "16": "yes",
+            "15": "second",
+            "16": "first",
             "17": "yes",
             "18": "yes",
             "19": "yes",
@@ -4222,7 +4236,7 @@
           }
         }
       },
-      "update": "17.10.2026 11:55",
+      "update": "17.10.2026 14:15",
       "today": 1792184400
     }
   }
