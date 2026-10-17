@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-17T19:03:39+03:00",
+  "updatedAt": "2026-10-17T19:48:49+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:dc70c75330f3a2f85c0bde5b2e1448bfc8d945cead0d4e9d12af22d4aebbf9ba",
-    "sourceUpdatedAt": "17.10.2026 18:55"
+    "contentHash": "sha256:b8d83980f19b5d6ec54940e72d498adf095cd410e778f5fd86b7a4bc63200afc",
+    "sourceUpdatedAt": "17.10.2026 19:46"
   },
   "groups": [
     "1.1",
@@ -527,13 +527,6 @@
         {
           "start": "2026-10-17T18:30:00+03:00",
           "end": "2026-10-17T19:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-17T22:00:00+03:00",
-          "end": "2026-10-17T22:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1071,13 +1064,6 @@
           "origin": "fact"
         },
         {
-          "start": "2026-10-17T22:00:00+03:00",
-          "end": "2026-10-18T00:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-10-18T00:00:00+03:00",
           "end": "2026-10-18T05:00:00+03:00",
           "kind": "possible",
@@ -1192,6 +1178,13 @@
         {
           "start": "2026-10-17T11:30:00+03:00",
           "end": "2026-10-17T15:30:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-17T22:00:00+03:00",
+          "end": "2026-10-18T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3931,7 +3924,7 @@
           }
         }
       },
-      "updateFact": "17.10.2026 18:55"
+      "updateFact": "17.10.2026 19:46"
     },
     "fact": {
       "data": {
@@ -4063,7 +4056,7 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "first",
+            "23": "yes",
             "24": "yes"
           },
           "GPV3.2": {
@@ -4167,8 +4160,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "no",
-            "24": "no"
+            "23": "yes",
+            "24": "yes"
           },
           "GPV5.2": {
             "1": "yes",
@@ -4193,8 +4186,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV6.1": {
             "1": "yes",
@@ -4250,7 +4243,7 @@
           }
         }
       },
-      "update": "17.10.2026 18:55",
+      "update": "17.10.2026 19:46",
       "today": 1792184400
     }
   }
