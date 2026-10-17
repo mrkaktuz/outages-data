@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:11db0112e53cb2517cee4758ed5a417e5108ce0793fd94581840571fc6761e0b",
+    "contentHash": "sha256:fa817c97773908cbe057c8be003484939de13488ae147022d2b22790febf0ad1",
     "sourceUpdatedAt": "17.10.2026 18:30"
   },
   "groups": [
@@ -82,13 +82,6 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
-        },
-        {
-          "start": "2026-10-17T19:30:00+03:00",
-          "end": "2026-10-17T22:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
         }
       ]
     },
@@ -113,7 +106,7 @@
         },
         {
           "start": "2026-10-17T16:30:00+03:00",
-          "end": "2026-10-17T19:30:00+03:00",
+          "end": "2026-10-17T19:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -447,9 +440,9 @@
             "17": "first",
             "18": "yes",
             "19": "yes",
-            "20": "second",
-            "21": "no",
-            "22": "no",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
             "23": "yes",
             "24": "yes"
           },
@@ -473,7 +466,7 @@
             "17": "second",
             "18": "no",
             "19": "no",
-            "20": "first",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "no",

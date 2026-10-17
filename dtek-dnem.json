@@ -6,13 +6,13 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-17T18:13:19+03:00",
+  "updatedAt": "2026-10-17T18:58:36+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:8c7f3f90f4743cd6430abce85b1cf2251796ac93b4586ee1f15b4094fee3f88a",
-    "sourceUpdatedAt": "17.10.2026 18:09"
+    "contentHash": "sha256:bc1ab3cf251a6cf9432c60fb8797e7d7b717c29a03409f3d1aaf9101c64f1ffc",
+    "sourceUpdatedAt": "17.10.2026 18:52"
   },
   "groups": [
     "1.1",
@@ -608,7 +608,7 @@
       "intervals": [
         {
           "start": "2026-10-17T17:00:00+03:00",
-          "end": "2026-10-17T21:00:00+03:00",
+          "end": "2026-10-17T19:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -945,13 +945,6 @@
         {
           "start": "2026-10-17T10:00:00+03:00",
           "end": "2026-10-17T13:30:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-17T20:30:00+03:00",
-          "end": "2026-10-17T22:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -7500,7 +7493,7 @@
           }
         }
       },
-      "updateFact": "17.10.2026 18:09"
+      "updateFact": "17.10.2026 18:52"
     },
     "fact": {
       "data": {
@@ -7655,8 +7648,8 @@
             "17": "yes",
             "18": "no",
             "19": "no",
-            "20": "no",
-            "21": "no",
+            "20": "yes",
+            "21": "yes",
             "22": "yes",
             "23": "yes",
             "24": "yes"
@@ -7734,8 +7727,8 @@
             "18": "yes",
             "19": "yes",
             "20": "yes",
-            "21": "second",
-            "22": "no",
+            "21": "yes",
+            "22": "yes",
             "23": "yes",
             "24": "yes"
           },
@@ -7819,7 +7812,7 @@
           }
         }
       },
-      "update": "17.10.2026 18:09",
+      "update": "17.10.2026 18:52",
       "today": 1792184400
     }
   }
