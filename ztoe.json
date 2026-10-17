@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-17T14:40:05+03:00",
+  "updatedAt": "2026-10-17T16:31:51+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:a26fb996978b2f4ac655fb448876bed5ac22fd0446155792f93840fc3ffa7cdd",
-    "sourceUpdatedAt": "17.10.2026 14:30"
+    "contentHash": "sha256:8fc30ade9cee61421e26ecad8699d60fb17bf79c361a26940204fce4f79df967",
+    "sourceUpdatedAt": "17.10.2026 16:30"
   },
   "groups": [
     "1.1",
@@ -106,7 +106,7 @@
         },
         {
           "start": "2026-10-17T16:30:00+03:00",
-          "end": "2026-10-17T17:30:00+03:00",
+          "end": "2026-10-17T19:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -229,6 +229,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-17T19:30:00+03:00",
+          "end": "2026-10-17T22:00:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -282,6 +289,13 @@
         {
           "start": "2026-10-17T10:30:00+03:00",
           "end": "2026-10-17T13:30:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-17T17:00:00+03:00",
+          "end": "2026-10-17T19:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -457,9 +471,9 @@
             "15": "yes",
             "16": "yes",
             "17": "second",
-            "18": "first",
-            "19": "yes",
-            "20": "yes",
+            "18": "no",
+            "19": "no",
+            "20": "first",
             "21": "yes",
             "22": "yes",
             "23": "no",
@@ -563,9 +577,9 @@
             "17": "first",
             "18": "yes",
             "19": "yes",
-            "20": "yes",
-            "21": "yes",
-            "22": "yes",
+            "20": "second",
+            "21": "no",
+            "22": "no",
             "23": "yes",
             "24": "yes"
           },
@@ -613,9 +627,9 @@
             "15": "yes",
             "16": "yes",
             "17": "yes",
-            "18": "yes",
-            "19": "yes",
-            "20": "yes",
+            "18": "no",
+            "19": "no",
+            "20": "first",
             "21": "yes",
             "22": "yes",
             "23": "no",
@@ -701,7 +715,7 @@
           }
         }
       },
-      "update": "17.10.2026 14:30",
+      "update": "17.10.2026 16:30",
       "today": 1792184400
     }
   }
