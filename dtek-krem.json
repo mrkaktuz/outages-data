@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-18T21:37:52+03:00",
+  "updatedAt": "2026-10-18T22:03:14+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:2cf4bd92d96eeaf43a11758510f94b33ffaa21285419c510229da8aaf5a4a31a",
-    "sourceUpdatedAt": "18.10.2026 21:27"
+    "contentHash": "sha256:7d8ded4308abef850b6dad5125f676cf3c13a8474a0299583bc6527ad0be4c31",
+    "sourceUpdatedAt": "18.10.2026 21:57"
   },
   "groups": [
     "1.1",
@@ -380,13 +380,6 @@
         {
           "start": "2026-10-18T12:00:00+03:00",
           "end": "2026-10-18T16:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-18T22:30:00+03:00",
-          "end": "2026-10-19T00:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1310,7 +1303,7 @@
         },
         {
           "start": "2026-10-18T19:00:00+03:00",
-          "end": "2026-10-18T23:00:00+03:00",
+          "end": "2026-10-18T22:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3791,7 +3784,7 @@
           }
         }
       },
-      "updateFact": "18.10.2026 21:27"
+      "updateFact": "18.10.2026 21:57"
     },
     "fact": {
       "data": {
@@ -3897,8 +3890,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "second",
-            "24": "no"
+            "23": "yes",
+            "24": "yes"
           },
           "GPV3.1": {
             "1": "yes",
@@ -4105,7 +4098,7 @@
             "20": "no",
             "21": "no",
             "22": "no",
-            "23": "no",
+            "23": "yes",
             "24": "yes"
           }
         },
@@ -4424,7 +4417,7 @@
           }
         }
       },
-      "update": "18.10.2026 21:27",
+      "update": "18.10.2026 21:57",
       "today": 1792270800
     }
   }
