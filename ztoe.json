@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:5dcadd02720f46bd9d0d0513d675916c97ffa934ebf46ba78a618eade6cf74b6",
+    "contentHash": "sha256:defb6916a7ceffa2d3a8ca9786cdf7f6fa8280fc1d87679db8237ce73fb6eccd",
     "sourceUpdatedAt": "18.10.2026 20:00"
   },
   "groups": [
@@ -211,7 +211,7 @@
         },
         {
           "start": "2026-10-18T20:00:00+03:00",
-          "end": "2026-10-18T21:00:00+03:00",
+          "end": "2026-10-18T22:00:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -537,7 +537,7 @@
             "19": "yes",
             "20": "yes",
             "21": "no",
-            "22": "yes",
+            "22": "no",
             "23": "yes",
             "24": "yes"
           },
