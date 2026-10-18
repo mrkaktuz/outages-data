@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-18T19:35:48+03:00",
+  "updatedAt": "2026-10-18T20:26:38+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:f13aedd825c4729f253ee80a5083ba0b8830bfeadb0ceaa2a4a046cf781b0910",
-    "sourceUpdatedAt": "18.10.2026 19:27"
+    "contentHash": "sha256:2c04f25c9225dab87b32fc1b02965a61cb7aac23bf021626f0b1b5902c463958",
+    "sourceUpdatedAt": "18.10.2026 20:20"
   },
   "groups": [
     "1.1",
@@ -749,6 +749,13 @@
           "origin": "fact"
         },
         {
+          "start": "2026-10-18T22:00:00+03:00",
+          "end": "2026-10-18T22:30:00+03:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
           "start": "2026-10-19T02:00:00+03:00",
           "end": "2026-10-19T09:00:00+03:00",
           "kind": "possible",
@@ -855,7 +862,7 @@
       "intervals": [
         {
           "start": "2026-10-18T15:30:00+03:00",
-          "end": "2026-10-18T22:30:00+03:00",
+          "end": "2026-10-18T20:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3847,7 +3854,7 @@
           }
         }
       },
-      "updateFact": "18.10.2026 19:27"
+      "updateFact": "18.10.2026 20:20"
     },
     "fact": {
       "data": {
@@ -4031,7 +4038,7 @@
             "20": "first",
             "21": "yes",
             "22": "yes",
-            "23": "yes",
+            "23": "first",
             "24": "yes"
           },
           "GPV4.2": {
@@ -4055,9 +4062,9 @@
             "18": "no",
             "19": "no",
             "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "first",
+            "21": "first",
+            "22": "yes",
+            "23": "yes",
             "24": "yes"
           },
           "GPV5.1": {
@@ -4166,7 +4173,7 @@
           }
         }
       },
-      "update": "18.10.2026 19:27",
+      "update": "18.10.2026 20:20",
       "today": 1792270800
     }
   }
