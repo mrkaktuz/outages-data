@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-23T17:58:00+03:00",
+  "updatedAt": "2026-10-23T18:16:34+03:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:15e3d1041e2f7af68e114837a3bc5ee367caec745760f7bc666a1551d1ca1926",
-    "sourceUpdatedAt": "23.10.2026 17:38"
+    "contentHash": "sha256:4ce6882943e34d8a58fe7a0f1a9e954ea0adf6c1dcf93ae8f37734421d61ccd8",
+    "sourceUpdatedAt": "23.10.2026 18:07"
   },
   "groups": [
     "1.1",
@@ -917,13 +917,6 @@
           "origin": "fact"
         },
         {
-          "start": "2026-10-23T21:30:00+03:00",
-          "end": "2026-10-24T00:00:00+03:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-10-24T00:00:00+03:00",
           "end": "2026-10-24T04:30:00+03:00",
           "kind": "possible",
@@ -1268,7 +1261,7 @@
       "intervals": [
         {
           "start": "2026-10-23T14:30:00+03:00",
-          "end": "2026-10-23T21:30:00+03:00",
+          "end": "2026-10-23T18:30:00+03:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3861,7 +3854,7 @@
           }
         }
       },
-      "updateFact": "23.10.2026 17:38"
+      "updateFact": "23.10.2026 18:07"
     },
     "fact": {
       "data": {
@@ -4070,9 +4063,9 @@
             "19": "yes",
             "20": "yes",
             "21": "yes",
-            "22": "second",
-            "23": "no",
-            "24": "no"
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
           },
           "GPV5.1": {
             "1": "yes",
@@ -4145,10 +4138,10 @@
             "16": "no",
             "17": "no",
             "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "no",
-            "22": "first",
+            "19": "first",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
             "23": "yes",
             "24": "yes"
           },
@@ -4180,7 +4173,7 @@
           }
         }
       },
-      "update": "23.10.2026 17:38",
+      "update": "23.10.2026 18:07",
       "today": 1792702800
     }
   }
