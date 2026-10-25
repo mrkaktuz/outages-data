@@ -6,13 +6,13 @@
     "region": "Миколаївська область",
     "url": "https://off.energy.mk.ua/"
   },
-  "updatedAt": "2026-10-25T23:27:40+02:00",
+  "updatedAt": "2026-10-25T23:42:29+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:bbe58d2a4da33343145de0c36c437e975144741fb6ceee10afd35a14cdcc9da2",
-    "sourceUpdatedAt": "25.10.2026 23:22"
+    "contentHash": "sha256:8b906764889f758a9155c8def1faf52fc506c1e5e898f86a21e2d1e47aab0066",
+    "sourceUpdatedAt": "25.10.2026 23:37"
   },
   "groups": [
     "1.1",
@@ -185,6 +185,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-27T00:00:00+02:00",
+          "end": "2026-10-27T00:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
         }
       ]
     },
@@ -205,6 +212,13 @@
           "end": "2026-10-27T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-27T00:00:00+02:00",
+          "end": "2026-10-27T00:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
           "origin": "fact"
         }
       ]
@@ -1362,6 +1376,31 @@
               "outage_queue_id": 22,
               "created_at": "2026-10-25T21:22:48.000000Z",
               "updated_at": "2026-10-25T21:22:48.000000Z",
+              "type": "PROBABLY_OFF"
+            }
+          ]
+        },
+        {
+          "id": 179,
+          "from": "2026-10-26T22:00:00.000000Z",
+          "to": "2026-10-27T21:59:00.000000Z",
+          "series": [
+            {
+              "id": 287775,
+              "outage_schedule_id": 179,
+              "time_series_id": 1,
+              "outage_queue_id": 21,
+              "created_at": "2026-10-25T21:37:38.000000Z",
+              "updated_at": "2026-10-25T21:37:38.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 287776,
+              "outage_schedule_id": 179,
+              "time_series_id": 1,
+              "outage_queue_id": 22,
+              "created_at": "2026-10-25T21:37:38.000000Z",
+              "updated_at": "2026-10-25T21:37:38.000000Z",
               "type": "PROBABLY_OFF"
             }
           ]
