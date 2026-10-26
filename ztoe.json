@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-26T18:06:33+02:00",
+  "updatedAt": "2026-10-26T20:50:33+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:095b4b75a05d995d83e5069569f6286dfeadc0e95a0c55fb3364a4e34547afcc",
-    "sourceUpdatedAt": "26.10.2026 18:00"
+    "contentHash": "sha256:d54c4c531e1c799ba7462378975169b414456c0e57ce1122ad25fdc58ecee437",
+    "sourceUpdatedAt": "26.10.2026 20:30"
   },
   "groups": [
     "1.1",
@@ -93,6 +93,13 @@
         {
           "start": "2026-10-26T12:00:00+02:00",
           "end": "2026-10-26T16:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-26T21:00:00+02:00",
+          "end": "2026-10-27T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -271,6 +278,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-26T21:00:00+02:00",
+          "end": "2026-10-27T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -289,6 +303,13 @@
         {
           "start": "2026-10-26T17:00:00+02:00",
           "end": "2026-10-26T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-26T21:00:00+02:00",
+          "end": "2026-10-27T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -391,9 +412,9 @@
             "19": "yes",
             "20": "yes",
             "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "22": "no",
+            "23": "no",
+            "24": "no"
           },
           "GPV2.2": {
             "1": "yes",
@@ -599,9 +620,9 @@
             "19": "yes",
             "20": "yes",
             "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "22": "no",
+            "23": "no",
+            "24": "no"
           },
           "GPV6.2": {
             "1": "yes",
@@ -625,13 +646,13 @@
             "19": "no",
             "20": "yes",
             "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
+            "22": "no",
+            "23": "no",
+            "24": "no"
           }
         }
       },
-      "update": "26.10.2026 18:00",
+      "update": "26.10.2026 20:30",
       "today": 1792965600
     }
   }
