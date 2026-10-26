@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-25T22:42:13+02:00",
+  "updatedAt": "2026-10-26T07:39:26+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:ed7ecba7f5d48c118941d45eb889cb7ac37e192e11ca8a3b9d67ecb7c38f55f5",
-    "sourceUpdatedAt": "25.10.2026 22:34"
+    "contentHash": "sha256:f252485cd87b56f85e70465e0b33e350ae1dc7a139b6b1b738c9bcdfa27cfc62",
+    "sourceUpdatedAt": "26.10.2026 07:35"
   },
   "groups": [
     "1.1",
@@ -414,13 +414,6 @@
       "intervals": [
         {
           "start": "2026-10-26T09:00:00+02:00",
-          "end": "2026-10-26T09:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-26T10:00:00+02:00",
           "end": "2026-10-26T13:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -1352,7 +1345,7 @@
       "intervals": [
         {
           "start": "2026-10-26T08:00:00+02:00",
-          "end": "2026-10-26T10:00:00+02:00",
+          "end": "2026-10-26T09:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3840,7 +3833,7 @@
           }
         }
       },
-      "updateFact": "25.10.2026 22:34"
+      "updateFact": "26.10.2026 07:35"
     },
     "fact": {
       "data": {
@@ -3933,7 +3926,7 @@
             "7": "yes",
             "8": "yes",
             "9": "yes",
-            "10": "first",
+            "10": "no",
             "11": "no",
             "12": "no",
             "13": "no",
@@ -4141,7 +4134,7 @@
             "7": "yes",
             "8": "yes",
             "9": "no",
-            "10": "no",
+            "10": "first",
             "11": "yes",
             "12": "yes",
             "13": "yes",
@@ -4159,7 +4152,7 @@
           }
         }
       },
-      "update": "25.10.2026 22:34",
+      "update": "26.10.2026 07:35",
       "today": 1792965600
     }
   }
