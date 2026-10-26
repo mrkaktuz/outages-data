@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:8a64c7d46be42d6bb451ce9e9774909ed6443f102dbf9fc079df7df7421dc8fb",
+    "contentHash": "sha256:6474264ba0cc2f043e84f5b3df53cecc554636028a2d40d350254423e894b272",
     "sourceUpdatedAt": "26.10.2026 09:00"
   },
   "groups": [
@@ -107,6 +107,13 @@
         {
           "start": "2026-10-26T12:00:00+02:00",
           "end": "2026-10-26T15:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-26T19:00:00+02:00",
+          "end": "2026-10-26T21:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -278,6 +285,13 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-10-26T17:00:00+02:00",
+          "end": "2026-10-26T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     }
@@ -401,8 +415,8 @@
             "17": "yes",
             "18": "yes",
             "19": "yes",
-            "20": "yes",
-            "21": "yes",
+            "20": "no",
+            "21": "no",
             "22": "yes",
             "23": "yes",
             "24": "yes"
@@ -607,8 +621,8 @@
             "15": "no",
             "16": "yes",
             "17": "yes",
-            "18": "yes",
-            "19": "yes",
+            "18": "no",
+            "19": "no",
             "20": "yes",
             "21": "yes",
             "22": "yes",
