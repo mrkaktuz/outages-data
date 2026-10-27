@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-27T08:36:37+02:00",
+  "updatedAt": "2026-10-27T10:02:06+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:a7767339f2a1f7337d43e9554399a93cd4f72ac20fcd673700db42645c27bb52",
-    "sourceUpdatedAt": "27.10.2026 08:30"
+    "contentHash": "sha256:e7cc0e71989524146b878c5982f9c7d86c88a5e5349a84eedc47bf67387a55fb",
+    "sourceUpdatedAt": "27.10.2026 10:00"
   },
   "groups": [
     "1.1",
@@ -84,13 +84,6 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-10-27T10:00:00+02:00",
-          "end": "2026-10-27T12:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-10-27T18:00:00+02:00",
           "end": "2026-10-27T21:00:00+02:00",
           "kind": "off",
@@ -107,13 +100,6 @@
         {
           "start": "2026-10-27T06:00:00+02:00",
           "end": "2026-10-27T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-27T12:30:00+02:00",
-          "end": "2026-10-27T15:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -408,9 +394,9 @@
             "8": "yes",
             "9": "yes",
             "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "first",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
             "14": "yes",
             "15": "yes",
             "16": "yes",
@@ -436,9 +422,9 @@
             "10": "yes",
             "11": "yes",
             "12": "yes",
-            "13": "second",
-            "14": "no",
-            "15": "no",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
             "16": "yes",
             "17": "yes",
             "18": "yes",
@@ -659,7 +645,7 @@
           }
         }
       },
-      "update": "27.10.2026 08:30",
+      "update": "27.10.2026 10:00",
       "today": 1793052000
     }
   }
