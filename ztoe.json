@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:2452bfff2e3476759312fe002e9b7d35fa7f70e734ecb6cc4f7a72ed06c1ed86",
+    "contentHash": "sha256:7296835cc327ca1c999faecd1209259a673c7b56ed8ee607f2d90b10d5ab5689",
     "sourceUpdatedAt": "28.10.2026 20:00"
   },
   "groups": [
@@ -351,7 +351,7 @@
         },
         {
           "start": "2026-10-28T19:00:00+02:00",
-          "end": "2026-10-28T21:00:00+02:00",
+          "end": "2026-10-28T22:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -393,7 +393,7 @@
         },
         {
           "start": "2026-10-28T19:00:00+02:00",
-          "end": "2026-10-28T21:00:00+02:00",
+          "end": "2026-10-28T22:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -736,7 +736,7 @@
             "19": "yes",
             "20": "no",
             "21": "no",
-            "22": "yes",
+            "22": "no",
             "23": "yes",
             "24": "yes"
           },
@@ -762,7 +762,7 @@
             "19": "yes",
             "20": "no",
             "21": "no",
-            "22": "yes",
+            "22": "no",
             "23": "yes",
             "24": "yes"
           },
