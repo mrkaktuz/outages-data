@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-10-28T20:05:32+02:00",
+  "updatedAt": "2026-10-28T23:39:17+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:7296835cc327ca1c999faecd1209259a673c7b56ed8ee607f2d90b10d5ab5689",
-    "sourceUpdatedAt": "28.10.2026 20:00"
+    "contentHash": "sha256:5b7e3a04b8048eee839c0bbbd3f31e44e126f219f6666b301d6fecd11a2144ef",
+    "sourceUpdatedAt": "28.10.2026 23:30"
   },
   "groups": [
     "1.1",
@@ -217,6 +217,13 @@
           "origin": "fact"
         },
         {
+          "start": "2026-10-29T00:00:00+02:00",
+          "end": "2026-10-29T01:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
           "start": "2026-10-29T12:00:00+02:00",
           "end": "2026-10-29T15:00:00+02:00",
           "kind": "off",
@@ -247,6 +254,13 @@
         {
           "start": "2026-10-28T16:30:00+02:00",
           "end": "2026-10-28T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-10-29T00:00:00+02:00",
+          "end": "2026-10-29T01:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -925,7 +939,7 @@
             "24": "no"
           },
           "GPV3.1": {
-            "1": "yes",
+            "1": "no",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -951,7 +965,7 @@
             "24": "no"
           },
           "GPV3.2": {
-            "1": "yes",
+            "1": "no",
             "2": "yes",
             "3": "yes",
             "4": "yes",
@@ -1134,7 +1148,7 @@
           }
         }
       },
-      "update": "28.10.2026 20:00",
+      "update": "28.10.2026 23:30",
       "today": 1793138400
     }
   }
