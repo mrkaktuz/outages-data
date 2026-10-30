@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-30T20:54:23+02:00",
+  "updatedAt": "2026-10-30T21:09:20+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:5e03f3af48e8fcabb816f1644d8794a233c05112a76af7ea4646ee5854a02d7b",
-    "sourceUpdatedAt": "30.10.2026 20:48"
+    "contentHash": "sha256:c6a4a3f49900637a1c65f1a1279f98e9d1e0c5d52f24ab4de7d19a57f419c12a",
+    "sourceUpdatedAt": "30.10.2026 21:05"
   },
   "groups": [
     "1.1",
@@ -644,13 +644,6 @@
           "origin": "fact"
         },
         {
-          "start": "2026-10-31T15:00:00+02:00",
-          "end": "2026-10-31T15:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-10-31T18:30:00+02:00",
           "end": "2026-10-31T22:30:00+02:00",
           "kind": "off",
@@ -1010,13 +1003,6 @@
         {
           "start": "2026-10-31T11:30:00+02:00",
           "end": "2026-10-31T15:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-10-31T18:30:00+02:00",
-          "end": "2026-10-31T19:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3833,7 +3819,7 @@
           }
         }
       },
-      "updateFact": "30.10.2026 20:48"
+      "updateFact": "30.10.2026 21:05"
     },
     "fact": {
       "data": {
@@ -4298,7 +4284,7 @@
             "13": "yes",
             "14": "yes",
             "15": "yes",
-            "16": "first",
+            "16": "yes",
             "17": "yes",
             "18": "yes",
             "19": "second",
@@ -4379,7 +4365,7 @@
             "16": "first",
             "17": "yes",
             "18": "yes",
-            "19": "second",
+            "19": "yes",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -4466,7 +4452,7 @@
           }
         }
       },
-      "update": "30.10.2026 20:48",
+      "update": "30.10.2026 21:05",
       "today": 1793311200
     }
   }
