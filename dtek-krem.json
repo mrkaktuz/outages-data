@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-10-30T21:09:20+02:00",
+  "updatedAt": "2026-10-31T18:48:36+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:b265d7c6c3034412a6c55ba1284ec5b670a7494770f89d95ab95c491bfe7c613",
-    "sourceUpdatedAt": "30.10.2026 21:05"
+    "contentHash": "sha256:b9bc47b9026fd1de68a2db36afe8fe489e58c150682722855fface4664cc1849",
+    "sourceUpdatedAt": "31.10.2026 18:40"
   },
   "groups": [
     "1.1",
@@ -49,21 +49,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T01:30:00+02:00",
-          "end": "2026-11-01T08:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T12:00:00+02:00",
-          "end": "2026-11-01T19:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-11-01T13:00:00+02:00",
+          "end": "2026-11-01T16:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T22:30:00+02:00",
+          "end": "2026-11-02T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T05:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -168,21 +168,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T01:30:00+02:00",
-          "end": "2026-11-01T08:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T12:00:00+02:00",
-          "end": "2026-11-01T19:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T16:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T22:30:00+02:00",
+          "end": "2026-11-02T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T05:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -287,21 +287,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T01:30:00+02:00",
-          "end": "2026-11-01T08:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T12:00:00+02:00",
-          "end": "2026-11-01T19:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T16:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T22:30:00+02:00",
+          "end": "2026-11-02T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T05:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -399,21 +399,14 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T01:30:00+02:00",
-          "end": "2026-11-01T08:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T12:00:00+02:00",
-          "end": "2026-11-01T19:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T19:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
-          "start": "2026-11-01T22:30:00+02:00",
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T05:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -518,25 +511,11 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T01:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T05:00:00+02:00",
-          "end": "2026-11-01T12:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T15:30:00+02:00",
-          "end": "2026-11-01T22:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T21:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-02T02:00:00+02:00",
@@ -644,25 +623,18 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T01:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T05:00:00+02:00",
-          "end": "2026-11-01T12:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-11-01T06:00:00+02:00",
+          "end": "2026-11-01T09:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T15:30:00+02:00",
-          "end": "2026-11-01T22:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T19:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-02T02:00:00+02:00",
@@ -777,25 +749,18 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T01:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T05:00:00+02:00",
-          "end": "2026-11-01T12:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-11-01T06:00:00+02:00",
+          "end": "2026-11-01T09:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T15:30:00+02:00",
-          "end": "2026-11-01T22:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T19:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-02T02:00:00+02:00",
@@ -903,25 +868,18 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T01:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T05:00:00+02:00",
-          "end": "2026-11-01T12:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "start": "2026-11-01T06:00:00+02:00",
+          "end": "2026-11-01T09:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T15:30:00+02:00",
-          "end": "2026-11-01T22:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T19:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-02T02:00:00+02:00",
@@ -1029,21 +987,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T05:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T08:30:00+02:00",
-          "end": "2026-11-01T15:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T12:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T19:00:00+02:00",
+          "end": "2026-11-01T23:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T02:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1148,21 +1106,14 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T05:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-01T08:30:00+02:00",
-          "end": "2026-11-01T15:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T19:00:00+02:00",
+          "end": "2026-11-01T23:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T02:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1260,21 +1211,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T05:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T08:30:00+02:00",
-          "end": "2026-11-01T15:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T12:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T19:00:00+02:00",
+          "end": "2026-11-01T21:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T02:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1379,21 +1330,21 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-01T00:00:00+02:00",
-          "end": "2026-11-01T05:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-01T08:30:00+02:00",
-          "end": "2026-11-01T15:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
+          "end": "2026-11-01T12:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         },
         {
           "start": "2026-11-01T19:00:00+02:00",
+          "end": "2026-11-01T23:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-02T00:00:00+02:00",
           "end": "2026-11-02T02:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -3854,7 +3805,7 @@
           }
         }
       },
-      "updateFact": "30.10.2026 21:05"
+      "updateFact": "31.10.2026 18:40"
     },
     "fact": {
       "data": {
@@ -4171,9 +4122,323 @@
             "23": "no",
             "24": "no"
           }
+        },
+        "1793484000": {
+          "GPV1.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "no",
+            "15": "no",
+            "16": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "second",
+            "24": "no"
+          },
+          "GPV1.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "no",
+            "14": "no",
+            "15": "no",
+            "16": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "second",
+            "24": "no"
+          },
+          "GPV2.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "no",
+            "14": "no",
+            "15": "no",
+            "16": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "second",
+            "24": "no"
+          },
+          "GPV2.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "no",
+            "14": "no",
+            "15": "no",
+            "16": "no",
+            "17": "no",
+            "18": "no",
+            "19": "no",
+            "20": "first",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV3.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "second",
+            "17": "no",
+            "18": "no",
+            "19": "no",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV3.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "no",
+            "8": "no",
+            "9": "no",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "second",
+            "17": "no",
+            "18": "no",
+            "19": "no",
+            "20": "first",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV4.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "no",
+            "8": "no",
+            "9": "no",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "second",
+            "17": "no",
+            "18": "no",
+            "19": "no",
+            "20": "first",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV4.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "no",
+            "8": "no",
+            "9": "no",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "second",
+            "17": "no",
+            "18": "no",
+            "19": "no",
+            "20": "first",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV5.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "second",
+            "10": "no",
+            "11": "no",
+            "12": "no",
+            "13": "first",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "no",
+            "21": "no",
+            "22": "no",
+            "23": "no",
+            "24": "yes"
+          },
+          "GPV5.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "yes",
+            "10": "yes",
+            "11": "yes",
+            "12": "yes",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "no",
+            "21": "no",
+            "22": "no",
+            "23": "no",
+            "24": "yes"
+          },
+          "GPV6.1": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "second",
+            "10": "no",
+            "11": "no",
+            "12": "no",
+            "13": "first",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "no",
+            "21": "no",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
+          },
+          "GPV6.2": {
+            "1": "yes",
+            "2": "yes",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
+            "8": "yes",
+            "9": "second",
+            "10": "no",
+            "11": "no",
+            "12": "no",
+            "13": "first",
+            "14": "yes",
+            "15": "yes",
+            "16": "yes",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "no",
+            "21": "no",
+            "22": "no",
+            "23": "no",
+            "24": "yes"
+          }
         }
       },
-      "update": "30.10.2026 21:05",
+      "update": "31.10.2026 18:40",
       "today": 1793397600
     }
   }
