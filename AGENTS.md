@@ -109,18 +109,28 @@ Two things clear it:
    page; else (real page, app JS still loading, e.g. "please wait" under load) →
    just wait. Only when the whole budget is exhausted do we try the inline-HTML
    fallback (`sliceBalanced`/`extractFromHtml`) and then classify `WAF_BLOCKED`.
-   DTEK's own **"heavy load" page** ("Сайт працює, але через велике навантаження
-   треба трохи зачекати і сторінка завантажиться") is full-size, so the size
-   check can't spot it; `looksLikeOverload` matches its text. That page loads
-   the real schedule **by itself** (another DTEK scraper, BR0kEN-/e9y, handles it
-   purely by waiting), so we **never reload** it — reloading would re-queue us.
-   Once seen, the budget is extended to `DTEK_OVERLOAD_WAIT_MS` (default 300000)
-   from that moment. If it still hasn't loaded → `TIMEOUT` with
-   `retryable=false`, so `fetchWithRetry` doesn't repeat a 5-min wait 3×; the
-   next scheduled run tries again. Not observed live from the sandbox (the
-   sandbox browser gets Incapsula 403), so watch the CI log line
-   `DTEK overload page, waiting for it to load` the first time it fires.
-   `fetchWithRetry` still retries the whole thing 3×.
+   DTEK's **"heavy load" page** ("Сайт працює, але через велике навантаження
+   треба трохи зачекати і сторінка завантажиться") is an **Imperva Waiting Room**,
+   captured live 2026-11-03 through a Ukrainian IP. The main document is a ~1 KB
+   shell, so by size it looks like the Incapsula stub; the text is inside an iframe
+   (`/_Incapsula_Resource?CWUDNSAI=43&…&edet=47&…&wrid=378`, title «Кімната
+   очікування»), which `page.content()` does not include. `wr.js` there polls
+   `/_Incapsula_Resource?SWWRGTS=<wrid>` and calls
+   `window.parent.location.reload(true)`, so the page loads the real schedule **by
+   itself**. `onWaitingRoom` recognises the shell (`edet=47`/`wrid=`) or the text in
+   any frame, and we **never reload** it. Once seen, the budget is extended to
+   `DTEK_OVERLOAD_WAIT_MS` (default 300000) from that moment. If it still hasn't
+   loaded → `TIMEOUT` with `retryable=false`, so `fetchWithRetry` doesn't repeat a
+   5-min wait 3×; the next scheduled run tries again. Its own reload can flash a tiny
+   document by, so after the room a stub is reloaded only following
+   `OVERLOAD_RELOAD_GRACE_MS` (30 s) without it; every reload also re-reads the page
+   first, since the state read before the 3 s pause may be stale. This wait was
+   verified by replaying the captured page in real Chromium, not yet against a live
+   queue, so watch the CI log for `DTEK overload page, waiting for it to load`, then
+   `DTEK page loaded {reloads, sawOverload, waitedMs}`.
+   The Incapsula iframe with `edet=15` is different: a country-block page ("адреси
+   країни, яка заблокована"), seen from a German datacenter IP; it stayed put for
+   2 min without a reload. `fetchWithRetry` still retries the whole thing 3×.
 
 ## ztoe source — confirmed facts (Житомиробленерго)
 

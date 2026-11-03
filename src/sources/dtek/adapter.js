@@ -12,6 +12,9 @@ const NAV_TIMEOUT_MS = Number(process.env.DTEK_NAV_TIMEOUT_MS || 45000);
 const DATA_TIMEOUT_MS = Number(process.env.DTEK_DATA_TIMEOUT_MS || 180000);
 /** How long to sit on DTEK's "heavy load" page, counted from when it first shows. */
 const OVERLOAD_WAIT_MS = Number(process.env.DTEK_OVERLOAD_WAIT_MS || 300000);
+/** The waiting room's own reload flashes a tiny document by; leave it this long before reloading. */
+const OVERLOAD_RELOAD_GRACE_MS = 30000;
+const FRAME_READ_TIMEOUT_MS = 2000;
 
 /** Read a `DisconSchedule.<key> = {…}` literal from raw HTML via brace matching. */
 function sliceBalanced(html, marker) {
@@ -79,15 +82,34 @@ async function readUpdatedLabel(page) {
 }
 
 /**
- * DTEK's own "under heavy load" page ("Сайт працює, але через велике
- * навантаження треба трохи зачекати…"). It is full-size, so the size-based stub
- * check misses it. The page loads the real schedule by itself once there is
- * room ("…і сторінка завантажиться"), so we must NOT reload it (that would only
- * re-queue us and add load) — just keep waiting, up to OVERLOAD_WAIT_MS.
+ * DTEK's "under heavy load" page ("Сайт працює, але через велике навантаження
+ * треба трохи зачекати…") is an Imperva Waiting Room. Seen live 2026-11-03: the
+ * main document is a ~1 KB shell, the text sits in an iframe
+ * (`/_Incapsula_Resource?CWUDNSAI=43&…&edet=47&…&wrid=378`) and its `wr.js` polls
+ * the queue, then reloads the parent by itself once we are let in. So we must NOT
+ * reload it (that would only re-queue us and add load) — just keep waiting, up to
+ * OVERLOAD_WAIT_MS.
  */
 const OVERLOAD_RE = /велике\s+навантаження|трохи\s+зачекати/i;
+const WAITING_ROOM_SHELL_RE = /_Incapsula_Resource\?[^"'>]*\b(?:edet=47|wrid=\d)/;
 function looksLikeOverload(html) {
-  return Boolean(html) && OVERLOAD_RE.test(html) && !html.includes('DisconSchedule');
+  if (!html || html.includes('DisconSchedule')) return false;
+  return OVERLOAD_RE.test(html) || WAITING_ROOM_SHELL_RE.test(html);
+}
+
+/** A frame that is mid-navigation must not stall the wait loop. */
+function readFrame(frame) {
+  const timeout = new Promise((resolve) => setTimeout(() => resolve(''), FRAME_READ_TIMEOUT_MS));
+  return Promise.race([frame.content().catch(() => ''), timeout]);
+}
+
+/** True while the page shows the waiting room, in its main document or in an iframe. */
+async function onWaitingRoom(page, mainHtml) {
+  if (looksLikeOverload(mainHtml)) return true;
+  for (const frame of page.frames()) {
+    if (frame !== page.mainFrame() && looksLikeOverload(await readFrame(frame))) return true;
+  }
+  return false;
 }
 
 /** Dismiss the promo/info modal that sometimes covers the page. */
@@ -132,49 +154,68 @@ async function fetchSnapshot(page, url) {
 
   let deadline = Date.now() + DATA_TIMEOUT_MS;
   let sawChallenge = false;
-  let sawOverload = false;
+  let overloadSince = null;
+  let overloadLastSeen = 0;
   let reachedRealPage = false;
   let reloads = 0;
+
+  const loaded = (snapshot) => {
+    if (sawChallenge || overloadSince !== null) {
+      log.info('DTEK page loaded', {
+        url,
+        reloads,
+        sawOverload: overloadSince !== null,
+        waitedMs: overloadSince === null ? 0 : Date.now() - overloadSince,
+      });
+    }
+    return snapshot;
+  };
 
   while (Date.now() < deadline) {
     // 1) Fast path: the app JS populated the live global.
     const raw = await readSnapshot(page).catch(() => null);
-    if (raw) {
-      if (sawChallenge || sawOverload) log.info('DTEK page loaded', { url, reloads, sawOverload });
-      return raw;
-    }
+    if (raw) return loaded(raw);
 
     // 2) The cleared page embeds preset/fact inline — parse straight from HTML
     //    the moment the real page is served, without waiting for its JS.
     const html = await page.content().catch(() => '');
-    const overloaded = looksLikeOverload(html);
+    const overloaded = await onWaitingRoom(page, html);
     const stub = looksLikeStub(html);
     if (!stub && !overloaded) {
       reachedRealPage = true;
       const fallback = extractFromHtml(html);
-      if (fallback) {
-        if (sawChallenge || sawOverload) log.info('DTEK page loaded', { url, reloads, sawOverload });
-        return fallback;
-      }
+      if (fallback) return loaded(fallback);
     }
 
     // 3) Overload page → wait patiently, never reload; give it the full
     //    OVERLOAD_WAIT_MS from the moment it first appeared.
-    if (overloaded && !sawOverload) {
-      sawOverload = true;
-      deadline = Math.max(deadline, Date.now() + OVERLOAD_WAIT_MS);
-      log.info('DTEK overload page, waiting for it to load', { url, waitMs: OVERLOAD_WAIT_MS });
+    if (overloaded) {
+      overloadLastSeen = Date.now();
+      if (overloadSince === null) {
+        overloadSince = overloadLastSeen;
+        deadline = Math.max(deadline, overloadSince + OVERLOAD_WAIT_MS);
+        log.info('DTEK overload page, waiting for it to load', { url, waitMs: OVERLOAD_WAIT_MS });
+      }
+      await page.waitForTimeout(3000);
+      continue;
     }
 
     // 4) Still on the stub → let its script set cookies, then reload so the
     //    follow-up request carries them; on a real-but-not-ready page just wait.
     sawChallenge = sawChallenge || stub;
-    await page.waitForTimeout(overloaded ? 3000 : stub ? 3000 : 1500);
-    if (stub && !overloaded) {
-      reloads += 1;
-      await page.reload({ waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS }).catch(() => {});
-      await dismissModal(page);
-    }
+    await page.waitForTimeout(stub ? 3000 : 1500);
+    if (!stub) continue;
+
+    // The page may have moved on by itself during that pause: never reload a
+    // page that has already loaded, turned out to be the waiting room, or is
+    // mid-navigation.
+    const current = await page.content().catch(() => '');
+    if (!current || !looksLikeStub(current) || (await onWaitingRoom(page, current))) continue;
+    if (overloadSince !== null && Date.now() - overloadLastSeen < OVERLOAD_RELOAD_GRACE_MS) continue;
+
+    reloads += 1;
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS }).catch(() => {});
+    await dismissModal(page);
   }
 
   // Budget exhausted — one last parse, otherwise classify the block.
@@ -184,7 +225,7 @@ async function fetchSnapshot(page, url) {
     log.info('used HTML fallback extraction', { url });
     return fallback;
   }
-  if (sawOverload) {
+  if (overloadSince !== null) {
     // Already waited minutes; an immediate retry would only re-queue us and
     // stall the whole run. The next scheduled run will try again.
     const err = new CollectError(STATUS.TIMEOUT, 'DTEK overload page did not load in time');
