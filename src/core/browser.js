@@ -122,6 +122,7 @@ export async function fetchWithRetry(context, adapter, { attempts = 3, backoffMs
     } finally {
       await page.close().catch(() => {});
     }
+    if (lastError.retryable === false) break;
     if (attempt < attempts) {
       const delay = backoffMs * attempt + Math.floor(Math.random() * 1000);
       await new Promise((resolve) => setTimeout(resolve, delay));

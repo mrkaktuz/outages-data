@@ -110,10 +110,16 @@ Two things clear it:
    just wait. Only when the whole budget is exhausted do we try the inline-HTML
    fallback (`sliceBalanced`/`extractFromHtml`) and then classify `WAF_BLOCKED`.
    DTEK's own **"heavy load" page** ("Сайт працює, але через велике навантаження
-   треба трохи зачекати…") is full-size, so the size check would mistake it for
-   the real page and just wait forever; `looksLikeOverload` matches its text and
-   treats it like the stub (wait ~6 s, reload). Exhausting the budget on it →
-   `TIMEOUT`.
+   треба трохи зачекати і сторінка завантажиться") is full-size, so the size
+   check can't spot it; `looksLikeOverload` matches its text. That page loads
+   the real schedule **by itself** (another DTEK scraper, BR0kEN-/e9y, handles it
+   purely by waiting), so we **never reload** it — reloading would re-queue us.
+   Once seen, the budget is extended to `DTEK_OVERLOAD_WAIT_MS` (default 300000)
+   from that moment. If it still hasn't loaded → `TIMEOUT` with
+   `retryable=false`, so `fetchWithRetry` doesn't repeat a 5-min wait 3×; the
+   next scheduled run tries again. Not observed live from the sandbox (the
+   sandbox browser gets Incapsula 403), so watch the CI log line
+   `DTEK overload page, waiting for it to load` the first time it fires.
    `fetchWithRetry` still retries the whole thing 3×.
 
 ## ztoe source — confirmed facts (Житомиробленерго)
@@ -337,7 +343,7 @@ too fragile.) Reminder: workflow_dispatch must exist on the default branch.
 `LOG_LEVEL` (debug|info|warn|error), `STORAGE_STATE_PATH` (persist cookies between
 runs), `HEADFUL` (`1`/`true` → launch a real on-screen browser; CI sets it and wraps
 the run in `xvfb-run` to clear Incapsula), `DTEK_DATA_TIMEOUT_MS` (default 180000),
-`DTEK_NAV_TIMEOUT_MS` (45000), `CHROMIUM_EXECUTABLE` (override Chromium path — used
+`DTEK_NAV_TIMEOUT_MS` (45000), `DTEK_OVERLOAD_WAIT_MS` (300000), `CHROMIUM_EXECUTABLE` (override Chromium path — used
 for local sandboxes).
 Secrets (CI): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, optional `TELEGRAM_THREAD_ID`.
 External scheduler holds its own PAT (not a repo secret).

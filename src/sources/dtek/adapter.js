@@ -10,6 +10,8 @@ import { normalize } from './normalize.js';
 
 const NAV_TIMEOUT_MS = Number(process.env.DTEK_NAV_TIMEOUT_MS || 45000);
 const DATA_TIMEOUT_MS = Number(process.env.DTEK_DATA_TIMEOUT_MS || 180000);
+/** How long to sit on DTEK's "heavy load" page, counted from when it first shows. */
+const OVERLOAD_WAIT_MS = Number(process.env.DTEK_OVERLOAD_WAIT_MS || 300000);
 
 /** Read a `DisconSchedule.<key> = {…}` literal from raw HTML via brace matching. */
 function sliceBalanced(html, marker) {
@@ -78,9 +80,10 @@ async function readUpdatedLabel(page) {
 
 /**
  * DTEK's own "under heavy load" page ("Сайт працює, але через велике
- * навантаження треба трохи зачекати…"). It is a full-size static page, so the
- * size-based stub check misses it; it never turns into the real page by itself,
- * so it must be reloaded like the Incapsula stub instead of being waited on.
+ * навантаження треба трохи зачекати…"). It is full-size, so the size-based stub
+ * check misses it. The page loads the real schedule by itself once there is
+ * room ("…і сторінка завантажиться"), so we must NOT reload it (that would only
+ * re-queue us and add load) — just keep waiting, up to OVERLOAD_WAIT_MS.
  */
 const OVERLOAD_RE = /велике\s+навантаження|трохи\s+зачекати/i;
 function looksLikeOverload(html) {
@@ -127,7 +130,7 @@ async function fetchSnapshot(page, url) {
   // that marker alone is NOT a reliable "still challenged" signal — only size is.)
   const looksLikeStub = (html) => !html || html.length < 2500;
 
-  const deadline = Date.now() + DATA_TIMEOUT_MS;
+  let deadline = Date.now() + DATA_TIMEOUT_MS;
   let sawChallenge = false;
   let sawOverload = false;
   let reachedRealPage = false;
@@ -137,7 +140,7 @@ async function fetchSnapshot(page, url) {
     // 1) Fast path: the app JS populated the live global.
     const raw = await readSnapshot(page).catch(() => null);
     if (raw) {
-      if (sawChallenge) log.info('Incapsula challenge cleared', { url, reloads });
+      if (sawChallenge || sawOverload) log.info('DTEK page loaded', { url, reloads, sawOverload });
       return raw;
     }
 
@@ -145,24 +148,29 @@ async function fetchSnapshot(page, url) {
     //    the moment the real page is served, without waiting for its JS.
     const html = await page.content().catch(() => '');
     const overloaded = looksLikeOverload(html);
-    const stub = looksLikeStub(html) || overloaded;
-    if (!stub) {
+    const stub = looksLikeStub(html);
+    if (!stub && !overloaded) {
       reachedRealPage = true;
       const fallback = extractFromHtml(html);
       if (fallback) {
-        if (sawChallenge) log.info('Incapsula challenge cleared', { url, reloads });
+        if (sawChallenge || sawOverload) log.info('DTEK page loaded', { url, reloads, sawOverload });
         return fallback;
       }
     }
 
-    // 3) Still on the stub → let its script set cookies, then reload so the
+    // 3) Overload page → wait patiently, never reload; give it the full
+    //    OVERLOAD_WAIT_MS from the moment it first appeared.
+    if (overloaded && !sawOverload) {
+      sawOverload = true;
+      deadline = Math.max(deadline, Date.now() + OVERLOAD_WAIT_MS);
+      log.info('DTEK overload page, waiting for it to load', { url, waitMs: OVERLOAD_WAIT_MS });
+    }
+
+    // 4) Still on the stub → let its script set cookies, then reload so the
     //    follow-up request carries them; on a real-but-not-ready page just wait.
-    //    The overload page gets a longer pause so we don't add to the load.
     sawChallenge = sawChallenge || stub;
-    if (overloaded && !sawOverload) log.info('DTEK overload page, will reload', { url });
-    sawOverload = sawOverload || overloaded;
-    await page.waitForTimeout(overloaded ? 6000 : stub ? 3000 : 1500);
-    if (stub) {
+    await page.waitForTimeout(overloaded ? 3000 : stub ? 3000 : 1500);
+    if (stub && !overloaded) {
       reloads += 1;
       await page.reload({ waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS }).catch(() => {});
       await dismissModal(page);
@@ -176,8 +184,12 @@ async function fetchSnapshot(page, url) {
     log.info('used HTML fallback extraction', { url });
     return fallback;
   }
-  if (looksLikeOverload(html)) {
-    throw new CollectError(STATUS.TIMEOUT, 'DTEK overload page did not go away in time');
+  if (sawOverload) {
+    // Already waited minutes; an immediate retry would only re-queue us and
+    // stall the whole run. The next scheduled run will try again.
+    const err = new CollectError(STATUS.TIMEOUT, 'DTEK overload page did not load in time');
+    err.retryable = false;
+    throw err;
   }
   if (!reachedRealPage && looksLikeStub(html)) {
     throw new CollectError(STATUS.WAF_BLOCKED, 'Incapsula challenge did not clear');
@@ -200,4 +212,4 @@ export function createDtekAdapter(config) {
   };
 }
 
-export const __test__ = { sliceBalanced, extractFromHtml, looksLikeOverload };
+export const __test__ = { sliceBalanced, extractFromHtml, looksLikeOverload, fetchSnapshot };

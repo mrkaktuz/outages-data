@@ -41,3 +41,36 @@ test('looksLikeOverload spots the DTEK "heavy load" page, not the real one', () 
   assert.equal(looksLikeOverload('<html><body>Графік відключень</body></html>'), false);
   assert.equal(looksLikeOverload(''), false);
 });
+
+/** Minimal fake Playwright page: serves `overload` HTML for `overloadPolls` polls, then the data. */
+function fakePage({ overloadPolls, html }) {
+  let polls = 0;
+  const calls = { reload: 0 };
+  return {
+    calls,
+    goto: async () => {},
+    reload: async () => { calls.reload += 1; },
+    waitForTimeout: async () => {},
+    locator: () => ({ first: () => ({ click: async () => {} }) }),
+    content: async () => html,
+    evaluate: async () => {
+      polls += 1;
+      if (polls <= overloadPolls) return { preset: null, fact: null };
+      return { preset: { data: { GPV1: {} }, updateFact: '03.11.2026 21:39' }, fact: null };
+    },
+  };
+}
+
+test('fetchSnapshot waits on the overload page without reloading it', async () => {
+  const html = '<html><body>Сайт працює, але через велике навантаження треба трохи зачекати' + 'x'.repeat(4000);
+  const page = fakePage({ overloadPolls: 20, html });
+  const raw = await __test__.fetchSnapshot(page, 'https://example/ua/shutdowns');
+  assert.ok(raw.preset.data.GPV1);
+  assert.equal(page.calls.reload, 0);
+});
+
+test('fetchSnapshot still reloads the small Incapsula stub', async () => {
+  const page = fakePage({ overloadPolls: 2, html: '<html><script src="/_Incapsula_Resource?x"></script></html>' });
+  await __test__.fetchSnapshot(page, 'https://example/ua/shutdowns');
+  assert.equal(page.calls.reload, 2);
+});
