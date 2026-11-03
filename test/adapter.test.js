@@ -30,3 +30,14 @@ test('extractFromHtml captures sourceUpdatedAt from fact.update', () => {
   const out = __test__.extractFromHtml(html);
   assert.equal(out.sourceUpdatedAt, '29.06.2026 11:04');
 });
+
+test('looksLikeOverload spots the DTEK "heavy load" page, not the real one', () => {
+  const { looksLikeOverload } = __test__;
+  const overload =
+    '<html><body><p>Шановні клієнти!<br>Сайт працює, але через велике навантаження ' +
+    'треба трохи зачекати і сторінка завантажиться.</p>' + 'x'.repeat(4000) + '</body></html>';
+  assert.equal(looksLikeOverload(overload), true);
+  assert.equal(looksLikeOverload('<html>DisconSchedule.preset = {}; велике навантаження</html>'), false);
+  assert.equal(looksLikeOverload('<html><body>Графік відключень</body></html>'), false);
+  assert.equal(looksLikeOverload(''), false);
+});

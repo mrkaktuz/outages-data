@@ -17,7 +17,11 @@ export class CollectError extends Error {
 export function toCollectError(err) {
   if (err instanceof CollectError) return err;
   const message = String(err && err.message);
-  const isTimeout = (err && err.name === 'TimeoutError') || /timeout \d+ms exceeded/i.test(message);
+  const isTimeout =
+    (err && err.name === 'TimeoutError') ||
+    /timeout \d+ms exceeded/i.test(message) ||
+    // Site down / unreachable (e.g. net::ERR_CONNECTION_TIMED_OUT): network, not parsing.
+    /net::ERR_(CONNECTION_|TIMED_OUT|NAME_NOT_RESOLVED|ADDRESS_UNREACHABLE|INTERNET_DISCONNECTED|EMPTY_RESPONSE|SSL_)/.test(message);
   return new CollectError(isTimeout ? STATUS.TIMEOUT : STATUS.PARSE_ERROR, message);
 }
 

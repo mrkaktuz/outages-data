@@ -109,9 +109,19 @@ Two things clear it:
    page; else (real page, app JS still loading, e.g. "please wait" under load) →
    just wait. Only when the whole budget is exhausted do we try the inline-HTML
    fallback (`sliceBalanced`/`extractFromHtml`) and then classify `WAF_BLOCKED`.
+   DTEK's own **"heavy load" page** ("Сайт працює, але через велике навантаження
+   треба трохи зачекати…") is full-size, so the size check would mistake it for
+   the real page and just wait forever; `looksLikeOverload` matches its text and
+   treats it like the stub (wait ~6 s, reload). Exhausting the budget on it →
+   `TIMEOUT`.
    `fetchWithRetry` still retries the whole thing 3×.
 
 ## ztoe source — confirmed facts (Житомиробленерго)
+
+- The site is sometimes simply **unreachable** from GitHub runners
+  (`net::ERR_CONNECTION_TIMED_OUT`, seen for hours on 2026-11-03). `toCollectError`
+  maps `net::ERR_*` connection errors to `TIMEOUT` (they used to show up as a
+  misleading `parse_error`). Each such run costs ~2.5 min of retries.
 
 - URL `https://www.ztoe.com.ua/unhooking-search.php`. **No WAF**, plain
   server-rendered HTML in **windows-1251** (the browser decodes it; a raw

@@ -22,3 +22,10 @@ test('toCollectError maps other errors to PARSE_ERROR', () => {
   assert.equal(err.code, STATUS.PARSE_ERROR);
   assert.match(err.message, /not a function/);
 });
+
+test('toCollectError maps unreachable-site network errors to TIMEOUT', () => {
+  const err = new Error('page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.ztoe.com.ua/');
+  assert.equal(toCollectError(err).code, STATUS.TIMEOUT);
+  const refused = new Error('page.goto: net::ERR_CONNECTION_REFUSED at https://x/');
+  assert.equal(toCollectError(refused).code, STATUS.TIMEOUT);
+});
