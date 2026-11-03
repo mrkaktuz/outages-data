@@ -6,13 +6,13 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-03T18:05:41+02:00",
+  "updatedAt": "2026-11-03T18:32:14+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:ee25af3b8339ca76ac9c9ffba8bff1431cdbb9061dc515b3dacbc4b3082f7b3a",
-    "sourceUpdatedAt": "03.11.2026 18:01"
+    "contentHash": "sha256:aa2661d5495853d7c8ff707b1ba5f324b16ce4ca64d53a585608c498e0ec920d",
+    "sourceUpdatedAt": "03.11.2026 18:29"
   },
   "groups": [
     "1.1",
@@ -43,7 +43,7 @@
         },
         {
           "start": "2026-11-03T17:00:00+02:00",
-          "end": "2026-11-03T21:00:00+02:00",
+          "end": "2026-11-03T18:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -905,13 +905,6 @@
         {
           "start": "2026-11-03T10:00:00+02:00",
           "end": "2026-11-03T17:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-03T20:30:00+02:00",
-          "end": "2026-11-04T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3861,7 +3854,7 @@
           }
         }
       },
-      "updateFact": "03.11.2026 18:01"
+      "updateFact": "03.11.2026 18:29"
     },
     "fact": {
       "data": {
@@ -3885,9 +3878,9 @@
             "16": "yes",
             "17": "yes",
             "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "no",
+            "19": "first",
+            "20": "yes",
+            "21": "yes",
             "22": "yes",
             "23": "yes",
             "24": "yes"
@@ -4069,10 +4062,10 @@
             "18": "first",
             "19": "yes",
             "20": "yes",
-            "21": "second",
-            "22": "no",
-            "23": "no",
-            "24": "no"
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
+            "24": "yes"
           },
           "GPV5.1": {
             "1": "yes",
@@ -4180,7 +4173,7 @@
           }
         }
       },
-      "update": "03.11.2026 18:01",
+      "update": "03.11.2026 18:29",
       "today": 1793656800
     }
   }
