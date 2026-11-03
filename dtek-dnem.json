@@ -6,13 +6,13 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-03T18:08:34+02:00",
+  "updatedAt": "2026-11-03T18:42:44+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:169356eae4bcd5357f206df36981fc3a6700107b5f2dcec6b8e882f6fb639bdf",
-    "sourceUpdatedAt": "03.11.2026 18:02"
+    "contentHash": "sha256:47427de648bf1eaaaea37d66306ebeae0f5fd5dbd6667f123fc35a48d71bc2f7",
+    "sourceUpdatedAt": "03.11.2026 18:36"
   },
   "groups": [
     "1.1",
@@ -293,7 +293,7 @@
         },
         {
           "start": "2026-11-03T15:00:00+02:00",
-          "end": "2026-11-03T19:00:00+02:00",
+          "end": "2026-11-03T18:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -777,13 +777,6 @@
         {
           "start": "2026-11-03T08:00:00+02:00",
           "end": "2026-11-03T15:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-03T18:30:00+02:00",
-          "end": "2026-11-03T22:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1274,13 +1267,6 @@
         {
           "start": "2026-11-03T11:30:00+02:00",
           "end": "2026-11-03T18:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-03T22:00:00+02:00",
-          "end": "2026-11-04T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -7591,7 +7577,7 @@
           }
         }
       },
-      "updateFact": "03.11.2026 18:02"
+      "updateFact": "03.11.2026 18:36"
     },
     "fact": {
       "data": {
@@ -7667,7 +7653,7 @@
             "16": "no",
             "17": "no",
             "18": "no",
-            "19": "no",
+            "19": "first",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -7771,11 +7757,11 @@
             "16": "yes",
             "17": "yes",
             "18": "yes",
-            "19": "second",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "first",
+            "19": "yes",
+            "20": "yes",
+            "21": "yes",
+            "22": "yes",
+            "23": "yes",
             "24": "yes"
           },
           "GPV4.2": {
@@ -7879,8 +7865,8 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "no",
-            "24": "no"
+            "23": "yes",
+            "24": "yes"
           },
           "GPV6.2": {
             "1": "yes",
@@ -7910,7 +7896,7 @@
           }
         }
       },
-      "update": "03.11.2026 18:02",
+      "update": "03.11.2026 18:36",
       "today": 1793656800
     }
   }
