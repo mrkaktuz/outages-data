@@ -6,11 +6,11 @@
     "region": "Миколаївська область",
     "url": "https://off.energy.mk.ua/"
   },
-  "updatedAt": "2026-11-03T20:45:37+02:00",
+  "updatedAt": "2026-11-04T09:49:56+02:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "no_data",
+    "message": "Mykolaiv API /api/outage-queue/by-type/3 -> HTTP 403",
     "contentHash": "sha256:7040da4c82d91d9600ff76a3913fc837ba89a68a9153a23cae330ae6f3a8011a",
     "sourceUpdatedAt": "03.11.2026 20:45"
   },
