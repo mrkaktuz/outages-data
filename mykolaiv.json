@@ -6,13 +6,13 @@
     "region": "Миколаївська область",
     "url": "https://off.energy.mk.ua/"
   },
-  "updatedAt": "2026-11-05T13:35:42+02:00",
+  "updatedAt": "2026-11-05T20:58:17+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:c60324a65612b131dab9c27a90e1a60967774b9e7121b22e4e8c0e499e128db0",
-    "sourceUpdatedAt": "05.11.2026 13:35"
+    "contentHash": "sha256:3f1e4f446a64c4a6906dab151e0f404f81f97f5fa061ecd22aa55e2b1725177c",
+    "sourceUpdatedAt": "05.11.2026 20:53"
   },
   "groups": [
     "1.1",
@@ -96,6 +96,69 @@
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:30:00+02:00",
+          "end": "2026-11-06T06:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T06:00:00+02:00",
+          "end": "2026-11-06T08:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:30:00+02:00",
+          "end": "2026-11-06T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:30:00+02:00",
+          "end": "2026-11-06T13:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T13:00:00+02:00",
+          "end": "2026-11-06T15:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T15:30:00+02:00",
+          "end": "2026-11-06T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:30:00+02:00",
+          "end": "2026-11-06T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T20:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:30:00+02:00",
+          "end": "2026-11-06T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
         }
       ]
     },
@@ -134,9 +197,58 @@
         },
         {
           "start": "2026-11-05T23:00:00+02:00",
-          "end": "2026-11-06T00:00:00+02:00",
+          "end": "2026-11-06T01:30:00+02:00",
           "kind": "off",
           "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T01:30:00+02:00",
+          "end": "2026-11-06T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:00:00+02:00",
+          "end": "2026-11-06T09:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:30:00+02:00",
+          "end": "2026-11-06T15:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T15:30:00+02:00",
+          "end": "2026-11-06T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:30:00+02:00",
+          "end": "2026-11-06T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T20:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:30:00+02:00",
+          "end": "2026-11-06T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
           "origin": "fact"
         }
       ]
@@ -176,9 +288,58 @@
         },
         {
           "start": "2026-11-05T23:00:00+02:00",
-          "end": "2026-11-06T00:00:00+02:00",
+          "end": "2026-11-06T01:30:00+02:00",
           "kind": "off",
           "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T01:30:00+02:00",
+          "end": "2026-11-06T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:30:00+02:00",
+          "end": "2026-11-06T06:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T06:00:00+02:00",
+          "end": "2026-11-06T08:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:30:00+02:00",
+          "end": "2026-11-06T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:00:00+02:00",
+          "end": "2026-11-06T16:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:30:00+02:00",
+          "end": "2026-11-06T22:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
           "origin": "fact"
         }
       ]
@@ -260,9 +421,79 @@
         },
         {
           "start": "2026-11-05T23:00:00+02:00",
-          "end": "2026-11-06T00:00:00+02:00",
+          "end": "2026-11-06T01:30:00+02:00",
           "kind": "off",
           "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T01:30:00+02:00",
+          "end": "2026-11-06T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:30:00+02:00",
+          "end": "2026-11-06T06:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T06:00:00+02:00",
+          "end": "2026-11-06T08:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:30:00+02:00",
+          "end": "2026-11-06T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:30:00+02:00",
+          "end": "2026-11-06T13:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T13:00:00+02:00",
+          "end": "2026-11-06T15:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T15:30:00+02:00",
+          "end": "2026-11-06T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:30:00+02:00",
+          "end": "2026-11-06T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T20:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:30:00+02:00",
+          "end": "2026-11-06T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
           "origin": "fact"
         }
       ]
@@ -310,6 +541,48 @@
         {
           "start": "2026-11-05T18:30:00+02:00",
           "end": "2026-11-05T19:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:00:00+02:00",
+          "end": "2026-11-06T02:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:30:00+02:00",
+          "end": "2026-11-06T05:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:00:00+02:00",
+          "end": "2026-11-06T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:00:00+02:00",
+          "end": "2026-11-06T16:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:30:00+02:00",
+          "end": "2026-11-06T22:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
@@ -372,9 +645,58 @@
         },
         {
           "start": "2026-11-05T23:00:00+02:00",
-          "end": "2026-11-06T00:00:00+02:00",
+          "end": "2026-11-06T01:30:00+02:00",
           "kind": "off",
           "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T01:30:00+02:00",
+          "end": "2026-11-06T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:00:00+02:00",
+          "end": "2026-11-06T09:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:30:00+02:00",
+          "end": "2026-11-06T15:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T15:30:00+02:00",
+          "end": "2026-11-06T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:30:00+02:00",
+          "end": "2026-11-06T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T20:00:00+02:00",
+          "end": "2026-11-06T22:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T22:30:00+02:00",
+          "end": "2026-11-06T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
           "origin": "fact"
         }
       ]
@@ -446,6 +768,62 @@
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T07:30:00+02:00",
+          "end": "2026-11-06T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:00:00+02:00",
+          "end": "2026-11-06T12:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:00:00+02:00",
+          "end": "2026-11-06T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:00:00+02:00",
+          "end": "2026-11-06T16:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:30:00+02:00",
+          "end": "2026-11-06T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:00:00+02:00",
+          "end": "2026-11-06T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:00:00+02:00",
+          "end": "2026-11-06T23:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:30:00+02:00",
+          "end": "2026-11-07T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -516,6 +894,62 @@
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T07:30:00+02:00",
+          "end": "2026-11-06T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:00:00+02:00",
+          "end": "2026-11-06T12:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:00:00+02:00",
+          "end": "2026-11-06T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:00:00+02:00",
+          "end": "2026-11-06T16:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T16:30:00+02:00",
+          "end": "2026-11-06T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:00:00+02:00",
+          "end": "2026-11-06T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:00:00+02:00",
+          "end": "2026-11-06T23:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:30:00+02:00",
+          "end": "2026-11-07T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     },
@@ -576,6 +1010,48 @@
         {
           "start": "2026-11-05T22:00:00+02:00",
           "end": "2026-11-05T22:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:30:00+02:00",
+          "end": "2026-11-06T06:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T06:00:00+02:00",
+          "end": "2026-11-06T08:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T08:30:00+02:00",
+          "end": "2026-11-06T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:30:00+02:00",
+          "end": "2026-11-06T13:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T13:00:00+02:00",
+          "end": "2026-11-06T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:00:00+02:00",
+          "end": "2026-11-06T19:30:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
@@ -642,6 +1118,48 @@
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:00:00+02:00",
+          "end": "2026-11-06T02:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:30:00+02:00",
+          "end": "2026-11-06T05:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:00:00+02:00",
+          "end": "2026-11-06T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:30:00+02:00",
+          "end": "2026-11-06T13:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T13:00:00+02:00",
+          "end": "2026-11-06T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T19:00:00+02:00",
+          "end": "2026-11-06T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
         }
       ]
     },
@@ -704,6 +1222,62 @@
           "end": "2026-11-05T22:30:00+02:00",
           "kind": "possible",
           "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:00:00+02:00",
+          "end": "2026-11-06T02:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:30:00+02:00",
+          "end": "2026-11-06T05:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:00:00+02:00",
+          "end": "2026-11-06T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:00:00+02:00",
+          "end": "2026-11-06T09:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:30:00+02:00",
+          "end": "2026-11-06T12:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:00:00+02:00",
+          "end": "2026-11-06T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:00:00+02:00",
+          "end": "2026-11-06T23:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:30:00+02:00",
+          "end": "2026-11-07T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
           "origin": "fact"
         }
       ]
@@ -768,6 +1342,62 @@
           "kind": "possible",
           "type": "possible",
           "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:00:00+02:00",
+          "end": "2026-11-06T02:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T02:30:00+02:00",
+          "end": "2026-11-06T05:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T05:00:00+02:00",
+          "end": "2026-11-06T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:00:00+02:00",
+          "end": "2026-11-06T09:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T09:30:00+02:00",
+          "end": "2026-11-06T12:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T12:00:00+02:00",
+          "end": "2026-11-06T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:00:00+02:00",
+          "end": "2026-11-06T23:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-06T23:30:00+02:00",
+          "end": "2026-11-07T00:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
         }
       ]
     }
@@ -781,25 +1411,25 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 15,
           "name": "1.2",
           "type_id": 3,
-          "enabled": 1,
+          "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 16,
           "name": "2.1",
           "type_id": 3,
-          "enabled": 1,
+          "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
@@ -808,7 +1438,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
@@ -817,7 +1447,7 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
@@ -826,61 +1456,61 @@
           "type_id": 3,
           "enabled": 0,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 21,
           "name": "4.1",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 22,
           "name": "4.2",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 24,
           "name": "5.1",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 25,
           "name": "5.2",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 26,
           "name": "6.1",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:00.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         },
         {
           "id": 27,
           "name": "6.2",
           "type_id": 3,
-          "enabled": 0,
+          "enabled": 1,
           "created_at": null,
-          "updated_at": "2026-11-05T09:50:01.000000Z",
+          "updated_at": "2026-11-05T17:00:32.000000Z",
           "deleted": 0
         }
       ],
@@ -3496,6 +4126,2281 @@
               "outage_queue_id": 20,
               "created_at": "2026-11-05T11:35:25.000000Z",
               "updated_at": "2026-11-05T11:35:25.000000Z",
+              "type": "PROBABLY_OFF"
+            }
+          ]
+        },
+        {
+          "id": 183,
+          "from": "2026-11-05T22:00:00.000000Z",
+          "to": "2026-11-06T21:59:00.000000Z",
+          "series": [
+            {
+              "id": 294505,
+              "outage_schedule_id": 183,
+              "time_series_id": 1,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294506,
+              "outage_schedule_id": 183,
+              "time_series_id": 1,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294507,
+              "outage_schedule_id": 183,
+              "time_series_id": 1,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294508,
+              "outage_schedule_id": 183,
+              "time_series_id": 1,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294509,
+              "outage_schedule_id": 183,
+              "time_series_id": 2,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294510,
+              "outage_schedule_id": 183,
+              "time_series_id": 2,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294511,
+              "outage_schedule_id": 183,
+              "time_series_id": 2,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294512,
+              "outage_schedule_id": 183,
+              "time_series_id": 2,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294513,
+              "outage_schedule_id": 183,
+              "time_series_id": 3,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294514,
+              "outage_schedule_id": 183,
+              "time_series_id": 3,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294515,
+              "outage_schedule_id": 183,
+              "time_series_id": 3,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294516,
+              "outage_schedule_id": 183,
+              "time_series_id": 3,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294517,
+              "outage_schedule_id": 183,
+              "time_series_id": 6,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294518,
+              "outage_schedule_id": 183,
+              "time_series_id": 6,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294519,
+              "outage_schedule_id": 183,
+              "time_series_id": 6,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294520,
+              "outage_schedule_id": 183,
+              "time_series_id": 6,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294521,
+              "outage_schedule_id": 183,
+              "time_series_id": 7,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294522,
+              "outage_schedule_id": 183,
+              "time_series_id": 7,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294523,
+              "outage_schedule_id": 183,
+              "time_series_id": 7,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294524,
+              "outage_schedule_id": 183,
+              "time_series_id": 7,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294525,
+              "outage_schedule_id": 183,
+              "time_series_id": 8,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294526,
+              "outage_schedule_id": 183,
+              "time_series_id": 8,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294527,
+              "outage_schedule_id": 183,
+              "time_series_id": 8,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294528,
+              "outage_schedule_id": 183,
+              "time_series_id": 8,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294529,
+              "outage_schedule_id": 183,
+              "time_series_id": 9,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294530,
+              "outage_schedule_id": 183,
+              "time_series_id": 9,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294531,
+              "outage_schedule_id": 183,
+              "time_series_id": 9,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294532,
+              "outage_schedule_id": 183,
+              "time_series_id": 9,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294533,
+              "outage_schedule_id": 183,
+              "time_series_id": 10,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294534,
+              "outage_schedule_id": 183,
+              "time_series_id": 10,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294535,
+              "outage_schedule_id": 183,
+              "time_series_id": 10,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294536,
+              "outage_schedule_id": 183,
+              "time_series_id": 10,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294537,
+              "outage_schedule_id": 183,
+              "time_series_id": 13,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294538,
+              "outage_schedule_id": 183,
+              "time_series_id": 13,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294539,
+              "outage_schedule_id": 183,
+              "time_series_id": 13,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294540,
+              "outage_schedule_id": 183,
+              "time_series_id": 13,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294541,
+              "outage_schedule_id": 183,
+              "time_series_id": 14,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294542,
+              "outage_schedule_id": 183,
+              "time_series_id": 14,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294543,
+              "outage_schedule_id": 183,
+              "time_series_id": 14,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294544,
+              "outage_schedule_id": 183,
+              "time_series_id": 14,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294545,
+              "outage_schedule_id": 183,
+              "time_series_id": 15,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294546,
+              "outage_schedule_id": 183,
+              "time_series_id": 15,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294547,
+              "outage_schedule_id": 183,
+              "time_series_id": 15,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294548,
+              "outage_schedule_id": 183,
+              "time_series_id": 15,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294549,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294550,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294551,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294552,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294553,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294554,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294555,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294556,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294557,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294558,
+              "outage_schedule_id": 183,
+              "time_series_id": 17,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294559,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294560,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294561,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294562,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294563,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294564,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294565,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294566,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294567,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294568,
+              "outage_schedule_id": 183,
+              "time_series_id": 20,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294569,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294570,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294571,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294572,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294573,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294574,
+              "outage_schedule_id": 183,
+              "time_series_id": 21,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294575,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294576,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294577,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294578,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294579,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294580,
+              "outage_schedule_id": 183,
+              "time_series_id": 22,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294581,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294582,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294583,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294584,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294585,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294586,
+              "outage_schedule_id": 183,
+              "time_series_id": 23,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294587,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294588,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294589,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294590,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294591,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294592,
+              "outage_schedule_id": 183,
+              "time_series_id": 24,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294593,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294594,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294595,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294596,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294597,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294598,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294599,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294600,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294601,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294602,
+              "outage_schedule_id": 183,
+              "time_series_id": 27,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294603,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294604,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294605,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294606,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294607,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294608,
+              "outage_schedule_id": 183,
+              "time_series_id": 28,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294609,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294610,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294611,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294612,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294613,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294614,
+              "outage_schedule_id": 183,
+              "time_series_id": 29,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294615,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294616,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294617,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294618,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294619,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294620,
+              "outage_schedule_id": 183,
+              "time_series_id": 30,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294621,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294622,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294623,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294624,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294625,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294626,
+              "outage_schedule_id": 183,
+              "time_series_id": 31,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294627,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294628,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294629,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294630,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294631,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294632,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294633,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294634,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294635,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294636,
+              "outage_schedule_id": 183,
+              "time_series_id": 34,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294637,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294638,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294639,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294640,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294641,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294642,
+              "outage_schedule_id": 183,
+              "time_series_id": 35,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294643,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294644,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294645,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294646,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294647,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294648,
+              "outage_schedule_id": 183,
+              "time_series_id": 36,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294649,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294650,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294651,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294652,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294653,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294654,
+              "outage_schedule_id": 183,
+              "time_series_id": 37,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294655,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294656,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294657,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294658,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294659,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294660,
+              "outage_schedule_id": 183,
+              "time_series_id": 38,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294661,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294662,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294663,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294664,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294665,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294666,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294667,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294668,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294669,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294670,
+              "outage_schedule_id": 183,
+              "time_series_id": 41,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294671,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294672,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294673,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294674,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294675,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294676,
+              "outage_schedule_id": 183,
+              "time_series_id": 42,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294677,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294678,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294679,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294680,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294681,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294682,
+              "outage_schedule_id": 183,
+              "time_series_id": 43,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294683,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294684,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294685,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294686,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294687,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294688,
+              "outage_schedule_id": 183,
+              "time_series_id": 44,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294689,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294690,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294691,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294692,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294693,
+              "outage_schedule_id": 183,
+              "time_series_id": 48,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294694,
+              "outage_schedule_id": 183,
+              "time_series_id": 48,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294695,
+              "outage_schedule_id": 183,
+              "time_series_id": 48,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294696,
+              "outage_schedule_id": 183,
+              "time_series_id": 48,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "OFF"
+            },
+            {
+              "id": 294697,
+              "outage_schedule_id": 183,
+              "time_series_id": 4,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294698,
+              "outage_schedule_id": 183,
+              "time_series_id": 4,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294699,
+              "outage_schedule_id": 183,
+              "time_series_id": 4,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294700,
+              "outage_schedule_id": 183,
+              "time_series_id": 4,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294701,
+              "outage_schedule_id": 183,
+              "time_series_id": 5,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294702,
+              "outage_schedule_id": 183,
+              "time_series_id": 5,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294703,
+              "outage_schedule_id": 183,
+              "time_series_id": 5,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294704,
+              "outage_schedule_id": 183,
+              "time_series_id": 5,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294705,
+              "outage_schedule_id": 183,
+              "time_series_id": 11,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294706,
+              "outage_schedule_id": 183,
+              "time_series_id": 11,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294707,
+              "outage_schedule_id": 183,
+              "time_series_id": 11,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294708,
+              "outage_schedule_id": 183,
+              "time_series_id": 11,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294709,
+              "outage_schedule_id": 183,
+              "time_series_id": 12,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294710,
+              "outage_schedule_id": 183,
+              "time_series_id": 12,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294711,
+              "outage_schedule_id": 183,
+              "time_series_id": 12,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294712,
+              "outage_schedule_id": 183,
+              "time_series_id": 12,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294713,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294714,
+              "outage_schedule_id": 183,
+              "time_series_id": 16,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294715,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294716,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294717,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294718,
+              "outage_schedule_id": 183,
+              "time_series_id": 18,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294719,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294720,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294721,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294722,
+              "outage_schedule_id": 183,
+              "time_series_id": 19,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294723,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294724,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294725,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294726,
+              "outage_schedule_id": 183,
+              "time_series_id": 25,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294727,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294728,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294729,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294730,
+              "outage_schedule_id": 183,
+              "time_series_id": 26,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294731,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294732,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294733,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294734,
+              "outage_schedule_id": 183,
+              "time_series_id": 32,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294735,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294736,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294737,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294738,
+              "outage_schedule_id": 183,
+              "time_series_id": 33,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294739,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 24,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294740,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 25,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294741,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294742,
+              "outage_schedule_id": 183,
+              "time_series_id": 39,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294743,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294744,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294745,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294746,
+              "outage_schedule_id": 183,
+              "time_series_id": 40,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294747,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 16,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294748,
+              "outage_schedule_id": 183,
+              "time_series_id": 45,
+              "outage_queue_id": 19,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294749,
+              "outage_schedule_id": 183,
+              "time_series_id": 46,
+              "outage_queue_id": 14,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294750,
+              "outage_schedule_id": 183,
+              "time_series_id": 46,
+              "outage_queue_id": 15,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294751,
+              "outage_schedule_id": 183,
+              "time_series_id": 46,
+              "outage_queue_id": 17,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294752,
+              "outage_schedule_id": 183,
+              "time_series_id": 46,
+              "outage_queue_id": 20,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294753,
+              "outage_schedule_id": 183,
+              "time_series_id": 47,
+              "outage_queue_id": 21,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294754,
+              "outage_schedule_id": 183,
+              "time_series_id": 47,
+              "outage_queue_id": 22,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294755,
+              "outage_schedule_id": 183,
+              "time_series_id": 47,
+              "outage_queue_id": 26,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
+              "type": "PROBABLY_OFF"
+            },
+            {
+              "id": 294756,
+              "outage_schedule_id": 183,
+              "time_series_id": 47,
+              "outage_queue_id": 27,
+              "created_at": "2026-11-05T18:53:03.000000Z",
+              "updated_at": "2026-11-05T18:53:03.000000Z",
               "type": "PROBABLY_OFF"
             }
           ]
