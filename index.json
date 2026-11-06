@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-06T23:37:46+02:00",
+  "generatedAt": "2026-11-07T00:45:36+02:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -28,7 +28,7 @@
       "id": "dtek-kem",
       "name": "ДТЕК Київські електромережі",
       "region": "місто Київ",
-      "updatedAt": "2026-11-06T21:37:00+02:00",
+      "updatedAt": "2026-11-07T00:43:44+02:00",
       "status": "ok",
       "groups": [
         "1.1",
@@ -160,8 +160,8 @@
       "id": "ztoe",
       "name": "Житомиробленерго",
       "region": "Житомирська область",
-      "updatedAt": "2026-11-06T19:39:40+02:00",
-      "status": "timeout",
+      "updatedAt": "2026-11-07T00:45:34+02:00",
+      "status": "no_data",
       "groups": [
         "1.1",
         "1.2",
