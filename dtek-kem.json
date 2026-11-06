@@ -6,11 +6,11 @@
     "region": "місто Київ",
     "url": "https://www.dtek-kem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-06T16:13:56+02:00",
+  "updatedAt": "2026-11-06T16:46:55+02:00",
   "status": {
-    "ok": false,
-    "code": "timeout",
-    "message": "DisconSchedule did not populate in time",
+    "ok": true,
+    "code": "ok",
+    "message": null,
     "contentHash": "sha256:522a8b4dc8f22810409ac22cbf36de47881e2d5feb43eaddf349df15d272e100",
     "sourceUpdatedAt": "06.11.2026 12:29"
   },
