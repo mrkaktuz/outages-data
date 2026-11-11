@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-11T20:32:48+02:00",
+  "generatedAt": "2026-11-11T20:57:49+02:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -28,7 +28,7 @@
       "id": "dtek-kem",
       "name": "ДТЕК Київські електромережі",
       "region": "місто Київ",
-      "updatedAt": "2026-11-10T22:04:21+02:00",
+      "updatedAt": "2026-11-11T20:55:26+02:00",
       "status": "ok",
       "groups": [
         "1.1",
