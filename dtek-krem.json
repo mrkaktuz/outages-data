@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-11T09:53:45+02:00",
+  "updatedAt": "2026-11-11T11:49:23+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:ecde5c7d19010d37dfd773c44ad396c97eec8cfa0f957cc38a9888837bdd2b4d",
-    "sourceUpdatedAt": "11.11.2026 09:46"
+    "contentHash": "sha256:c29ca5ffc2b78d24d145c11b64d153243628f0999d6e03f7a4570efa0ff0a428",
+    "sourceUpdatedAt": "11.11.2026 11:39"
   },
   "groups": [
     "1.1",
@@ -399,7 +399,7 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-11T13:30:00+02:00",
+          "start": "2026-11-11T14:00:00+02:00",
           "end": "2026-11-11T18:30:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -765,13 +765,6 @@
         {
           "start": "2026-11-11T06:00:00+02:00",
           "end": "2026-11-11T11:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-11T12:00:00+02:00",
-          "end": "2026-11-11T14:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3917,7 +3910,7 @@
           }
         }
       },
-      "updateFact": "11.11.2026 09:46"
+      "updateFact": "11.11.2026 11:39"
     },
     "fact": {
       "data": {
@@ -4014,7 +4007,7 @@
             "11": "first",
             "12": "yes",
             "13": "yes",
-            "14": "second",
+            "14": "yes",
             "15": "no",
             "16": "no",
             "17": "no",
@@ -4091,8 +4084,8 @@
             "10": "no",
             "11": "no",
             "12": "first",
-            "13": "no",
-            "14": "no",
+            "13": "yes",
+            "14": "yes",
             "15": "yes",
             "16": "yes",
             "17": "yes",
@@ -4236,7 +4229,7 @@
           }
         }
       },
-      "update": "11.11.2026 09:46",
+      "update": "11.11.2026 11:39",
       "today": 1794348000
     }
   }
