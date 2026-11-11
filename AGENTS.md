@@ -298,6 +298,14 @@ adjacent same kind+type intervals; `yes`/unknown produce no interval.
   deletes `/etc/apt/sources.list.d/google-chrome*` (we don't use it) and retries
   `apt-get update` 3× before installing. If a *different* third-party repo ever
   breaks the same way, drop that one too rather than pinning Playwright.
+- **Gotcha (apt, 2026-11-11):** for ~2 h the runners couldn't resolve the Ubuntu
+  mirrors (`Temporary failure resolving 'azure.archive.ubuntu.com'`). `--with-deps`
+  hung ~15 min per run on 9 optional fonts and failed; with `concurrency: collect`
+  the queued dispatches were cancelled meanwhile, so no data at all. The runner
+  image already has Xvfb and every Chromium lib, so the step now runs plain
+  `npx playwright install chromium` (Playwright CDN, no apt) and falls back to apt
+  (`install-deps`, short timeouts) only if `ldd` shows a missing lib or `xvfb-run`
+  is absent. Don't put `--with-deps` back.
 - Publishes with the built-in `GITHUB_TOKEN` (`permissions: contents: write`).
   **No PAT needed** to push to `data` in this repo.
 - `schedule`/`workflow_dispatch` only register from the **default branch**

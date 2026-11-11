@@ -31,23 +31,34 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # `playwright install --with-deps` runs apt-get update internally, so a
-      # single broken apt source takes the whole run down. The runner image
-      # ships a Google Chrome repo that intermittently serves a Packages index
-      # whose hash doesn't match its Release file ("Hash Sum mismatch") — that
-      # failed every run on 2026-09-09. We don't use that repo, so drop it, and
-      # retry the update in case a mirror is momentarily out of sync.
-      - name: Install Chromium and Xvfb
+      # apt is a liability here, so it is touched only when something is really
+      # missing. The runner image already has Xvfb and every library Chromium
+      # needs; `playwright install --with-deps` only added 9 optional fonts —
+      # and on 2026-11-11 the runners couldn't resolve the Ubuntu mirrors, so
+      # that font download hung ~15 min and failed every run for hours
+      # (earlier, 2026-09-09: a broken Google Chrome repo, "Hash Sum mismatch").
+      # The browser itself comes from Playwright's CDN, not apt.
+      - name: Install Chromium
+        timeout-minutes: 10
         run: |
-          sudo rm -f /etc/apt/sources.list.d/google-chrome*.list \
-                     /etc/apt/sources.list.d/google-chrome*.sources
-          for attempt in 1 2 3; do
-            sudo apt-get update && break
-            echo "apt-get update failed (attempt $attempt), retrying…" >&2
-            sleep $((attempt * 5))
-          done
-          sudo apt-get install -y xvfb
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
+          CHROME=$(node -e "import('playwright').then(p=>console.log(p.chromium.executablePath()))")
+          test -x "$CHROME"
+          MISSING=$(ldd "$CHROME" | grep 'not found' || true)
+          if [ -n "$MISSING" ] || ! command -v xvfb-run >/dev/null; then
+            echo "::warning::Runner image lacks Chromium libs or Xvfb, installing via apt"
+            echo "$MISSING"
+            sudo rm -f /etc/apt/sources.list.d/google-chrome*.list \
+                       /etc/apt/sources.list.d/google-chrome*.sources
+            APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20"
+            for attempt in 1 2 3; do
+              sudo apt-get $APT update && break
+              echo "apt-get update failed (attempt $attempt), retrying…" >&2
+              sleep $((attempt * 5))
+            done
+            sudo apt-get $APT install -y --no-install-recommends xvfb
+            npx playwright install-deps chromium
+          fi
 
       # Persist cleared-challenge cookies between runs to reduce WAF challenges.
       - name: Restore browser state
