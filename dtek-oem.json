@@ -6,11 +6,11 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-14T06:56:01+02:00",
+  "updatedAt": "2026-11-14T07:16:06+02:00",
   "status": {
     "ok": false,
-    "code": "timeout",
-    "message": "DisconSchedule did not populate in time",
+    "code": "waf_blocked",
+    "message": "Incapsula challenge did not clear",
     "contentHash": "sha256:069c0ac59f7a3618818d90675f7f30e3a91cb7d8cc4fa1de3566a6b0521ffd24",
     "sourceUpdatedAt": "14.11.2026 05:54"
   },
