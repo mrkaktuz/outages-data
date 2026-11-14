@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-14T07:16:08+02:00",
+  "generatedAt": "2026-11-14T07:41:05+02:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -104,8 +104,8 @@
       "id": "dtek-dnem",
       "name": "ДТЕК Дніпровські електромережі",
       "region": "Дніпропетровська область",
-      "updatedAt": "2026-11-14T06:46:32+02:00",
-      "status": "timeout",
+      "updatedAt": "2026-11-14T07:26:24+02:00",
+      "status": "waf_blocked",
       "groups": [
         "1.1",
         "1.2",
@@ -138,8 +138,8 @@
       "id": "dtek-oem",
       "name": "ДТЕК Одеські електромережі",
       "region": "Одеська область",
-      "updatedAt": "2026-11-14T07:16:06+02:00",
-      "status": "waf_blocked",
+      "updatedAt": "2026-11-14T07:41:03+02:00",
+      "status": "timeout",
       "groups": [
         "1.1",
         "1.2",
@@ -160,7 +160,7 @@
       "id": "ztoe",
       "name": "Житомиробленерго",
       "region": "Житомирська область",
-      "updatedAt": "2026-11-14T00:03:53+02:00",
+      "updatedAt": "2026-11-14T07:41:03+02:00",
       "status": "ok",
       "groups": [
         "1.1",
