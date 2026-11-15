@@ -6,13 +6,13 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-15T21:21:44+02:00",
+  "updatedAt": "2026-11-15T23:12:36+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:e39f9312d73c78afcef3a28d753e261eb94a394a424c61b72a78713a000e6cf1",
-    "sourceUpdatedAt": "15.11.2026 21:20"
+    "contentHash": "sha256:f8955a93d071fc4144f117a88e2d2c393dff9cbb28b7a8bdfcbae6c4d27af2b8",
+    "sourceUpdatedAt": "15.11.2026 22:45"
   },
   "groups": [
     "1.1",
@@ -916,7 +916,7 @@
       "intervals": [
         {
           "start": "2026-11-15T21:30:00+02:00",
-          "end": "2026-11-16T00:00:00+02:00",
+          "end": "2026-11-15T23:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1035,7 +1035,7 @@
       "intervals": [
         {
           "start": "2026-11-15T21:30:00+02:00",
-          "end": "2026-11-16T00:00:00+02:00",
+          "end": "2026-11-15T23:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -7423,7 +7423,7 @@
           }
         }
       },
-      "updateFact": "15.11.2026 21:20"
+      "updateFact": "15.11.2026 22:45"
     },
     "fact": {
       "data": {
@@ -7660,7 +7660,7 @@
             "21": "yes",
             "22": "second",
             "23": "no",
-            "24": "no"
+            "24": "yes"
           },
           "GPV5.2": {
             "1": "yes",
@@ -7686,7 +7686,7 @@
             "21": "yes",
             "22": "second",
             "23": "no",
-            "24": "no"
+            "24": "yes"
           },
           "GPV6.1": {
             "1": "yes",
@@ -7742,7 +7742,7 @@
           }
         }
       },
-      "update": "15.11.2026 21:20",
+      "update": "15.11.2026 22:45",
       "today": 1794693600
     }
   }
