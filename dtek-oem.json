@@ -6,11 +6,11 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-16T18:58:49+02:00",
+  "updatedAt": "2026-11-16T19:07:58+02:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "timeout",
+    "message": "page.goto: Timeout 45000ms exceeded. Call log: - navigating to \"https://www.dtek-oem.com.ua/ua/shutdowns\", waiting until \"domcontentloaded\"",
     "contentHash": "sha256:6cf11728d9de4cb3ff77fc2eb5842a6f1489f83a7fe84504eb42fbf787f6032c",
     "sourceUpdatedAt": "16.11.2026 14:49"
   },
