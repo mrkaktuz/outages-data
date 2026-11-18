@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-11-18T00:03:49+02:00",
+  "updatedAt": "2026-11-18T08:06:56+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:d79a7807af038b77e8bf2a4c6f50c0e97509ede461b936a23cc8cd6618a4a0ac",
-    "sourceUpdatedAt": "18.11.2026 00:00"
+    "contentHash": "sha256:871ee76332f76118db72730fe893f5577d565c274571490b6679ad3500ffdaf7",
+    "sourceUpdatedAt": "18.11.2026 08:00"
   },
   "groups": [
     "1.1",
@@ -203,6 +203,13 @@
           "origin": "fact"
         },
         {
+          "start": "2026-11-18T08:00:00+02:00",
+          "end": "2026-11-18T09:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
           "start": "2026-11-18T16:30:00+02:00",
           "end": "2026-11-18T19:30:00+02:00",
           "kind": "off",
@@ -219,6 +226,13 @@
         {
           "start": "2026-11-18T03:00:00+02:00",
           "end": "2026-11-18T06:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-18T08:00:00+02:00",
+          "end": "2026-11-18T09:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -545,8 +559,8 @@
             "6": "no",
             "7": "yes",
             "8": "yes",
-            "9": "yes",
-            "10": "yes",
+            "9": "no",
+            "10": "first",
             "11": "yes",
             "12": "yes",
             "13": "yes",
@@ -571,8 +585,8 @@
             "6": "no",
             "7": "yes",
             "8": "yes",
-            "9": "yes",
-            "10": "yes",
+            "9": "no",
+            "10": "first",
             "11": "yes",
             "12": "yes",
             "13": "yes",
@@ -694,7 +708,7 @@
           }
         }
       },
-      "update": "18.11.2026 00:00",
+      "update": "18.11.2026 08:00",
       "today": 1794952800
     }
   }
