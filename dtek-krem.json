@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-18T21:28:46+02:00",
+  "updatedAt": "2026-11-19T11:48:35+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:c9913075e17b15a8d83e64694a87038460e56f62aac46fe4626df794e979f8e5",
-    "sourceUpdatedAt": "18.11.2026 21:25"
+    "contentHash": "sha256:dacf4f8bb427cfb76a8748a1240485f742da1b5e82d3b85f9ad9d8f9db1da465",
+    "sourceUpdatedAt": "19.11.2026 11:41"
   },
   "groups": [
     "1.1",
@@ -274,7 +274,7 @@
       "intervals": [
         {
           "start": "2026-11-19T10:30:00+02:00",
-          "end": "2026-11-19T14:30:00+02:00",
+          "end": "2026-11-19T11:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3840,7 +3840,7 @@
           }
         }
       },
-      "updateFact": "18.11.2026 21:25"
+      "updateFact": "19.11.2026 11:41"
     },
     "fact": {
       "data": {
@@ -3909,10 +3909,10 @@
             "9": "yes",
             "10": "yes",
             "11": "second",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "first",
+            "12": "first",
+            "13": "yes",
+            "14": "yes",
+            "15": "yes",
             "16": "yes",
             "17": "yes",
             "18": "yes",
@@ -4159,7 +4159,7 @@
           }
         }
       },
-      "update": "18.11.2026 21:25",
+      "update": "19.11.2026 11:41",
       "today": 1795039200
     }
   }
