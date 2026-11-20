@@ -6,13 +6,13 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-20T09:43:49+02:00",
+  "updatedAt": "2026-11-20T09:58:57+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:71b4108182d26efcd039fc21caf21bef9b5469e4a613770c32e1b8d82145c483",
-    "sourceUpdatedAt": "20.11.2026 09:41"
+    "contentHash": "sha256:4d66815ee98a3f027afea1ef2324bd32f0fa9d93c3cb73e16d7b851c124a67eb",
+    "sourceUpdatedAt": "20.11.2026 09:56"
   },
   "groups": [
     "1.1",
@@ -286,6 +286,13 @@
       "subgroup": "1",
       "name": "Черга 2.1",
       "intervals": [
+        {
+          "start": "2026-11-20T10:00:00+02:00",
+          "end": "2026-11-20T12:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
         {
           "start": "2026-11-21T00:00:00+02:00",
           "end": "2026-11-21T01:30:00+02:00",
@@ -629,6 +636,13 @@
       "subgroup": "2",
       "name": "Черга 3.2",
       "intervals": [
+        {
+          "start": "2026-11-20T11:30:00+02:00",
+          "end": "2026-11-20T15:30:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
         {
           "start": "2026-11-21T00:00:00+02:00",
           "end": "2026-11-21T05:00:00+02:00",
@@ -3784,7 +3798,7 @@
           }
         }
       },
-      "updateFact": "20.11.2026 09:41"
+      "updateFact": "20.11.2026 09:56"
     },
     "fact": {
       "data": {
@@ -3852,8 +3866,8 @@
             "8": "yes",
             "9": "yes",
             "10": "yes",
-            "11": "yes",
-            "12": "yes",
+            "11": "no",
+            "12": "no",
             "13": "yes",
             "14": "yes",
             "15": "yes",
@@ -3931,11 +3945,11 @@
             "9": "yes",
             "10": "yes",
             "11": "yes",
-            "12": "yes",
-            "13": "yes",
-            "14": "yes",
-            "15": "yes",
-            "16": "yes",
+            "12": "second",
+            "13": "no",
+            "14": "no",
+            "15": "no",
+            "16": "first",
             "17": "yes",
             "18": "yes",
             "19": "yes",
@@ -4103,7 +4117,7 @@
           }
         }
       },
-      "update": "20.11.2026 09:41",
+      "update": "20.11.2026 09:56",
       "today": 1795125600
     }
   }
