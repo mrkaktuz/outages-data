@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:14497956c2777ddb5b4ad32b7315ec0275c7b7a8e3742ff3f7250c4cea6c5b5c",
+    "contentHash": "sha256:c75e06608c8ed701e12fbc206f2ff4ff40cf06fd1906a01225fb83b97dce06a3",
     "sourceUpdatedAt": "21.11.2026 15:30"
   },
   "groups": [
@@ -70,7 +70,7 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-11-21T18:00:00+02:00",
+          "start": "2026-11-21T16:30:00+02:00",
           "end": "2026-11-21T20:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -279,8 +279,8 @@
             "14": "yes",
             "15": "yes",
             "16": "yes",
-            "17": "yes",
-            "18": "yes",
+            "17": "second",
+            "18": "no",
             "19": "no",
             "20": "no",
             "21": "yes",
