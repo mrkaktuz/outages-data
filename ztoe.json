@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-11-21T13:53:29+02:00",
+  "updatedAt": "2026-11-21T15:35:12+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:0f523521bb20a2af69824c4d0909d3934569a25e8e429018d67d4a9a9ab2ffa2",
-    "sourceUpdatedAt": "21.11.2026 13:30"
+    "contentHash": "sha256:9d474dcf6f493343a6a53e9e6202677610c0df1c8a761e9abe62cf6ab35df83b",
+    "sourceUpdatedAt": "21.11.2026 15:30"
   },
   "groups": [
     "1.1",
@@ -42,13 +42,6 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-21T16:00:00+02:00",
-          "end": "2026-11-21T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-21T22:30:00+02:00",
           "end": "2026-11-22T00:00:00+02:00",
           "kind": "off",
@@ -68,13 +61,6 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
-        },
-        {
-          "start": "2026-11-21T16:00:00+02:00",
-          "end": "2026-11-21T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
         }
       ]
     },
@@ -82,29 +68,13 @@
       "group": "2",
       "subgroup": "1",
       "name": "Черга 2.1",
-      "intervals": [
-        {
-          "start": "2026-11-21T16:00:00+02:00",
-          "end": "2026-11-21T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "2.2": {
       "group": "2",
       "subgroup": "2",
       "name": "Черга 2.2",
-      "intervals": [
-        {
-          "start": "2026-11-21T16:00:00+02:00",
-          "end": "2026-11-21T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        }
-      ]
+      "intervals": []
     },
     "3.1": {
       "group": "3",
@@ -249,10 +219,10 @@
             "14": "yes",
             "15": "yes",
             "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "second",
@@ -275,10 +245,10 @@
             "14": "yes",
             "15": "yes",
             "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -301,10 +271,10 @@
             "14": "yes",
             "15": "yes",
             "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -327,10 +297,10 @@
             "14": "yes",
             "15": "yes",
             "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
+            "17": "yes",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -546,7 +516,7 @@
           }
         }
       },
-      "update": "21.11.2026 13:30",
+      "update": "21.11.2026 15:30",
       "today": 1795212000
     }
   }
