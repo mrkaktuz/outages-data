@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:9d474dcf6f493343a6a53e9e6202677610c0df1c8a761e9abe62cf6ab35df83b",
+    "contentHash": "sha256:14497956c2777ddb5b4ad32b7315ec0275c7b7a8e3742ff3f7250c4cea6c5b5c",
     "sourceUpdatedAt": "21.11.2026 15:30"
   },
   "groups": [
@@ -68,7 +68,15 @@
       "group": "2",
       "subgroup": "1",
       "name": "Черга 2.1",
-      "intervals": []
+      "intervals": [
+        {
+          "start": "2026-11-21T18:00:00+02:00",
+          "end": "2026-11-21T20:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        }
+      ]
     },
     "2.2": {
       "group": "2",
@@ -273,8 +281,8 @@
             "16": "yes",
             "17": "yes",
             "18": "yes",
-            "19": "yes",
-            "20": "yes",
+            "19": "no",
+            "20": "no",
             "21": "yes",
             "22": "yes",
             "23": "yes",
