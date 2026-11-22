@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-22T23:12:05+02:00",
+  "updatedAt": "2026-11-22T23:17:02+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:c0043f6a85be65c0a00fba0bd8a93229fe4329cb1227a9b06a2ff56bf984d058",
-    "sourceUpdatedAt": "22.11.2026 23:08"
+    "contentHash": "sha256:ab06036dbb310d3628fd397564efe1fd4ee5775cd9419882a632d61277441c6e",
+    "sourceUpdatedAt": "22.11.2026 23:12"
   },
   "groups": [
     "1.1",
@@ -280,7 +280,7 @@
           "origin": "fact"
         },
         {
-          "start": "2026-11-23T09:00:00+02:00",
+          "start": "2026-11-23T08:00:00+02:00",
           "end": "2026-11-23T16:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -387,13 +387,6 @@
         {
           "start": "2026-11-22T22:30:00+02:00",
           "end": "2026-11-22T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-23T08:00:00+02:00",
-          "end": "2026-11-23T09:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3763,7 +3756,7 @@
           }
         }
       },
-      "updateFact": "22.11.2026 23:08"
+      "updateFact": "22.11.2026 23:12"
     },
     "fact": {
       "data": {
@@ -4143,7 +4136,7 @@
             "6": "yes",
             "7": "yes",
             "8": "yes",
-            "9": "yes",
+            "9": "no",
             "10": "no",
             "11": "no",
             "12": "no",
@@ -4169,7 +4162,7 @@
             "6": "yes",
             "7": "yes",
             "8": "yes",
-            "9": "no",
+            "9": "yes",
             "10": "second",
             "11": "no",
             "12": "no",
@@ -4396,7 +4389,7 @@
           }
         }
       },
-      "update": "22.11.2026 23:08",
+      "update": "22.11.2026 23:12",
       "today": 1795298400
     }
   }
