@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-23T19:47:41+02:00",
+  "updatedAt": "2026-11-23T21:39:47+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:bee8d4dd5f4275d1d71bfe63acf4ed8e18b881d8f3bc00d01277a1253031f109",
-    "sourceUpdatedAt": "23.11.2026 19:42"
+    "contentHash": "sha256:49f34e94bc42fcd9025d134c27b54479844ca7a494f5c4fdf80bb505b858907e",
+    "sourceUpdatedAt": "23.11.2026 21:38"
   },
   "groups": [
     "1.1",
@@ -1002,7 +1002,7 @@
         },
         {
           "start": "2026-11-23T15:30:00+02:00",
-          "end": "2026-11-23T23:00:00+02:00",
+          "end": "2026-11-23T21:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1367,13 +1367,6 @@
         {
           "start": "2026-11-23T17:30:00+02:00",
           "end": "2026-11-23T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-23T22:30:00+02:00",
-          "end": "2026-11-24T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3854,7 +3847,7 @@
           }
         }
       },
-      "updateFact": "23.11.2026 19:42"
+      "updateFact": "23.11.2026 21:38"
     },
     "fact": {
       "data": {
@@ -4089,8 +4082,8 @@
             "19": "no",
             "20": "no",
             "21": "no",
-            "22": "no",
-            "23": "no",
+            "22": "first",
+            "23": "yes",
             "24": "yes"
           },
           "GPV5.2": {
@@ -4168,12 +4161,12 @@
             "20": "no",
             "21": "yes",
             "22": "yes",
-            "23": "second",
-            "24": "no"
+            "23": "yes",
+            "24": "yes"
           }
         }
       },
-      "update": "23.11.2026 19:42",
+      "update": "23.11.2026 21:38",
       "today": 1795384800
     }
   }
