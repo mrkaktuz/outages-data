@@ -6,13 +6,13 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-23T07:35:40+02:00",
+  "updatedAt": "2026-11-23T07:45:51+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:fe554451cd25ae7a849e829b9fcb60bf29cb4892aef528f48aded9c0cc91a331",
-    "sourceUpdatedAt": "23.11.2026 07:32"
+    "contentHash": "sha256:b8e37e06078484cd71b24b46dfb93b9e1a410e4b73046a1a2d224323459cc9a9",
+    "sourceUpdatedAt": "23.11.2026 07:42"
   },
   "groups": [
     "1.1",
@@ -540,7 +540,7 @@
       "intervals": [
         {
           "start": "2026-11-23T13:00:00+02:00",
-          "end": "2026-11-23T20:00:00+02:00",
+          "end": "2026-11-23T17:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -876,13 +876,6 @@
       "intervals": [
         {
           "start": "2026-11-23T13:00:00+02:00",
-          "end": "2026-11-23T17:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-23T20:00:00+02:00",
           "end": "2026-11-23T20:30:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -3847,7 +3840,7 @@
           }
         }
       },
-      "updateFact": "23.11.2026 07:32"
+      "updateFact": "23.11.2026 07:42"
     },
     "fact": {
       "data": {
@@ -3974,9 +3967,9 @@
             "15": "no",
             "16": "no",
             "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
+            "18": "yes",
+            "19": "yes",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -4052,9 +4045,9 @@
             "15": "no",
             "16": "no",
             "17": "no",
-            "18": "yes",
-            "19": "yes",
-            "20": "yes",
+            "18": "no",
+            "19": "no",
+            "20": "no",
             "21": "first",
             "22": "yes",
             "23": "yes",
@@ -4166,7 +4159,7 @@
           }
         }
       },
-      "update": "23.11.2026 07:32",
+      "update": "23.11.2026 07:42",
       "today": 1795384800
     }
   }
