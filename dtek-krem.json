@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-23T22:40:31+02:00",
+  "updatedAt": "2026-11-23T23:11:14+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:5c5fbb494f58c2fdf17fad256976694479ca703309d76117835014769402fc02",
-    "sourceUpdatedAt": "23.11.2026 22:33"
+    "contentHash": "sha256:f726789398329dcfe935cc79d6bc1ae9b142120f526676cd472d4bb62ca5abef",
+    "sourceUpdatedAt": "23.11.2026 23:06"
   },
   "groups": [
     "1.1",
@@ -519,7 +519,7 @@
         },
         {
           "start": "2026-11-23T22:30:00+02:00",
-          "end": "2026-11-24T02:30:00+02:00",
+          "end": "2026-11-24T01:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -632,6 +632,13 @@
         {
           "start": "2026-11-23T13:00:00+02:00",
           "end": "2026-11-23T19:00:00+02:00",
+          "kind": "off",
+          "type": "planned",
+          "origin": "fact"
+        },
+        {
+          "start": "2026-11-24T00:00:00+02:00",
+          "end": "2026-11-24T02:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3812,7 +3819,7 @@
           }
         }
       },
-      "updateFact": "23.11.2026 22:33"
+      "updateFact": "23.11.2026 23:06"
     },
     "fact": {
       "data": {
@@ -4237,8 +4244,8 @@
           },
           "GPV3.1": {
             "1": "no",
-            "2": "no",
-            "3": "first",
+            "2": "yes",
+            "3": "yes",
             "4": "yes",
             "5": "yes",
             "6": "yes",
@@ -4262,9 +4269,9 @@
             "24": "yes"
           },
           "GPV3.2": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
+            "1": "no",
+            "2": "no",
+            "3": "first",
             "4": "yes",
             "5": "yes",
             "6": "yes",
@@ -4445,7 +4452,7 @@
           }
         }
       },
-      "update": "23.11.2026 22:33",
+      "update": "23.11.2026 23:06",
       "today": 1795384800
     }
   }
