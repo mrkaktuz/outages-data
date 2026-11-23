@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:c6ade1c00507c5fe589deb4047c0ceee7d9358ec4be271885c5b2fe37568ea2c",
+    "contentHash": "sha256:bb0df6b96757337d0de01db0ffcbd946efae5310e2f8f8fbc6ff948597f0ff36",
     "sourceUpdatedAt": "23.11.2026 21:30"
   },
   "groups": [
@@ -219,13 +219,6 @@
         {
           "start": "2026-11-23T18:00:00+02:00",
           "end": "2026-11-23T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-23T22:00:00+02:00",
-          "end": "2026-11-24T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -566,8 +559,8 @@
             "20": "no",
             "21": "yes",
             "22": "yes",
-            "23": "no",
-            "24": "no"
+            "23": "yes",
+            "24": "yes"
           },
           "GPV4.2": {
             "1": "yes",
