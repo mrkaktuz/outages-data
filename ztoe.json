@@ -6,13 +6,13 @@
     "region": "Житомирська область",
     "url": "https://www.ztoe.com.ua/unhooking-search.php"
   },
-  "updatedAt": "2026-11-23T12:51:09+02:00",
+  "updatedAt": "2026-11-23T19:02:19+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:3adf19de2da8a5ac60423df4949a6312bffda64960c378935c7f68d4f9424b33",
-    "sourceUpdatedAt": "23.11.2026 12:30"
+    "contentHash": "sha256:26271326b905a225fdfc9dcd641533413eb52c25628c952a0178cf7dd92f96ea",
+    "sourceUpdatedAt": "23.11.2026 19:00"
   },
   "groups": [
     "1.1",
@@ -246,7 +246,7 @@
         },
         {
           "start": "2026-11-23T18:00:00+02:00",
-          "end": "2026-11-23T20:00:00+02:00",
+          "end": "2026-11-23T19:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -575,7 +575,7 @@
             "17": "yes",
             "18": "yes",
             "19": "no",
-            "20": "no",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -687,7 +687,7 @@
           }
         }
       },
-      "update": "23.11.2026 12:30",
+      "update": "23.11.2026 19:00",
       "today": 1795384800
     }
   }
