@@ -6,13 +6,13 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-24T05:02:35+02:00",
+  "updatedAt": "2026-11-24T05:43:04+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:335a2faef2364d6b3b48ff649d0cd411bd67106e2a1ddfbcc1759e27c74bb1a1",
-    "sourceUpdatedAt": "24.11.2026 04:57"
+    "contentHash": "sha256:292b89a826a59fdc58d5ccf4b487059e83704c8c86863ee4a163bb2b921517de",
+    "sourceUpdatedAt": "24.11.2026 05:41"
   },
   "groups": [
     "1.1",
@@ -55,7 +55,7 @@
         },
         {
           "start": "2026-11-24T15:00:00+02:00",
-          "end": "2026-11-24T22:00:00+02:00",
+          "end": "2026-11-24T22:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -294,13 +294,6 @@
         {
           "start": "2026-11-24T15:00:00+02:00",
           "end": "2026-11-24T19:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-24T22:00:00+02:00",
-          "end": "2026-11-24T22:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -7633,7 +7626,7 @@
           }
         }
       },
-      "updateFact": "24.11.2026 04:57"
+      "updateFact": "24.11.2026 05:41"
     },
     "fact": {
       "data": {
@@ -7661,7 +7654,7 @@
             "20": "no",
             "21": "no",
             "22": "no",
-            "23": "yes",
+            "23": "first",
             "24": "yes"
           },
           "GPV1.2": {
@@ -7713,7 +7706,7 @@
             "20": "yes",
             "21": "yes",
             "22": "yes",
-            "23": "first",
+            "23": "yes",
             "24": "yes"
           },
           "GPV2.2": {
@@ -7952,7 +7945,7 @@
           }
         }
       },
-      "update": "24.11.2026 04:57",
+      "update": "24.11.2026 05:41",
       "today": 1795471200
     }
   }
