@@ -6,13 +6,13 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-24T05:43:04+02:00",
+  "updatedAt": "2026-11-24T05:48:00+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:292b89a826a59fdc58d5ccf4b487059e83704c8c86863ee4a163bb2b921517de",
-    "sourceUpdatedAt": "24.11.2026 05:41"
+    "contentHash": "sha256:3d64b5c495143d41f1d8a1809ab2765bbd931791d8821f6cf5dd28b6b50f9a03",
+    "sourceUpdatedAt": "24.11.2026 05:43"
   },
   "groups": [
     "1.1",
@@ -1175,7 +1175,7 @@
         },
         {
           "start": "2026-11-24T12:00:00+02:00",
-          "end": "2026-11-24T18:30:00+02:00",
+          "end": "2026-11-24T19:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -1428,13 +1428,6 @@
         {
           "start": "2026-11-24T11:30:00+02:00",
           "end": "2026-11-24T15:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-24T18:30:00+02:00",
-          "end": "2026-11-24T19:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -7626,7 +7619,7 @@
           }
         }
       },
-      "updateFact": "24.11.2026 05:41"
+      "updateFact": "24.11.2026 05:43"
     },
     "fact": {
       "data": {
@@ -7884,7 +7877,7 @@
             "16": "no",
             "17": "no",
             "18": "no",
-            "19": "first",
+            "19": "no",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -7936,7 +7929,7 @@
             "16": "first",
             "17": "yes",
             "18": "yes",
-            "19": "second",
+            "19": "yes",
             "20": "yes",
             "21": "yes",
             "22": "yes",
@@ -7945,7 +7938,7 @@
           }
         }
       },
-      "update": "24.11.2026 05:41",
+      "update": "24.11.2026 05:43",
       "today": 1795471200
     }
   }
