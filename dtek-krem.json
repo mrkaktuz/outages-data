@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-25T01:34:26+02:00",
+  "updatedAt": "2026-11-25T02:15:10+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:5748e1dfac8eca429d1a7759735853c77a80afe0fbbff0a894bc1fb7e1e755b9",
-    "sourceUpdatedAt": "25.11.2026 01:33"
+    "contentHash": "sha256:49aa3278ea01a80c2014dfb2cd065b8831dd5512d5beee792d775ff61d6346f0",
+    "sourceUpdatedAt": "25.11.2026 02:09"
   },
   "groups": [
     "1.1",
@@ -980,13 +980,6 @@
       "name": "Черга 5.1",
       "intervals": [
         {
-          "start": "2026-11-25T02:30:00+02:00",
-          "end": "2026-11-25T06:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-25T09:30:00+02:00",
           "end": "2026-11-25T15:00:00+02:00",
           "kind": "off",
@@ -1380,7 +1373,7 @@
       "intervals": [
         {
           "start": "2026-11-25T00:00:00+02:00",
-          "end": "2026-11-25T03:00:00+02:00",
+          "end": "2026-11-25T02:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3882,7 +3875,7 @@
           }
         }
       },
-      "updateFact": "25.11.2026 01:33"
+      "updateFact": "25.11.2026 02:09"
     },
     "fact": {
       "data": {
@@ -4098,11 +4091,11 @@
           "GPV5.1": {
             "1": "yes",
             "2": "yes",
-            "3": "second",
-            "4": "no",
-            "5": "no",
-            "6": "no",
-            "7": "first",
+            "3": "yes",
+            "4": "yes",
+            "5": "yes",
+            "6": "yes",
+            "7": "yes",
             "8": "yes",
             "9": "yes",
             "10": "second",
@@ -4176,7 +4169,7 @@
           "GPV6.2": {
             "1": "no",
             "2": "no",
-            "3": "no",
+            "3": "yes",
             "4": "yes",
             "5": "yes",
             "6": "yes",
@@ -4201,7 +4194,7 @@
           }
         }
       },
-      "update": "25.11.2026 01:33",
+      "update": "25.11.2026 02:09",
       "today": 1795557600
     }
   }
