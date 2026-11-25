@@ -6,13 +6,13 @@
     "region": "Київська область",
     "url": "https://www.dtek-krem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-25T07:55:48+02:00",
+  "updatedAt": "2026-11-25T10:38:46+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:bf3ae3d41c39dc4a3bc784c378605d31796cc97927ba54928d541b40ced05fa4",
-    "sourceUpdatedAt": "25.11.2026 07:48"
+    "contentHash": "sha256:395180c2c3f006d4c69dbba16ad7dcf6bbd50194cbd3e98da98cf7dd27845844",
+    "sourceUpdatedAt": "25.11.2026 10:35"
   },
   "groups": [
     "1.1",
@@ -505,7 +505,7 @@
       "intervals": [
         {
           "start": "2026-11-25T08:00:00+02:00",
-          "end": "2026-11-25T11:00:00+02:00",
+          "end": "2026-11-25T12:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -624,7 +624,7 @@
       "intervals": [
         {
           "start": "2026-11-25T06:00:00+02:00",
-          "end": "2026-11-25T11:00:00+02:00",
+          "end": "2026-11-25T12:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3875,7 +3875,7 @@
           }
         }
       },
-      "updateFact": "25.11.2026 07:48"
+      "updateFact": "25.11.2026 10:35"
     },
     "fact": {
       "data": {
@@ -3996,8 +3996,8 @@
             "9": "no",
             "10": "no",
             "11": "no",
-            "12": "yes",
-            "13": "yes",
+            "12": "no",
+            "13": "first",
             "14": "yes",
             "15": "yes",
             "16": "yes",
@@ -4022,8 +4022,8 @@
             "9": "no",
             "10": "no",
             "11": "no",
-            "12": "yes",
-            "13": "yes",
+            "12": "no",
+            "13": "first",
             "14": "yes",
             "15": "yes",
             "16": "yes",
@@ -4194,7 +4194,7 @@
           }
         }
       },
-      "update": "25.11.2026 07:48",
+      "update": "25.11.2026 10:35",
       "today": 1795557600
     }
   }
