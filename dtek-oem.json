@@ -6,13 +6,13 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-25T18:32:40+02:00",
+  "updatedAt": "2026-11-25T22:00:44+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:751f597e0c791c4224dea1658b528507ca96ba03ec75f9db663687ab853f2d88",
-    "sourceUpdatedAt": "25.11.2026 18:28"
+    "contentHash": "sha256:9f86a43777b2ed025747fa196d425bc36653fed98daf6fc9c8ce91883fc78ebe",
+    "sourceUpdatedAt": "25.11.2026 21:58"
   },
   "groups": [
     "1.1",
@@ -1002,7 +1002,7 @@
         },
         {
           "start": "2026-11-25T21:00:00+02:00",
-          "end": "2026-11-25T22:30:00+02:00",
+          "end": "2026-11-26T00:00:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3847,7 +3847,7 @@
           }
         }
       },
-      "updateFact": "25.11.2026 18:28"
+      "updateFact": "25.11.2026 21:58"
     },
     "fact": {
       "data": {
@@ -4083,8 +4083,8 @@
             "20": "yes",
             "21": "yes",
             "22": "no",
-            "23": "first",
-            "24": "yes"
+            "23": "no",
+            "24": "no"
           },
           "GPV5.2": {
             "1": "yes",
@@ -4166,7 +4166,7 @@
           }
         }
       },
-      "update": "25.11.2026 18:28",
+      "update": "25.11.2026 21:58",
       "today": 1795557600
     }
   }
