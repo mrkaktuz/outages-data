@@ -11,7 +11,7 @@
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:6e0f0126d0fd1177abdb584d63f379a0fa7cfab0e64786625eb49f378c0980e5",
+    "contentHash": "sha256:adfc8c32efbbf204b5543a66e36dac13acd9ecc136d7a804017691fe51540026",
     "sourceUpdatedAt": "26.11.2026 23:18"
   },
   "groups": [
@@ -59,20 +59,6 @@
       "name": "Черга 1.1",
       "intervals": [
         {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T04:00:00+02:00",
           "end": "2026-11-27T08:00:00+02:00",
           "kind": "off",
@@ -92,6 +78,20 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -101,21 +101,7 @@
       "name": "Черга 1.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -214,7 +200,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -227,20 +227,6 @@
       "name": "Черга 2.1",
       "intervals": [
         {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T04:00:00+02:00",
           "end": "2026-11-27T08:00:00+02:00",
           "kind": "off",
@@ -260,6 +246,20 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -269,21 +269,7 @@
       "name": "Черга 2.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -382,7 +368,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -394,27 +394,6 @@
       "subgroup": "1",
       "name": "Черга 3.1",
       "intervals": [
-        {
-          "start": "2026-11-26T01:00:00+02:00",
-          "end": "2026-11-26T05:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T14:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
         {
           "start": "2026-11-27T06:00:00+02:00",
           "end": "2026-11-27T11:00:00+02:00",
@@ -435,6 +414,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T01:00:00+02:00",
+          "end": "2026-12-03T05:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T14:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -444,21 +444,7 @@
       "name": "Черга 3.2",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -554,6 +540,27 @@
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -562,27 +569,6 @@
       "subgroup": "1",
       "name": "Черга 4.1",
       "intervals": [
-        {
-          "start": "2026-11-26T01:00:00+02:00",
-          "end": "2026-11-26T05:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T14:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
-          "end": "2026-11-27T00:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
         {
           "start": "2026-11-27T06:00:00+02:00",
           "end": "2026-11-27T08:00:00+02:00",
@@ -603,6 +589,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T01:00:00+02:00",
+          "end": "2026-12-03T05:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T14:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -612,21 +619,7 @@
       "name": "Черга 4.2",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -722,6 +715,27 @@
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -731,21 +745,7 @@
       "name": "Черга 5.1",
       "intervals": [
         {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T16:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -764,6 +764,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T06:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T16:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -772,27 +793,6 @@
       "subgroup": "2",
       "name": "Черга 5.2",
       "intervals": [
-        {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
         {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
@@ -886,7 +886,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -899,21 +913,7 @@
       "name": "Черга 6.1",
       "intervals": [
         {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -932,6 +932,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T06:00:00+02:00",
+          "end": "2026-12-03T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -940,27 +961,6 @@
       "subgroup": "2",
       "name": "Черга 6.2",
       "intervals": [
-        {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
         {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
@@ -1054,7 +1054,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -1067,27 +1081,6 @@
       "name": "Черга 7.1",
       "intervals": [
         {
-          "start": "2026-11-26T05:00:00+02:00",
-          "end": "2026-11-26T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
-          "end": "2026-11-27T00:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T07:00:00+02:00",
           "end": "2026-11-27T11:00:00+02:00",
           "kind": "off",
@@ -1100,6 +1093,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T04:00:00+02:00",
+          "end": "2026-12-03T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1109,27 +1123,6 @@
       "name": "Черга 8.1",
       "intervals": [
         {
-          "start": "2026-11-26T05:00:00+02:00",
-          "end": "2026-11-26T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
-          "end": "2026-11-27T00:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T07:00:00+02:00",
           "end": "2026-11-27T11:00:00+02:00",
           "kind": "off",
@@ -1142,6 +1135,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T04:00:00+02:00",
+          "end": "2026-12-03T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1151,27 +1165,6 @@
       "name": "Черга 9.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T14:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T01:00:00+02:00",
           "end": "2026-11-27T05:00:00+02:00",
           "kind": "off",
@@ -1191,6 +1184,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T14:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1200,27 +1214,6 @@
       "name": "Черга 10.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T01:00:00+02:00",
           "end": "2026-11-27T05:00:00+02:00",
           "kind": "off",
@@ -1240,6 +1233,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1249,20 +1263,6 @@
       "name": "Черга 11.1",
       "intervals": [
         {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T10:00:00+02:00",
           "end": "2026-11-27T17:00:00+02:00",
           "kind": "off",
@@ -1275,6 +1275,20 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1284,20 +1298,6 @@
       "name": "Черга 12.1",
       "intervals": [
         {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T10:00:00+02:00",
           "end": "2026-11-27T17:00:00+02:00",
           "kind": "off",
@@ -1310,6 +1310,20 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1319,21 +1333,7 @@
       "name": "Черга 13.1",
       "intervals": [
         {
-          "start": "2026-11-26T01:00:00+02:00",
-          "end": "2026-11-26T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T17:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -1359,6 +1359,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T01:00:00+02:00",
+          "end": "2026-12-03T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T17:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1368,21 +1389,7 @@
       "name": "Черга 14.1",
       "intervals": [
         {
-          "start": "2026-11-26T01:00:00+02:00",
-          "end": "2026-11-26T08:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T10:00:00+02:00",
-          "end": "2026-11-26T17:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T19:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -1408,6 +1415,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T01:00:00+02:00",
+          "end": "2026-12-03T08:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T10:00:00+02:00",
+          "end": "2026-12-03T17:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1417,28 +1445,7 @@
       "name": "Черга 15.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T01:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T05:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -1457,6 +1464,34 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T04:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1466,28 +1501,7 @@
       "name": "Черга 16.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T01:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T11:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T13:00:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T22:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T05:00:00+02:00",
           "kind": "off",
           "type": "planned",
@@ -1506,6 +1520,34 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T04:00:00+02:00",
+          "end": "2026-12-03T11:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T13:00:00+02:00",
+          "end": "2026-12-03T20:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T22:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1515,27 +1557,6 @@
       "name": "Черга 17.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T01:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T14:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T01:00:00+02:00",
           "end": "2026-11-27T08:00:00+02:00",
           "kind": "off",
@@ -1555,6 +1576,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T14:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1564,27 +1606,6 @@
       "name": "Черга 18.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T01:30:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T07:00:00+02:00",
-          "end": "2026-11-26T14:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "off",
-          "type": "planned",
-          "origin": "fact"
-        },
-        {
           "start": "2026-11-27T01:00:00+02:00",
           "end": "2026-11-27T08:00:00+02:00",
           "kind": "off",
@@ -1604,6 +1625,27 @@
           "kind": "off",
           "type": "planned",
           "origin": "fact"
+        },
+        {
+          "start": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T07:00:00+02:00",
+          "end": "2026-12-03T14:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -1613,21 +1655,7 @@
       "name": "ЦЕК 1.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1726,7 +1754,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -1739,21 +1781,7 @@
       "name": "ЦЕК 1.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1852,7 +1880,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -1865,21 +1907,7 @@
       "name": "ЦЕК 2.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -1978,7 +2006,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -1991,21 +2033,7 @@
       "name": "ЦЕК 2.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T05:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T09:00:00+02:00",
-          "end": "2026-11-26T16:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T19:30:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T02:30:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -2104,7 +2132,21 @@
         },
         {
           "start": "2026-12-02T22:30:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T05:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T09:00:00+02:00",
+          "end": "2026-12-03T16:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T19:30:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2117,21 +2159,7 @@
       "name": "ЦЕК 3.1",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -2224,6 +2252,27 @@
         {
           "start": "2026-12-02T15:30:00+02:00",
           "end": "2026-12-02T22:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2236,21 +2285,7 @@
       "name": "ЦЕК 3.2",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -2343,6 +2378,27 @@
         {
           "start": "2026-12-02T15:30:00+02:00",
           "end": "2026-12-02T22:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2355,21 +2411,7 @@
       "name": "ЦЕК 4.1",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -2462,6 +2504,27 @@
         {
           "start": "2026-12-02T15:30:00+02:00",
           "end": "2026-12-02T22:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2474,21 +2537,7 @@
       "name": "ЦЕК 4.2",
       "intervals": [
         {
-          "start": "2026-11-26T02:00:00+02:00",
-          "end": "2026-11-26T09:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T12:30:00+02:00",
-          "end": "2026-11-26T19:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T23:00:00+02:00",
+          "start": "2026-11-27T00:00:00+02:00",
           "end": "2026-11-27T06:00:00+02:00",
           "kind": "possible",
           "type": "possible",
@@ -2584,6 +2633,27 @@
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T02:00:00+02:00",
+          "end": "2026-12-03T09:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T12:30:00+02:00",
+          "end": "2026-12-03T19:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T23:00:00+02:00",
+          "end": "2026-12-04T00:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
         }
       ]
     },
@@ -2592,27 +2662,6 @@
       "subgroup": "1",
       "name": "ЦЕК 5.1",
       "intervals": [
-        {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
         {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
@@ -2706,7 +2755,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2719,27 +2782,6 @@
       "name": "ЦЕК 5.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
           "kind": "possible",
@@ -2832,7 +2874,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2845,27 +2901,6 @@
       "name": "ЦЕК 6.1",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
           "kind": "possible",
@@ -2958,7 +2993,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -2971,27 +3020,6 @@
       "name": "ЦЕК 6.2",
       "intervals": [
         {
-          "start": "2026-11-26T00:00:00+02:00",
-          "end": "2026-11-26T02:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T05:30:00+02:00",
-          "end": "2026-11-26T12:30:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
-          "start": "2026-11-26T16:00:00+02:00",
-          "end": "2026-11-26T23:00:00+02:00",
-          "kind": "possible",
-          "type": "possible",
-          "origin": "preset"
-        },
-        {
           "start": "2026-11-27T02:30:00+02:00",
           "end": "2026-11-27T09:30:00+02:00",
           "kind": "possible",
@@ -3084,7 +3112,21 @@
         },
         {
           "start": "2026-12-02T19:00:00+02:00",
-          "end": "2026-12-03T00:00:00+02:00",
+          "end": "2026-12-03T02:00:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T05:30:00+02:00",
+          "end": "2026-12-03T12:30:00+02:00",
+          "kind": "possible",
+          "type": "possible",
+          "origin": "preset"
+        },
+        {
+          "start": "2026-12-03T16:00:00+02:00",
+          "end": "2026-12-03T23:00:00+02:00",
           "kind": "possible",
           "type": "possible",
           "origin": "preset"
@@ -9923,476 +9965,6 @@
     },
     "fact": {
       "data": {
-        "1795644000": {
-          "GPV1.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "yes",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "yes",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV10.1": {
-            "1": "no",
-            "2": "no",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "yes",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
-          },
-          "GPV11.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "yes",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV12.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "yes",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
-          },
-          "GPV13.1": {
-            "1": "yes",
-            "2": "no",
-            "3": "no",
-            "4": "no",
-            "5": "no",
-            "6": "no",
-            "7": "no",
-            "8": "no",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV14.1": {
-            "1": "yes",
-            "2": "no",
-            "3": "no",
-            "4": "no",
-            "5": "no",
-            "6": "no",
-            "7": "no",
-            "8": "no",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV15.1": {
-            "1": "no",
-            "2": "first",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV16.1": {
-            "1": "no",
-            "2": "first",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV17.1": {
-            "1": "no",
-            "2": "first",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV18.1": {
-            "1": "no",
-            "2": "first",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV2.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "yes",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "yes",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV3.1": {
-            "1": "yes",
-            "2": "no",
-            "3": "no",
-            "4": "no",
-            "5": "no",
-            "6": "yes",
-            "7": "yes",
-            "8": "yes",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "yes",
-            "16": "yes",
-            "17": "yes",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "yes"
-          },
-          "GPV4.1": {
-            "1": "yes",
-            "2": "no",
-            "3": "no",
-            "4": "no",
-            "5": "no",
-            "6": "yes",
-            "7": "yes",
-            "8": "yes",
-            "9": "yes",
-            "10": "yes",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "yes",
-            "16": "yes",
-            "17": "yes",
-            "18": "yes",
-            "19": "yes",
-            "20": "no",
-            "21": "no",
-            "22": "no",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV5.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "first",
-            "18": "yes",
-            "19": "yes",
-            "20": "yes",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV6.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "yes",
-            "10": "yes",
-            "11": "yes",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV7.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "no",
-            "7": "no",
-            "8": "no",
-            "9": "yes",
-            "10": "yes",
-            "11": "yes",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV8.1": {
-            "1": "yes",
-            "2": "yes",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "no",
-            "7": "no",
-            "8": "no",
-            "9": "yes",
-            "10": "yes",
-            "11": "yes",
-            "12": "yes",
-            "13": "yes",
-            "14": "no",
-            "15": "no",
-            "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "no",
-            "24": "no"
-          },
-          "GPV9.1": {
-            "1": "no",
-            "2": "no",
-            "3": "yes",
-            "4": "yes",
-            "5": "yes",
-            "6": "yes",
-            "7": "yes",
-            "8": "no",
-            "9": "no",
-            "10": "no",
-            "11": "no",
-            "12": "no",
-            "13": "no",
-            "14": "no",
-            "15": "yes",
-            "16": "yes",
-            "17": "no",
-            "18": "no",
-            "19": "no",
-            "20": "no",
-            "21": "yes",
-            "22": "yes",
-            "23": "yes",
-            "24": "yes"
-          }
-        },
         "1795730400": {
           "GPV1.1": {
             "1": "yes",
@@ -10865,7 +10437,7 @@
         }
       },
       "update": "26.11.2026 23:18",
-      "today": 1795644000
+      "today": 1795730400
     }
   }
 }
