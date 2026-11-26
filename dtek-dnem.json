@@ -6,11 +6,11 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-26T07:25:15+02:00",
+  "updatedAt": "2026-11-26T13:36:08+02:00",
   "status": {
-    "ok": true,
-    "code": "ok",
-    "message": null,
+    "ok": false,
+    "code": "waf_blocked",
+    "message": "Incapsula challenge did not clear",
     "contentHash": "sha256:5077bc733501d2aa4e628f70521c76ce35bb34d09035b82a2abc6f156fe7eb46",
     "sourceUpdatedAt": "26.11.2026 07:21"
   },
