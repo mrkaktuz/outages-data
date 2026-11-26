@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-26T05:49:04+02:00",
+  "generatedAt": "2026-11-26T06:09:13+02:00",
   "sources": [
     {
       "id": "dtek-krem",
@@ -194,7 +194,7 @@
       "id": "mykolaiv",
       "name": "Миколаївобленерго",
       "region": "Миколаївська область",
-      "updatedAt": "2026-11-26T05:49:04+02:00",
+      "updatedAt": "2026-11-26T06:09:12+02:00",
       "status": "ok",
       "groups": [
         "1.1",
