@@ -6,13 +6,13 @@
     "region": "Одеська область",
     "url": "https://www.dtek-oem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-26T14:22:33+02:00",
+  "updatedAt": "2026-11-26T16:34:44+02:00",
   "status": {
     "ok": true,
     "code": "ok",
     "message": null,
-    "contentHash": "sha256:76d3cb493764a5fc27496da80f770eccdb558502d2c455c418dec8be288ec1e2",
-    "sourceUpdatedAt": "26.11.2026 14:18"
+    "contentHash": "sha256:ba30fad1d50a4f2f1e224968e244aedfbafcc7cbfd0a4a6f9673b0e7df263669",
+    "sourceUpdatedAt": "26.11.2026 16:30"
   },
   "groups": [
     "1.1",
@@ -155,7 +155,7 @@
       "intervals": [
         {
           "start": "2026-11-26T11:00:00+02:00",
-          "end": "2026-11-26T18:30:00+02:00",
+          "end": "2026-11-26T16:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -638,7 +638,7 @@
         },
         {
           "start": "2026-11-26T14:30:00+02:00",
-          "end": "2026-11-26T20:00:00+02:00",
+          "end": "2026-11-26T18:30:00+02:00",
           "kind": "off",
           "type": "planned",
           "origin": "fact"
@@ -3875,7 +3875,7 @@
           }
         }
       },
-      "updateFact": "26.11.2026 14:18"
+      "updateFact": "26.11.2026 16:30"
     },
     "fact": {
       "data": {
@@ -3923,9 +3923,9 @@
             "14": "no",
             "15": "no",
             "16": "no",
-            "17": "no",
-            "18": "no",
-            "19": "first",
+            "17": "first",
+            "18": "yes",
+            "19": "yes",
             "20": "yes",
             "21": "yes",
             "22": "second",
@@ -4029,8 +4029,8 @@
             "16": "no",
             "17": "no",
             "18": "no",
-            "19": "no",
-            "20": "no",
+            "19": "first",
+            "20": "yes",
             "21": "yes",
             "22": "yes",
             "23": "yes",
@@ -4194,7 +4194,7 @@
           }
         }
       },
-      "update": "26.11.2026 14:18",
+      "update": "26.11.2026 16:30",
       "today": 1795644000
     }
   }
