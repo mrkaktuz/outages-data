@@ -6,11 +6,11 @@
     "region": "Дніпропетровська область",
     "url": "https://www.dtek-dnem.com.ua/ua/shutdowns"
   },
-  "updatedAt": "2026-11-26T02:47:36+02:00",
+  "updatedAt": "2026-11-26T02:51:10+02:00",
   "status": {
-    "ok": false,
-    "code": "timeout",
-    "message": "page.goto: Timeout 45000ms exceeded. Call log: - navigating to \"https://www.dtek-dnem.com.ua/ua/shutdowns\", waiting until \"domcontentloaded\"",
+    "ok": true,
+    "code": "ok",
+    "message": null,
     "contentHash": "sha256:9eade83090bb06b3e442de1cc5b1e5fe2d0435088f6bcea91aeb5af29b4c7696",
     "sourceUpdatedAt": "26.11.2026 00:37"
   },
